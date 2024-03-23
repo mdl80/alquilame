@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>12</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>348</x>
+      <y>0</y>
+      <w>336</w>
+      <h>564</h>
+    </coordinates>
+    <panel_attributes>index.html
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>36</y>
+      <w>312</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Header
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>372</x>
+      <y>60</y>
+      <w>288</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>nav
+bg=yellow
+layer=3
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>108</y>
+      <w>312</w>
+      <h>156</h>
+    </coordinates>
+    <panel_attributes>section
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>372</x>
+      <y>144</y>
+      <w>288</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>filtros
+bg=orange
+layer=2
+transparency=10</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>48</x>
+      <y>180</y>
+      <w>288</w>
+      <h>204</h>
+    </coordinates>
+    <panel_attributes>mapa
+layer=3
+bg=pink
+transparency=10</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>480</y>
+      <w>312</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Footer
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>372</x>
+      <y>504</y>
+      <w>288</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>nav
+bg=yellow
+layer=3
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>216</y>
+      <w>312</w>
+      <h>228</h>
+    </coordinates>
+    <panel_attributes>section
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>372</x>
+      <y>312</y>
+      <w>288</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>Propiedades destacadas
+
+
+Busquedas recientes
+bg=white
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>756</x>
+      <y>24</y>
+      <w>120</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>System
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>732</x>
+      <y>204</y>
+      <w>120</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>System
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
