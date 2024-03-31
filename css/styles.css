@@ -413,6 +413,30 @@ footer{
     align-items: center;
 }
 
+/*-----------Alquileres-----------*/
+
+.alquileres{
+    height: 750px;
+}
+
+/*-----------Contacto-----------*/
+
+.contactohtml{
+    height: 750px;
+}
+
+/*-----------Nosotros-----------*/
+
+.nosotros{
+    height: 750px;
+}
+
+/*-----------Registro-----------*/
+
+.registro{
+    height: 750px;
+}
+
 
 
 
