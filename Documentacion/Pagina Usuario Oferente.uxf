@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>200</x>
+      <y>50</y>
+      <w>330</w>
+      <h>560</h>
+    </coordinates>
+    <panel_attributes>Pagina usuario oferente
+--
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>210</x>
+      <y>80</y>
+      <w>310</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Header
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>420</x>
+      <y>150</y>
+      <w>100</w>
+      <h>440</h>
+    </coordinates>
+    <panel_attributes>aside
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>210</x>
+      <y>150</y>
+      <w>200</w>
+      <h>440</h>
+    </coordinates>
+    <panel_attributes>Section
+(cambia segun opciones)
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
