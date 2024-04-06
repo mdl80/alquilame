@@ -181,7 +181,7 @@ header{
 /*-----------Busqueda por categorías-----------*/
 
 .busqueda_gral{
-    height: 750px;
+    height: 900px;
     background-image: url("../static/img/pexels-photomix-company-101808\ -\ copia.jpg");
     display: flex;
     flex-direction: column;
@@ -192,15 +192,16 @@ header{
     text-align: center;
     color: var(--text-color-third);
     text-shadow: var(--text-shadow);
-    margin-bottom: var(--margin-medium-2);
+    margin-bottom: var(--margin-medium);
     font-size: var(--font-large);
     font-family: "Nunito", sans-serif;
     font-optical-sizing: auto;
 }
 
 .busqueda{
-    width: 70%;
+    width: 60%;
     display: grid;
+    height: 75px;
     grid-template-columns: auto auto auto;
     justify-content: center;
     background-color: var(--bg-color-principal-transp);
@@ -344,21 +345,20 @@ footer{
 .container{
     display: grid;
     grid-template-columns: auto auto auto;
-    grid-gap: var(--gap-med);
+    grid-gap: var(--gap-maximo);
     justify-content: space-evenly;
     color: var(--text-color-principal);
 }
 
 .propiedad{
-    width: 350px;
+    width: 500px;
     border: 1px solid;
     margin-bottom: var(--margin-small);
-    border-bottom-left-radius: var(--border-radius-med);
-    border-bottom-right-radius: var(--border-radius-med);
 }
 
 .propiedad img{
-    width: 350px;
+    width: 480px;
+    padding: 10px;
 }
 
 .propiedad h3{
