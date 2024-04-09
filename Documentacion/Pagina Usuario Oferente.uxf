@@ -4,10 +4,10 @@
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>200</x>
+      <x>190</x>
       <y>50</y>
-      <w>330</w>
-      <h>560</h>
+      <w>360</w>
+      <h>590</h>
     </coordinates>
     <panel_attributes>Pagina usuario oferente
 --
@@ -30,7 +30,7 @@ halign=left</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>420</x>
-      <y>150</y>
+      <y>170</y>
       <w>100</w>
       <h>440</h>
     </coordinates>
@@ -42,12 +42,24 @@ halign=left</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>210</x>
-      <y>150</y>
+      <y>170</y>
       <w>200</w>
       <h>440</h>
     </coordinates>
     <panel_attributes>Section
 (cambia segun opciones)
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>200</x>
+      <y>150</y>
+      <w>340</w>
+      <h>470</h>
+    </coordinates>
+    <panel_attributes>Contenedor
 halign=left</panel_attributes>
     <additional_attributes/>
   </element>
