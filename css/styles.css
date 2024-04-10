@@ -181,7 +181,7 @@ header{
 /*-----------Busqueda por categorías-----------*/
 
 .busqueda_gral{
-    height: 750px;
+    height: 900px;
     background-image: url("../static/img/pexels-photomix-company-101808\ -\ copia.jpg");
     display: flex;
     flex-direction: column;
@@ -192,15 +192,16 @@ header{
     text-align: center;
     color: var(--text-color-third);
     text-shadow: var(--text-shadow);
-    margin-bottom: var(--margin-medium-2);
+    margin-bottom: var(--margin-medium);
     font-size: var(--font-large);
     font-family: "Nunito", sans-serif;
     font-optical-sizing: auto;
 }
 
 .busqueda{
-    width: 70%;
+    width: 60%;
     display: grid;
+    height: 75px;
     grid-template-columns: auto auto auto;
     justify-content: center;
     background-color: var(--bg-color-principal-transp);
@@ -345,11 +346,16 @@ footer{
     display: grid;
     grid-template-columns: auto auto auto;
     grid-gap: var(--gap-maximo);
+<<<<<<< HEAD
     justify-content: center;
+=======
+    justify-content: space-evenly;
+>>>>>>> 0a81dcefcbc73bdb3bc844c108ba6454767fcfbc
     color: var(--text-color-principal);
 }
 
 .propiedad{
+<<<<<<< HEAD
     width: 350px;
     margin-bottom: var(--margin-small);
     border: 0.1px solid #8d8d8d;
@@ -362,6 +368,16 @@ footer{
 .propiedad img{
     width: 350px;
     height: 240px;
+=======
+    width: 500px;
+    border: 1px solid;
+    margin-bottom: var(--margin-small);
+}
+
+.propiedad img{
+    width: 480px;
+    padding: 10px;
+>>>>>>> 0a81dcefcbc73bdb3bc844c108ba6454767fcfbc
 }
 
 .propiedad h3{
@@ -425,12 +441,37 @@ footer{
     align-items: center;
 }
 
+<<<<<<< HEAD
 main{
     height: 750px;
 }
 
 #form-wrapper{
     margin-top: 180px;
+=======
+/*-----------Alquileres-----------*/
+
+.alquileres{
+    height: 750px;
+}
+
+/*-----------Contacto-----------*/
+
+.contactohtml{
+    height: 750px;
+}
+
+/*-----------Nosotros-----------*/
+
+.nosotros{
+    height: 750px;
+}
+
+/*-----------Registro-----------*/
+
+.registro{
+    height: 750px;
+>>>>>>> 0a81dcefcbc73bdb3bc844c108ba6454767fcfbc
 }
 
 
