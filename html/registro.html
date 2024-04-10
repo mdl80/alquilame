@@ -4,11 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro-CAC-MOVIE</title>
+    <title>Alquila-Me</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 </head>
-
 <body>
-    <header></header>
+    <header>
+        <nav class="header_nav">
+                <div class="header_content">
+                    <img src="../static/img/Logo alquilame azul.svg" alt="Logo AlquilaMe">
+                    <div class="contacto">
+                        <div>
+                            <h4>Llamanos</h4>
+                        </div>
+                        <div class="tel">
+                            <a href="tel:+5411-5555-5555">(+54-11) 5555-5555</a>
+                        </div>
+                    </div>
+                    <div class="contacto">
+                        <div>
+                            <h4>Escribinos</h4>
+                        </div>
+                        <div class="email">
+                            <a href = "mailto:contacto@alquilame.com.ar">contacto@alquilame.com.ar</a>
+                        </div>
+                    </div>
+                    <div class="social">
+                        <div>
+                            <h4>Seguinos</h4>
+                        </div>
+                        <div>
+                            <a href="https://facebook.com"><img src="../static/img/Facebook.svg" alt="facebook"></a>
+                            <a href="https://twitter.com/home"><img src="../static/img/Twitter.svg" alt="X"></a>
+                            <a href="https://instagram.com"><img src="../static/img/Instagram.svg" alt="instagram"></a>
+                            <a href="https://whatsapp.com"><img src="../static/img/WhatsApp.svg" alt="whatsapp"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu_nav">
+                    <a href="/html/index.html">HOME</a>
+                    <a href="/html/nosotros.html">NOSOTROS</a>
+                    <a href="/html/alquileres.html">ALQUILERES</a>
+                    <a href="/html/contacto.html">CONTACTO</a>
+                    <a href="/html/registro.html">REGISTRO</a>
+                </div>
+        </nav>
+    </header>
     <main>
         <section id="form-wrapper">
             <h2>Registro como cliente</h2>
@@ -42,21 +86,58 @@
                     <input type="password" name="password" id="password" required placeholder="123456">
                 </div>
                 <div class="error" id="error-firstname"></div>
-<div class="form.terms">
-    <div class="terms">
-        <input type="checkbox" id="terms">
-        <label for="terms">Acepto términos y condiciones</label>
-    </div>
-</div>
-<button type="submit">Registrate</button>
-<div class="form-help">
-    <a href="#">¿Necesitas ayuda?</a>
-</div>
-
+                <div class="form.terms">
+                    <div class="terms">
+                        <input type="checkbox" id="terms">
+                        <label for="terms">Acepto términos y condiciones</label>
+                    </div>
+                </div>
+                <button type="submit">Registrate</button>
+                <div class="form-help">
+                    <a href="#">¿Necesitas ayuda?</a>
+                </div>
             </form>
         </section>
     </main>
-    <footer></footer>
+    <footer>
+        <nav class="footer_nav">
+            <div class="footer_links">
+                <a href="/html/index.html">HOME</a>
+                <a href="/html/nosotros.html">NOSOTROS</a>
+                <a href="/html/alquileres.html">ALQUILERES</a>
+                <a href="/html/contacto.html">CONTACTO</a>
+                <a href="/html/registro.html">REGISTRO</a>
+            </div>
+            <div class="social">
+                <div>
+                    <h4>Seguinos</h4>
+                </div>
+                <div>
+                    <a href="https://facebook.com"><img src="../static/img/Facebook.svg" alt="facebook"></a>
+                    <a href="https://twitter.com/home"><img src="../static/img/Twitter.svg" alt="X"></a>
+                    <a href="https://instagram.com"><img src="../static/img/Instagram.svg" alt="instagram"></a>
+                    <a href="https://whatsapp.com"><img src="../static/img/WhatsApp.svg" alt="whatsapp"></a>
+                </div>
+            </div>
+            </div>
+            <div class="info">
+                <h3>INFORMACIÓN 1:</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio odit mollitia voluptatibus pariatur dolor sequi, ducimus, libero quibusdam nam assumenda commodi deserunt quisquam dignissimos id blanditiis, aperiam animi? Deserunt cumque accusantium fugit veniam odit excepturi ducimus esse rem quis. Debitis nam facilis corporis possimus et hic nihil praesentium cupiditate tempora?</p>
+            </div>
+            <div class="info">
+                <h3> INFORMACIÓN 2:</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio odit mollitia voluptatibus pariatur dolor sequi, ducimus, libero quibusdam nam assumenda commodi deserunt quisquam dignissimos id blanditiis, aperiam animi? Deserunt cumque accusantium fugit veniam odit excepturi ducimus esse rem quis. Debitis nam facilis corporis possimus et hic nihil praesentium cupiditate tempora?</p>
+            </div>
+        </nav>
+        <section class="footer_info">
+            <div class="copyright">
+                <p><b>Copyright ©<script>document.write(new Date().getFullYear());</script> All Rights Reserved.</p></b>
+            </div>
+            <div class="diseñador">
+                <a href="#">Creado por: <span>Grupo4®</span></a>
+            </div>
+        </section>
+    </footer>
 </body>
 
 </html>

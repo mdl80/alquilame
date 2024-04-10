@@ -27,7 +27,7 @@
     --text-color-secondary:#B2AA8E;
     --text-color-third: #ffffff;
     --text-color-title:#D60B52;
-    --text-color-price:#DBFE87;
+    --text-color-price:#6d9c00;
     --text-color-nav-a-hover:#0c1b33;
     --text-shadow: 3px 3px 5px #000000;
     --text-color-copyright:#ffffff;
@@ -344,21 +344,24 @@ footer{
 .container{
     display: grid;
     grid-template-columns: auto auto auto;
-    grid-gap: var(--gap-med);
-    justify-content: space-evenly;
+    grid-gap: var(--gap-maximo);
+    justify-content: center;
     color: var(--text-color-principal);
 }
 
 .propiedad{
     width: 350px;
-    border: 1px solid;
     margin-bottom: var(--margin-small);
-    border-bottom-left-radius: var(--border-radius-med);
-    border-bottom-right-radius: var(--border-radius-med);
+    border: 0.1px solid #8d8d8d;
+}
+
+.propiedad:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .propiedad img{
     width: 350px;
+    height: 240px;
 }
 
 .propiedad h3{
@@ -367,6 +370,15 @@ footer{
     font-size: var(--font-x-small);
     padding: var(--padding-xx-small);
     background-color: var(--bg-color-destacadas-titulos);
+    
+}
+
+.propiedad h4{
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-size: var(--font-x-small);
+    padding: var(--padding-x-small) var(--padding-small) 0 var(--padding-x-small);
+    color: var(--text-color-price)
 }
 
 .propiedad p{
@@ -383,7 +395,7 @@ footer{
     font-optical-sizing: auto;
     font-weight: 800;
     font-size: var(--font-small);
-    color: var(--text-color-principal);
+    color: var(--text-color-price);
 }
 
 /*-----------Garantias de alquiler-----------*/
@@ -411,6 +423,14 @@ footer{
     width: 150px;
     padding: var(--padding-large);
     align-items: center;
+}
+
+main{
+    height: 750px;
+}
+
+#form-wrapper{
+    margin-top: 180px;
 }
 
 
