@@ -62,10 +62,10 @@
     --gap-medio: 30px;
     --gap-min: 8px;
 
-    font-family: "Nunito", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 200;
-    font-style: normal;
+    font-family: "Nunito", sans-serif!important;
+    font-optical-sizing: auto!important;
+    font-weight: 200!important;
+    font-style: normal!important;
 }
 
 /* padding y margin para todo el documento(elementos)*/
