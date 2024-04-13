@@ -192,7 +192,7 @@ header{
 /*-----------Busqueda por categorías-----------*/
 
 .busqueda_gral{
-    height: 900px;
+    height: 750px;
     background-image: url("../static/img/pexels-photomix-company-101808\ -\ copia.jpg");
     display: flex;
     flex-direction: column;
