@@ -5,7 +5,6 @@
   font-style: normal;
 }
 
-
 .roboto-condensed-<uniquifier> {
   font-family: "Roboto Condensed", sans-serif;
   font-optical-sizing: auto;
@@ -14,9 +13,8 @@
 }
 
 :root{
-
     font-size: 23px;
-
+    
     /*Colores fondo*/
     --bg-color-principal:#0eb5aa;
     --bg-color-principal-transp:rgba(3, 181, 169, 0.6);
@@ -81,7 +79,6 @@
     /*Border color*/
     --border-color-1: #a8a8a8;
     --border-color-2: #3b3b3b;
-
 }
 
 * {
@@ -143,7 +140,6 @@ header{
     font-optical-sizing: auto;
     text-align: center;
 }
-
 
 .menu_nav {
     display: flex;
@@ -476,7 +472,6 @@ footer{
     font-size: var(--font-large);
     font-family: "Nunito", sans-serif;
     font-optical-sizing: auto;
-
 }
 
 .nosotros{
@@ -516,16 +511,12 @@ footer{
     padding: var(--padding-large);
 }
 
-
-
-
-
-/*-----------Registro-----------*/
+/*-----------CSS Registro-----------*/
 .registro{
     height: 750px;
 }
 
-
+/*-----------Termina CSS Registro-----------*/
 
 
 
