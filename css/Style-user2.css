@@ -1,10 +1,6 @@
 :root {
     /*tamaño para la fuente predeterminada*/
-<<<<<<< HEAD
     font-size: 23px;
-=======
-    font-size: 30px;
->>>>>>> Previa
 
     /*Colores fondo*/
     --bg-color-principal: #0eb5aa;
@@ -66,7 +62,6 @@
     --gap-medio: 30px;
     --gap-min: 8px;
 
-<<<<<<< HEAD
     font-family: "Nunito", sans-serif;
     font-optical-sizing: auto;
     font-weight: 200;
@@ -81,14 +76,6 @@
     font-style: normal;
 } */
 
-=======
-    font-family: "Nunito", sans-serif!important;
-    font-optical-sizing: auto!important;
-    font-weight: 200!important;
-    font-style: normal!important;
-}
-
->>>>>>> Previa
 /* padding y margin para todo el documento(elementos)*/
 * {
     padding: 0;
@@ -98,7 +85,6 @@
 body {
     margin: 0 auto;
     width: 100%;
-<<<<<<< HEAD
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 7rem 1fr 1fr;
@@ -253,172 +239,4 @@ footer {
 
 .diseñador a span {
     color: var(--text-color-grupocreador);
-=======
-}
-
-/* dejo el header fijo*/
-.header {
-    width: 100%;
-    height: 122.4px;
-    position: fixed;
-    background-color: var(--bg-color-secondary);
-    margin: 0%;
-    z-index: 10;
-}
-
-.header>.logo-header {
-    padding-left: 6.6%;
-    width: 350px;
-}
-
-/*el contenedor de contenido y el aside*/
-.principal {
-    display: flex;
-    padding-top: 122.4px;
-    height: 800px;
-    background-image: url(../static/img/pexels-photomix-company-101808\ -\ copia.jpg);
-    background-size: cover;
-    /*box-shadow: inset 0px 0px 50px 500px rgba(255, 255, 255, 0.4);*/
-}
-
-/*contenedor de las propiedades*/
-.contenido {
-    display: flex;
-    width: 80%;
-    height: 650px;
-    overflow-y: scroll;
-    padding-left: 30px;
-    flex-wrap: wrap;
-    align-items: baseline;
-}
-
-/*contenedor individual de cada propiedad*/
-.propiedad {
-    display: flex;
-    flex-direction: column;
-    margin:20px;
-    width: 300px;
-    height: 300px;
-    border: 0.5px solid var(--bg-color-busqueda);
-    box-shadow: 5px 2px 15px 5px black;
-    
-}
-
-/*foto de la propiedad en contenedor propiedad*/
-.foto-propiedad {
-    width: 300px;
-    height: 200px;
-}
-
-/*contenedor estado dentro de contenedor propiedad debajo de la foto*/
-.estado {
-    display: flex;
-    width: 100%;
-    height: 100px;
-    background-color: var(--bg-color-footer);
-    align-items: center;
-    justify-content: center;
-    font-weight: 400;
-}
-
-/*icono dentro de contenedor estado*/
-.icono-estado {
-    transform: scale(0.4);
-}
-
-.estado::before {
-    content: "alquilado";
-    color: var(--bg-color-busqueda);
-}
-
-/*manejando el menu lateral*/
-aside {
-    display: flex;
-    flex-direction: column;
-    width: 20%;
-    min-width: 190px;
-    background-color: var(--bg-color-principal-transp);
-    text-align: center;
-    font-size: var(--font-small);
-}
-
-/*quitando decoraciones de las anclas*/
-aside a {
-    text-decoration: none;
-}
-
-/*efecto al pasar el cursor por las anclas*/
-aside a:hover {
-    font-weight: 400;
-    text-shadow: 4px 4px 5px rgba(12, 27, 51, 0.64);
-}
-
-/*separamos las opciones del texto descriptivo*/
-.control-publicaciones>a:first-of-type,
-.mensajes>a:first-of-type {
-    margin-top: 30px;
-}
-
-/*ponemos en horizontal las anclas usando flex*/
-.control-publicaciones,
-.mensajes {
-    display: flex;
-    flex-direction: column;
-}
-
-/*margen superior del control de publicaciones*/
-.control-publicaciones {
-    margin-top: 20px;
-}
-
-.mensajes {
-    margin-top: 40px;
-}
-
-/*quitando decoraciones de las anclas*/
-aside a {
-    text-decoration: none;
-    color: var(--text-color-third);
-}
-
-/*efecto al pasar el cursor por las anclas*/
-aside a:hover {
-    box-shadow: inset 0px 0px 50px 300px rgba(255, 255, 255, 0.2);
-    color: var(--text-color-nav-a-hover);
-    font-weight: 600;
-    border-radius: var(--border-radius-max);
-}
-
-/*separamos las opciones del texto descriptivo*/
-.control-publicaciones>a:first-of-type,
-.mensajes>a:first-of-type {
-    margin-top: 20px;
-}
-
-/*ponemos en horizontal las anclas usando flex*/
-.control-publicaciones,
-.mensajes {
-    display: flex;
-    flex-direction: column;
-}
-
-/** grilla para el filtro***/
-.grid-container {
-    display: grid;
-    width: 100%;
-    grid-template-columns: repeat(4, auto);
-    gap: var(--gap-min);
-    padding: 5px;
-}
-
-.filtro label {
-    font-size: var(--font-xx-small);
-    text-align: left;
-}
-
-input {
-    width: 35px;
-    height: 25px;
-    font-size: small;
->>>>>>> Previa
 }
