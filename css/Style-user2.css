@@ -1,6 +1,6 @@
 :root {
     /*tamaño para la fuente predeterminada*/
-    font-size: 30px;
+    font-size: 23px;
 
     /*Colores fondo*/
     --bg-color-principal: #0eb5aa;
@@ -62,11 +62,19 @@
     --gap-medio: 30px;
     --gap-min: 8px;
 
-    font-family: "Nunito", sans-serif!important;
-    font-optical-sizing: auto!important;
-    font-weight: 200!important;
-    font-style: normal!important;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
 }
+
+/**fuente de google**/
+/* .nunito-200 {
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+} */
 
 /* padding y margin para todo el documento(elementos)*/
 * {
@@ -77,170 +85,158 @@
 body {
     margin: 0 auto;
     width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 7rem 1fr 1fr;
+    grid-template-areas: "header header header header header header header header header header header header"
+        "main main main main main main main main main main main main"
+        "footer footer footer footer  footer footer footer footer footer footer footer footer";
 }
 
-/* dejo el header fijo*/
-.header {
+/** header**/
+header {
     width: 100%;
-    height: 122.4px;
-    position: fixed;
+    grid-area: header;
+    justify-content: center;
     background-color: var(--bg-color-secondary);
-    margin: 0%;
-    z-index: 10;
+    position: fixed;
 }
 
-.header>.logo-header {
-    padding-left: 6.6%;
+.header-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.logo {
     width: 350px;
 }
 
-/*el contenedor de contenido y el aside*/
-.principal {
-    display: flex;
-    padding-top: 122.4px;
-    height: 800px;
-    background-image: url(../static/img/pexels-photomix-company-101808\ -\ copia.jpg);
-    background-size: cover;
-    /*box-shadow: inset 0px 0px 50px 500px rgba(255, 255, 255, 0.4);*/
-}
-
-/*contenedor de las propiedades*/
-.contenido {
-    display: flex;
-    width: 80%;
-    height: 650px;
-    overflow-y: scroll;
-    padding-left: 30px;
-    flex-wrap: wrap;
-    align-items: baseline;
-}
-
-/*contenedor individual de cada propiedad*/
-.propiedad {
-    display: flex;
-    flex-direction: column;
-    margin:20px;
-    width: 300px;
-    height: 300px;
-    border: 0.5px solid var(--bg-color-busqueda);
-    box-shadow: 5px 2px 15px 5px black;
-    
-}
-
-/*foto de la propiedad en contenedor propiedad*/
-.foto-propiedad {
-    width: 300px;
-    height: 200px;
-}
-
-/*contenedor estado dentro de contenedor propiedad debajo de la foto*/
-.estado {
-    display: flex;
-    width: 100%;
-    height: 100px;
-    background-color: var(--bg-color-footer);
-    align-items: center;
-    justify-content: center;
-    font-weight: 400;
-}
-
-/*icono dentro de contenedor estado*/
-.icono-estado {
-    transform: scale(0.4);
-}
-
-.estado::before {
-    content: "alquilado";
-    color: var(--bg-color-busqueda);
-}
-
-/*manejando el menu lateral*/
-aside {
-    display: flex;
-    flex-direction: column;
-    width: 20%;
-    min-width: 190px;
-    background-color: var(--bg-color-principal-transp);
+.contacto h4 {
     text-align: center;
-    font-size: var(--font-small);
 }
 
-/*quitando decoraciones de las anclas*/
-aside a {
-    text-decoration: none;
+.social h4 {
+    text-align: center;
 }
 
-/*efecto al pasar el cursor por las anclas*/
-aside a:hover {
-    font-weight: 400;
-    text-shadow: 4px 4px 5px rgba(12, 27, 51, 0.64);
-}
-
-/*separamos las opciones del texto descriptivo*/
-.control-publicaciones>a:first-of-type,
-.mensajes>a:first-of-type {
-    margin-top: 30px;
-}
-
-/*ponemos en horizontal las anclas usando flex*/
-.control-publicaciones,
-.mensajes {
+header nav {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
+    background-color: var(--bg-color-principal);
+    padding: var(--padding-xx-small);
 }
 
-/*margen superior del control de publicaciones*/
-.control-publicaciones {
-    margin-top: 20px;
-}
-
-.mensajes {
-    margin-top: 40px;
-}
-
-/*quitando decoraciones de las anclas*/
-aside a {
+header nav a {
     text-decoration: none;
+    font-size: var(--font-x-small);
+    transition: 0.5s;
+    font-weight: 500;
+    margin: 0 var(--margin-small);
     color: var(--text-color-third);
 }
 
-/*efecto al pasar el cursor por las anclas*/
-aside a:hover {
-    box-shadow: inset 0px 0px 50px 300px rgba(255, 255, 255, 0.2);
+/**se incluye anclas de footer**/
+header nav a:hover,
+.footer_links a:hover {
     color: var(--text-color-nav-a-hover);
-    font-weight: 600;
-    border-radius: var(--border-radius-max);
 }
 
-/*separamos las opciones del texto descriptivo*/
-.control-publicaciones>a:first-of-type,
-.mensajes>a:first-of-type {
-    margin-top: 20px;
+/**se incluye iconos de footer**/
+.social-icon {
+    width: 30px;
+    padding: var(--padding-xx-small);
+    transition: transform .3s;
 }
 
-/*ponemos en horizontal las anclas usando flex*/
-.control-publicaciones,
-.mensajes {
-    display: flex;
-    flex-direction: column;
+.social-icon:hover {
+    transform: scale(1.3);
 }
 
-/** grilla para el filtro***/
-.grid-container {
-    display: grid;
+.contacto a {
+    text-decoration: none;
+    font-size: var(--font-x-small);
+    color: var(--text-color-principal);
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.contacto a:hover {
+    color: var(--bg-color-principal);
+}
+
+/**main**/
+main {
     width: 100%;
-    grid-template-columns: repeat(4, auto);
-    gap: var(--gap-min);
-    padding: 5px;
+    grid-area: main;
 }
 
-.filtro label {
+
+/**footer**/
+
+footer {
+    background-color: var(--bg-color-footer);
+    grid-area: footer;
+}
+
+.footer_nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer_links {
+    width: 300px;
+}
+
+.footer_links a {
+    text-decoration: none;
+    font-size: var(--font-x-small);
+    color: var(--text-color-copyright);
+    font-weight: 800;
+    margin: var(--margin-medium);
+}
+
+.info {
+    width: 380px;
+    padding: var(--padding-large);
+    font-weight: 600;
+}
+
+.info h3 {
+    font-size: var(--font-small);
+    color: var(--text-color-principal);
+}
+
+.info p {
     font-size: var(--font-xx-small);
-    text-align: left;
+    text-align: justify;
+    font-weight: lighter;
+    color: var(--text-color-third);
 }
 
-input {
-    width: 35px;
-    height: 25px;
-    font-size: small;
+.footer_info {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.copyright {
+    font-size: var(--font-xx-small);
+}
+
+.diseñador a {
+    text-decoration: none;
+    font-size: var(--font-x-small);
+    color: var(--text-color-principal);
+}
+
+.diseñador a span {
+    color: var(--text-color-grupocreador);
 }
