@@ -1,212 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alquila-Me</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <title>Alquilame</title>
 </head>
-<body>
-    <header>
-        <nav class="header_nav">
-                <div class="header_content">
-                    <img src="../static/img/Logo alquilame azul.svg" alt="Logo AlquilaMe">
-                    <div class="contacto">
-                        <div>
-                            <h4>Llamanos</h4>
-                        </div>
-                        <div class="tel">
-                            <a href="tel:+5411-5555-5555">(+54-11) 5555-5555</a>
-                        </div>
-                    </div>
-                    <div class="contacto">
-                        <div>
-                            <h4>Escribinos</h4>
-                        </div>
-                        <div class="email">
-                            <a href = "mailto:contacto@alquilame.com.ar">contacto@alquilame.com.ar</a>
-                        </div>
-                    </div>
-                    <div class="social">
-                        <div>
-                            <h4>Seguinos</h4>
-                        </div>
-                        <div>
-                            <a href="https://facebook.com"><img src="../static/img/Facebook.svg" alt="facebook"></a>
-                            <a href="https://twitter.com/home"><img src="../static/img/Twitter.svg" alt="X"></a>
-                            <a href="https://instagram.com"><img src="../static/img/Instagram.svg" alt="instagram"></a>
-                            <a href="https://whatsapp.com"><img src="../static/img/WhatsApp.svg" alt="whatsapp"></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu_nav">
-                    <a href="/html/index.html">HOME</a>
-                    <a href="/html/nosotros.html">NOSOTROS</a>
-                    <a href="/html/alquileres.html">ALQUILERES</a>
-                    <a href="/html/contacto.html">CONTACTO</a>
-                    <a href="/html/registro.html">REGISTRO</a>
-                </div>
-        </nav>
-    </header>
-    <!--Aca arranca el body-->
-    <main>
-        <section id="form-wrapper">
-            <h2>Registro como cliente</h2>
-            <form action="#" id="formregister" method="GET" novalidate>
-                <div class="form-control">
-                    <label for="firstname">Nombre(s):</label>
-                    <input type="text" name="firstname" id="firstname" required placeholder="Juan Ignacio">
-                </div>
-                <div class="error" id="error-firstname"></div>
-
-                <div class="form-control">
-                    <label for="lastname">Apellido(s):</label>
-                    <input type="text" name="lastname" id="lastname" required placeholder="Diaz Perez">
-                </div>
-                <div class="error" id="error-lastname"></div>
-
-                <div class="form-control">
-                    <label for="e-mail">E-mail:</label>
-                    <input type="email" name="e-mail" id="e-mail" required placeholder="ejemplo@ejemplo.com">
-                </div>
-                <div class="error" id="error-email"></div>
-
-                <div class="form-control">
-                    <label for="label-birthdate">Fecha de nacimiento:</label>
-                    <input type="date" name="birthdate" id="birthdate" required min="01/01/1990" max="01/01/2024" placeholder="MM/DD/YYYY">
-                </div>
-                <div class="error" id="error-birthdate"></div>
-
-                <div class="form-control">
-                    <label for="password">Contraseña:</label>
-                    <input type="password" name="password" id="password" required placeholder="123456">
-                </div>
-                <div class="error" id="error-firstname"></div>
-                <div class="form.terms">
-                    <div class="terms">
-                        <input type="checkbox" id="terms">
-                        <label for="terms">Acepto términos y condiciones</label>
-                    </div>
-                </div>
-                <button type="submit">Registrate</button>
-                <div class="form-help">
-                    <a href="#">¿Necesitas ayuda?</a>
-                </div>
-            </form>
-        </section>
-    </main>
-    <footer>
-        <nav class="footer_nav">
-            <div class="footer_links">
-                <a href="/html/index.html">HOME</a>
-                <a href="/html/nosotros.html">NOSOTROS</a>
-                <a href="/html/alquileres.html">ALQUILERES</a>
-                <a href="/html/contacto.html">CONTACTO</a>
-                <a href="/html/registro.html">REGISTRO</a>
-            </div>
-            <div class="social">
-                <div>
-                    <h4>Seguinos</h4>
-                </div>
-                <div>
-                    <a href="https://facebook.com"><img src="../static/img/Facebook.svg" alt="facebook"></a>
-                    <a href="https://twitter.com/home"><img src="../static/img/Twitter.svg" alt="X"></a>
-                    <a href="https://instagram.com"><img src="../static/img/Instagram.svg" alt="instagram"></a>
-                    <a href="https://whatsapp.com"><img src="../static/img/WhatsApp.svg" alt="whatsapp"></a>
-                </div>
-            </div>
-            </div>
-            <div class="info">
-                <h3>INFORMACIÓN 1:</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio odit mollitia voluptatibus pariatur dolor sequi, ducimus, libero quibusdam nam assumenda commodi deserunt quisquam dignissimos id blanditiis, aperiam animi? Deserunt cumque accusantium fugit veniam odit excepturi ducimus esse rem quis. Debitis nam facilis corporis possimus et hic nihil praesentium cupiditate tempora?</p>
-            </div>
-            <div class="info">
-                <h3> INFORMACIÓN 2:</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio odit mollitia voluptatibus pariatur dolor sequi, ducimus, libero quibusdam nam assumenda commodi deserunt quisquam dignissimos id blanditiis, aperiam animi? Deserunt cumque accusantium fugit veniam odit excepturi ducimus esse rem quis. Debitis nam facilis corporis possimus et hic nihil praesentium cupiditate tempora?</p>
-            </div>
-        </nav>
-        <section class="footer_info">
-            <div class="copyright">
-                <p><b>Copyright ©<script>document.write(new Date().getFullYear());</script> All Rights Reserved.</p></b>
-            </div>
-            <div class="diseñador">
-                <a href="#">Creado por: <span>Grupo4®</span></a>
-            </div>
-        </section>
-    </footer>
-</body>
-
-</html>
-=======
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Alquila-Me</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../css/styles.css">
-        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    </head>
     <body>
         <header>
-            <nav class="header_nav">
-                    <div class="header_content">
-                        <img src="../static/img/Logo alquilame azul.svg" alt="Logo AlquilaMe">
-                        <div class="contacto">
-                            <div>
-                                <h4>Llamanos</h4>
-                            </div>
-                            <div class="tel">
-                                <a href="tel:+5411-5555-5555">(+54-11) 5555-5555</a>
-                            </div>
-                        </div>
-                        <div class="contacto">
-                            <div>
-                                <h4>Escribinos</h4>
-                            </div>
-                            <div class="email">
-                                <a href = "mailto:contacto@alquilame.com.ar">contacto@alquilame.com.ar</a>
-                            </div>
-                        </div>
-                        <div class="social">
-                            <div>
-                                <h4>Seguinos</h4>
-                            </div>
-                            <div>
-                                <a href="https://facebook.com"><img src="../static/img/Facebook.svg" alt="facebook"></a>
-                                <a href="https://twitter.com/home"><img src="../static/img/Twitter.svg" alt="X"></a>
-                                <a href="https://instagram.com"><img src="../static/img/Instagram.svg" alt="instagram"></a>
-                                <a href="https://whatsapp.com"><img src="../static/img/WhatsApp.svg" alt="whatsapp"></a>
-                            </div>
-                        </div>
+            <div class="header">
+                <img src="../static/img/Logo alquilame azul.svg" alt="Logo Alquilame" class="logo_alquilame">
+                <div class="comunicate">
+                    <p>Llamanos: <a href="tel:+5411-5555-5555">(+54-11) 5555-5555</a></p>
+                    <p>Escribinos: <a href="mailto:contacto@alquilame.com.ar">contacto@alquilame.com.ar</a></p>
+                </div>            
+                <div class="social">
+                    <h4>Seguinos</h4>
+                    <div class="iconos_social">
+                        <a href="https://facebook.com"><img src="../static/img/Facebook.svg" alt="facebook"></a>
+                        <a href="https://twitter.com/home"><img src="../static/img/Twitter.svg" alt="X"></a>
+                        <a href="https://instagram.com"><img src="../static/img/Instagram.svg" alt="instagram"></a>
+                        <a href="https://whatsapp.com"><img src="../static/img/WhatsApp.svg" alt="whatsapp"></a>
                     </div>
-                    <div class="menu_nav">
-                        <a href="index.html">HOME</a>
-                        <a href="nosotros.html">NOSOTROS</a>
-                        <a href="alquileres.html">ALQUILERES</a>
-                        <a href="contacto.html">CONTACTO</a>
-                        <a href="registro.html">REGISTRO</a>
-                    </div>
-            </nav>
+                </div>
+                <div class="ingreso">
+                    <img src="../static/img/lock_7542188 (1).png" alt="icono inciar sesión"><a href="./inicio_sesion.html" id="inicio_sesion">INICIAR SESION</a>
+                    <a href="inicio_sesion_propietario.html" id="publicar">PUBLICAR</a>
+                </div>
+            </div>
+            <div class="menu_nav">
+                <a href="index.html">HOME</a>
+                <a href="nosotros.html">NOSOTROS</a>
+                <a href="contacto.html">CONTACTO</a>
+                <a href="registro.html">REGISTRO</a>
+            </div>
         </header>
-            <article class="registro">
-                
-
+            <article class="registro_u_p">
+                <section class="registro_title">
+                    <h2>Registro</h2>
+                </section>
+                <section class="formularios_usuarios">
+                    <div class="formulario_registro_usuario">
+                        <h4>Registro Clientes</h4>
+                        <form action="#" class="usuario_form" method="post">
+                            <div>
+                                <input type="text" id="name_usuario" name="name" placeholder="Nombre y apellido *">
+                            </div>
+                            <div>
+                                <input type="text" id="dni_usuario" name="dni" placeholder="Número de documento *">
+                            </div>
+                            <div>
+                                <input type="text" id="address_usuario" name="address" placeholder="Direccion *">
+                            </div>
+                            <div>
+                                <input type="text" id="CPostal_usuario" name="cpostal" placeholder="Código postal *">
+                            </div>
+                            <div>
+                                <input type="email" id="email_usuario" name="email" placeholder="email@address.com *">
+                            </div>
+                            <div>
+                                <input type="password" id="password_usuario" name="password" placeholder="Contraseña *">
+                            </div>
+                            <div>
+                                <input type="password" id="password2_usuario" name="password" placeholder="Repetir contraseña *">
+                            </div>
+                            <div>
+                                <p class="requeridos">Los campos marcados con * son requeridos</p>
+                            </div>
+                            <div>
+                                <input class="button_usuario" type="submit" value="Crear nuevo usuario">
+                            </div>
+                            
+                            <div>
+                                <p class="ayuda">¿Necesitas ayuda?</p>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="formulario_registro_propietario">
+                        <h4>Registro Propietarios</h4>
+                        <form action="#" class="usuario_form" method="post">
+                            <div>
+                                <input type="text" id="name_usuario" name="name" placeholder="Nombre y apellido *">
+                            </div>
+                            <div>
+                                <input type="text" id="address_usuario" name="address" placeholder="Dirección *">
+                            </div>
+                            <div>
+                                <input type="text" id="CPostal_usuario" name="cpostal" placeholder="Código postal *">
+                            </div>
+                            <div>
+                                <input type="email" id="email_usuario" name="email" placeholder="email@address.com *">
+                            </div>
+                            <div>
+                                <input type="text" id="razon_social" name="razon_social" placeholder="Razón Social *">
+                            </div>
+                            <div>
+                                <input type="text" id="matricula_usuario" name="matricula" placeholder="Matricula inmobiliaria *">
+                            </div>
+                            <div>
+                                <input type="password" id="password_usuario" name="password" placeholder="Contraseña *">
+                            </div>
+                            <div>
+                                <input type="password" id="password2_usuario" name="password" placeholder="Repetir contraseña *">
+                            </div>
+                            <div>
+                                <p class="requeridos">Los campos marcados con * son requeridos</p>
+                            </div>
+                            <div>
+                                <input class="button_usuario" type="submit" value="Crear nuevo propietario">
+                            </div>
+                            
+                            <div>
+                                <p class="ayuda">¿Necesitas ayuda?</p>
+                            </div>
+                        </form>
+                    </div>
+                </section>
             </article>
         <footer>
             <nav class="footer_nav">
                 <div class="footer_links">
                     <a href="index.html">HOME</a>
                     <a href="nosotros.html">NOSOTROS</a>
-                    <a href="alquileres.html">ALQUILERES</a>
                     <a href="contacto.html">CONTACTO</a>
                     <a href="registro.html">REGISTRO</a>
                 </div>
@@ -214,7 +135,7 @@
                     <div>
                         <h4>Seguinos</h4>
                     </div>
-                    <div>
+                    <div class="iconos_social">
                         <a href="https://facebook.com"><img src="../static/img/Facebook.svg" alt="facebook"></a>
                         <a href="https://twitter.com/home"><img src="../static/img/Twitter.svg" alt="X"></a>
                         <a href="https://instagram.com"><img src="../static/img/Instagram.svg" alt="instagram"></a>
@@ -242,4 +163,3 @@
         </footer>
     </body>
 </html>
->>>>>>> 0a81dcefcbc73bdb3bc844c108ba6454767fcfbc

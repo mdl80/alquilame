@@ -1,60 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Alquila-Me</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../css/styles.css">
-        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Alquilame</title>
+</head>
     <body>
         <header>
-            <nav class="header_nav">
-                    <div class="header_content">
-                        <img src="../static/img/Logo alquilame azul.svg" alt="Logo AlquilaMe">
-                        <div class="contacto">
-                            <div>
-                                <h4>Llamanos</h4>
-                            </div>
-                            <div class="tel">
-                                <a href="tel:+5411-5555-5555">(+54-11) 5555-5555</a>
-                            </div>
-                        </div>
-                        <div class="contacto">
-                            <div>
-                                <h4>Escribinos</h4>
-                            </div>
-                            <div class="email">
-                                <a href = "mailto:contacto@alquilame.com.ar">contacto@alquilame.com.ar</a>
-                            </div>
-                        </div>
-                        <div class="social">
-                            <div>
-                                <h4>Seguinos</h4>
-                            </div>
-                            <div>
-                                <a href="https://facebook.com"><img src="../static/img/Facebook.svg" alt="facebook"></a>
-                                <a href="https://twitter.com/home"><img src="../static/img/Twitter.svg" alt="X"></a>
-                                <a href="https://instagram.com"><img src="../static/img/Instagram.svg" alt="instagram"></a>
-                                <a href="https://whatsapp.com"><img src="../static/img/WhatsApp.svg" alt="whatsapp"></a>
-                            </div>
-                        </div>
+            <div class="header">
+                <img src="../static/img/Logo alquilame azul.svg" alt="Logo Alquilame" class="logo_alquilame">
+                <div class="comunicate">
+                    <p>Llamanos: <a href="tel:+5411-5555-5555">(+54-11) 5555-5555</a></p>
+                    <p>Escribinos: <a href="mailto:contacto@alquilame.com.ar">contacto@alquilame.com.ar</a></p>
+                </div>            
+                <div class="social">
+                    <h4>Seguinos</h4>
+                    <div class="iconos_social">
+                        <a href="https://facebook.com"><img src="../static/img/Facebook.svg" alt="facebook"></a>
+                        <a href="https://twitter.com/home"><img src="../static/img/Twitter.svg" alt="X"></a>
+                        <a href="https://instagram.com"><img src="../static/img/Instagram.svg" alt="instagram"></a>
+                        <a href="https://whatsapp.com"><img src="../static/img/WhatsApp.svg" alt="whatsapp"></a>
                     </div>
-                    <div class="menu_nav">
-                        <a href="index.html">HOME</a>
-                        <a href="nosotros.html">NOSOTROS</a>
-                        <a href="alquileres.html">ALQUILERES</a>
-                        <a href="contacto.html">CONTACTO</a>
-                        <a href="registro.html">REGISTRO</a>
-                    </div>
-            </nav>
-        </header>
+                </div>
+                <div class="ingreso">
+                    <img src="../static/img/lock_7542188 (1).png" alt="icono inciar sesión"><a href="./inicio_sesion.html" id="inicio_sesion">INICIAR SESION</a>
+                    <a href="inicio_sesion_propietario.html" id="publicar">PUBLICAR</a>
+                </div>
+            </div>
+            <div class="menu_nav">
+                <a href="index.html">HOME</a>
+                <a href="nosotros.html">NOSOTROS</a>
+                <a href="contacto.html">CONTACTO</a>
+                <a href="registro.html">REGISTRO</a>
+            </div>
+        </header> 
         <article class="nosotros">
             <section class="sobre_nosotros">
                 <h2>Sobre nosotros</h2>
@@ -74,7 +60,6 @@
                 <div class="footer_links">
                     <a href="index.html">HOME</a>
                     <a href="nosotros.html">NOSOTROS</a>
-                    <a href="alquileres.html">ALQUILERES</a>
                     <a href="contacto.html">CONTACTO</a>
                     <a href="registro.html">REGISTRO</a>
                 </div>
@@ -82,7 +67,7 @@
                     <div>
                         <h4>Seguinos</h4>
                     </div>
-                    <div>
+                    <div class="iconos_social">
                         <a href="https://facebook.com"><img src="../static/img/Facebook.svg" alt="facebook"></a>
                         <a href="https://twitter.com/home"><img src="../static/img/Twitter.svg" alt="X"></a>
                         <a href="https://instagram.com"><img src="../static/img/Instagram.svg" alt="instagram"></a>

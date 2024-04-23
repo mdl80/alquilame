@@ -1,144 +1,214 @@
-.nunito-<uniquifier> {
-  font-family: "Nunito", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-}
+/* .nunito-<uniquifier> {
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+  }
+  
+  .roboto-condensed-<uniquifier> {
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+  } */
+  
+  :root{
+      font-size: 23px;
+      
+      /*Colores fondo*/
+      --bg-color-principal:#0eb5aa;
+      --bg-color-principal-transp:rgba(3, 181, 169, 0.6);
+      --bg-color-busqueda:#0c1b33;
+      --bg-color-cards-price: rgb(0, 162, 255);
+      --bg-gradient-color:linear-gradient(to right, rgb(0, 162, 255), rgb(6, 37, 104)) ;
+      --bg-color-secondary: #ffffff;
+      --bg-color-footer: #B2AA8E;
+      --bg-color-destacadas-titulos: #DBFE87;
+  
+      /*Colores textos*/
+      --text-color-principal:#000000;
+      --text-color-secondary:#0eb5aa;
+      --text-color-third: #ffffff;
+      --text-color-title:#D60B52;
+      --text-color-price:#6d9c00;
+      --text-color-nav-a-hover:#0c1b33;
+      --text-shadow: 3px 3px 5px #000000;
+      --text-color-copyright:#ffffff;
+      --text-color-grupocreador: #9c1d1d;
+      --text-color-propiedad-p:#797979;
+      --text-color-link: #0f00b4;
+  
+      /*Fonts*/
+      --font-xx-large: 3rem;
+      --font-x-large: 2.5rem;
+      --font-large: 2rem;
+      --font-medium: 1.5rem;
+      --font-small: 1rem;
+      --font-x-small: 0.73rem;
+      --font-xx-small: 0.55rem;
+  
+      /*Padding*/
+      --padding-xx-large:300px;
+      --padding-x-large: 70px;
+      --padding-large: 50px;
+      --padding-medium: 30px;
+      --padding-small: 20px;
+      --padding-x-small: 15px;
+      --padding-xx-small: 10px;
+  
+      /*Margin*/
+      --margin-x-large: 120px;
+      --margin-large: 90px;
+      --margin-medium: 70px;
+      --margin-medium-2: 50px;
+      --margin-small: 30px;
+      --margin-small-2: 20px;
+      --margin-small-1: 15px;
+      --margin-x-small: 10px;
+      --margin-min: 3px;
+  
+      /*Border radius*/
+      --border-radius-max: 15px;
+      --border-radius-med: 8px;
+      --border-radius-min: 3px;
+  
+      /*Gap*/
+      --gap-maximo: 50px;
+      --gap-medio: 30px;
+      --gap-min2: 20px;
+      --gap-min: 10px;
+  
+      /*Border color*/
+      --border-color-1: #a8a8a8;
+      --border-color-2: #3b3b3b;
+      --border-color-3: #888888;
+  }
+  
+  * {
+      padding: 0;
+      margin: 0;
+  }
+  
+  html {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  }
+  
+  body {
+      margin: 0 auto;
+      width: 100%;
+  }
 
-.roboto-condensed-<uniquifier> {
-  font-family: "Roboto Condensed", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-}
+  /* Codigo para el header */
 
-:root{
-    font-size: 23px;
-    
-    /*Colores fondo*/
-    --bg-color-principal:#0eb5aa;
-    --bg-color-principal-transp:rgba(3, 181, 169, 0.6);
-    --bg-color-busqueda:#0c1b33;
-    --bg-color-cards-price: rgb(0, 162, 255);
-    --bg-gradient-color:linear-gradient(to right, rgb(0, 162, 255), rgb(6, 37, 104)) ;
-    --bg-color-secondary: #ffffff;
-    --bg-color-footer: #B2AA8E;
-    --bg-color-destacadas-titulos: #DBFE87;
-
-    /*Colores textos*/
-    --text-color-principal:#000000;
-    --text-color-secondary:#B2AA8E;
-    --text-color-third: #ffffff;
-    --text-color-title:#D60B52;
-    --text-color-price:#6d9c00;
-    --text-color-nav-a-hover:#0c1b33;
-    --text-shadow: 3px 3px 5px #000000;
-    --text-color-copyright:#ffffff;
-    --text-color-grupocreador: #9c1d1d;
-    --text-color-propiedad-p:#797979;
-
-    /*Fonts*/
-    --font-xx-large: 3rem;
-    --font-x-large: 2.5rem;
-    --font-large: 2rem;
-    --font-medium: 1.5rem;
-    --font-small: 1rem;
-    --font-x-small: 0.73rem;
-    --font-xx-small: 0.55rem;
-
-    /*Padding*/
-    --padding-xx-large:300px;
-    --padding-x-large: 90px;
-    --padding-large: 50px;
-    --padding-medium: 30px;
-    --padding-small: 20px;
-    --padding-x-small: 15px;
-    --padding-xx-small: 7px;
-
-    /*Margin*/
-    --margin-x-large: 120px;
-    --margin-large: 90px;
-    --margin-medium: 70px;
-    --margin-medium-2: 50px;
-    --margin-small: 30px;
-    --margin-small-2: 20px;
-    --margin-small-1: 15px;
-    --margin-x-small: 10px;
-    --margin-min: 3px;
-
-    /*Border radius*/
-    --border-radius-max: 15px;
-    --border-radius-med: 8px;
-    --border-radius-min: 3px;
-
-    /*Gap*/
-    --gap-maximo: 50px;
-    --gap-medio: 30px;
-    --gap-min: 8px;
-
-    /*Border color*/
-    --border-color-1: #a8a8a8;
-    --border-color-2: #3b3b3b;
-}
-
-* {
-    padding: 0;
-    margin: 0;
-}
-
-html {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-body {
-    margin: 0 auto;
-    width: 100%
-}
-
-/*------------Header-----------*/
-
-header{
+  header{
     width: 100%;
     position: fixed;
     margin: 0%;
     background-color: var(--bg-color-secondary);
     z-index: 9999;
-}
-
-.header_nav{
     display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 
-.header_content{
+.header{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
 }
 
-.header_content img{
-    width: 350px;
+.logo_alquilame{
+    width: 300px;
 }
 
+.comunicate{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
 
-.social img{
+.social{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    text-align: center;
+}
+
+.social h4{
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-size: var(--font-x-small);
+}
+
+.iconos_social{
+    display: flex;
+    flex-direction: row;
+}
+
+.iconos_social img{
     width: 30px;
     padding: var(--padding-xx-small);
     transition: transform .3s;
 }
 
-.social img:hover{
+.iconos_social img:hover{
     transform: scale(1.3);
 }
 
-.social h4{
-    font-family: "Nunito", sans-serif;
+.ingreso{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.ingreso img{
+    width: 30px;
+}
+
+.comunicate{
+    font-family: "Roboto Condensed", sans-serif;
     font-optical-sizing: auto;
-    text-align: center;
+    font-size: var(--font-x-small);
+}
+
+.comunicate p{
+    font-weight: 700;
+}
+
+.comunicate a{
+    color: var(--text-color-principal);
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.comunicate a:hover{
+    color: var(--text-color-secondary);
+}
+
+.ingreso{
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-size: var(--font-x-small);
+}
+
+.ingreso a{
+    text-decoration: none;
+}
+
+#publicar{
+    padding: var(--padding-xx-small);
+    background-color: var(--bg-color-principal);
+    color: var(--text-color-third);
+    border-radius: var(--border-radius-med);
+}
+
+#inicio_sesion{
+    color: var(--text-color-principal);
+    padding: 0 var(--padding-small) 0 0;
 }
 
 .menu_nav {
@@ -157,7 +227,7 @@ header{
     font-weight: 500;
     margin: 0 var(--margin-small);
     color: var(--text-color-third);
-    font-family: "Nunito", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     font-optical-sizing: auto;
 }
 
@@ -165,31 +235,9 @@ header{
     color:var(--text-color-nav-a-hover);
 }
 
-.contacto a{
-    text-decoration: none;
-    font-size: var(--font-x-small);
-    color: var(--text-color-principal);
-    cursor: pointer;
-    font-weight: 500;
-    font-family: "Nunito", sans-serif;
-    font-optical-sizing: auto;
-}
-
-.contacto a:hover{
-    color:var(--bg-color-principal);
-}
-
-.contacto h4{
-    font-family: "Nunito", sans-serif;
-    font-optical-sizing: auto;
-    text-align: center;
-}
-
-/*-----------Busqueda por categorías-----------*/
-
 .busqueda_gral{
-    height: 750px;
-    background-image: url("../static/img/pexels-photomix-company-101808\ -\ copia.jpg");
+    height: 700px;
+    background-image: url("../static/img/Fondo\ index\ duotono.png");
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -254,7 +302,7 @@ header{
     font-weight: 700;
 }
 
-/*-----------FooterNav-----------*/
+/* Codigo para el footer */
 
 footer{
     background-color: var(--bg-color-footer);
@@ -274,7 +322,7 @@ footer{
 
 .footer_links a{
     text-decoration: none;
-    font-family: "Nunito", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     font-optical-sizing: auto;
     font-size: var(--font-x-small);
     color: var(--text-color-copyright);
@@ -293,14 +341,14 @@ footer{
 }
 
 .info h3{
-    font-family: "Nunito", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     font-optical-sizing: auto;
     font-size: var(--font-x-small);
     color: var(--text-color-principal);
 }
 
 .info p{
-    font-family: "Nunito", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     font-optical-sizing: auto;
     font-size: var(--font-xx-small);
     text-align: justify;
@@ -318,7 +366,7 @@ footer{
 
 .copyright{
     font-size: var(--font-xx-small);
-    font-family: "Nunito", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     font-optical-sizing: auto;
 }
 
@@ -326,137 +374,16 @@ footer{
     text-decoration: none;
     font-size: var(--font-x-small);
     color: var(--text-color-principal);
-    font-family: "Nunito", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     font-optical-sizing: auto;
 }
-
-/*------------Propiedades Destacadas------------*/
 
 .diseñador a span{
     color: var(--text-color-grupocreador);
     font-weight: 500;
 }
 
-.destacadas{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.destacadas h2{
-    text-align: center;
-    padding: var(--padding-medium);
-    font-family: "Nunito", sans-serif;
-    font-optical-sizing: auto;
-}
-
-.container{
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap: var(--gap-maximo);
-    justify-content: center;
-    color: var(--text-color-principal);
-}
-
-.propiedad{
-    width: 350px;
-    margin-bottom: var(--margin-small);
-    border: 0.1px solid var(--border-color-1);
-    cursor: pointer;
-    border-radius: var(--border-radius-max);
-}
-
-.propiedad:hover{
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-    transform: scale(1.03);
-    transition: transform 0.3s ease-in-out;
-    
-}
-
-.propiedad img{
-    width: 350px;
-    height: 240px;
-    border-top-left-radius: var(--border-radius-max);
-    border-top-right-radius: var(--border-radius-max);
-}
-
-/*.propiedad h3{
-    font-family: "Nunito", sans-serif;
-    font-optical-sizing: auto;
-    font-size: var(--font-x-small);
-    padding: var(--padding-xx-small) var(--padding-x-small) ;
-    background-color: var(--bg-color-principal); 
-    color: var(--text-color-third);
-}*/
-
-.propiedad h4{
-    font-family: "Nunito", sans-serif;
-    font-optical-sizing: auto;
-    font-size: var(--font-x-small);
-    padding: var(--padding-x-small) var(--padding-small) 0 var(--padding-x-small);
-    color: var(--text-color-price)
-}
-
-.propiedad p{
-    font-family: "Roboto Condensed", sans-serif;
-    font-size: var(--font-x-small);
-    text-align: justify;
-    padding: var(--padding-small);
-    color: var(--text-color-propiedad-p)
-}
-
-.importe p{
-    text-align: right;
-    font-family: "Nunito", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-size: var(--font-small);
-    color: var(--text-color-price);
-}
-
-/*-----------Garantias de alquiler-----------*/
-
-.accesos{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-
-.accesos h2{
-    font-family: "Nunito", sans-serif;
-    font-optical-sizing: auto;
-    text-align: center;
-    font-size: var(--font-small);
-    margin-top: var(--margin-medium);
-}
-
-.garantias{
-    margin: 0 auto;
-}
-
-.garantias img{
-    width: 150px;
-    padding: var(--padding-large);
-    align-items: center;
-}
-
-#form-wrapper{
-    margin-top: 180px;
-}
-/*-----------Alquileres-----------*/
-
-.alquileres{
-    height: 750px;
-}
-
-/*-----------Contacto-----------*/
-
-.contactohtml{
-    height: 750px;
-}
-
-/*-----------Nosotros-----------*/
+/* Codigo Nosotros */
 
 .sobre_nosotros{
     width: 100%;
@@ -464,7 +391,7 @@ footer{
 }
 
 .sobre_nosotros h2{
-    height: 200px;
+    height: 150px;
     align-content: center;
     text-align: center;
     color: var(--text-color-third);
@@ -477,13 +404,13 @@ footer{
 .nosotros{
     display: flex;
     flex-direction: column;
-    height: 950px;
-    margin-top: 150px;
+    justify-content: space-between;
+    margin-top: 139px;
     align-items: center;
 }
 
 .quienes_somos{
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -491,32 +418,383 @@ footer{
 
 .quienes_somos h3{
     font-family: "Roboto Condensed", sans-serif;
-    padding: var(--padding-large) 0 0 var(--padding-large);
-
+    font-size: var(--font-medium);
+    padding: var(--padding-medium) var(--padding-x-large) 0 var(--padding-x-large);
+    color: var(--text-color-secondary);
 }
 
 .quienes_somos p{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding: var(--padding-small) var(--padding-x-large);
     font-family: "Roboto Condensed", sans-serif;
     font-size: var(--font-x-small);
     text-align: justify;
-    padding: var(--padding-large);
     color: var(--text-color-propiedad-p);
 }
 
 .foto_nosotros{
     width: 700px;
+    padding: var(--padding-x-small) 0 var(--padding-x-small) var(--padding-x-small);
+}
+
+/* Codigo formulario Log in */
+
+.inicio_sesion{
+    margin-top: 139px;
+}
+
+.login{
+    width: 100%;
+    background: url("../static/img/fondo_cortado_duotono_ingreso.png");
+}
+
+.login h2{
+    height: 150px;
+    align-content: center;
+    text-align: center;
+    color: var(--text-color-third);
+    text-shadow: var(--text-shadow);
+    font-size: var(--font-large);
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.seccion_contacto{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.formulario{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--padding-small);
+    margin: var(--margin-small) auto;
+    border: 1px solid var(--border-color-3);
+}
+
+.formulario_contacto{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--padding-small);
+}
+
+.formulario_contacto p{
+    width: 400px;
+    font-family: "Roboto Condensed", sans-serif;
+    text-align: justify;
+    font-size: var(--font-x-small);
+    margin: var(--margin-x-small) auto;
+    
+}
+
+.contacto{
+    margin-top: 139px;
+}
+
+.img_contacto img{
+    width: 950px;
+    height: auto;
+}
+
+.contacto_title{
+    width: 100%;
+    background: url("../static/img/fondo_cortado_duotono_contacto.png");
+}
+
+.contacto_title h2{
+    height: 150px;
+    align-content: center;
+    text-align: center;
+    color: var(--text-color-third);
+    text-shadow: var(--text-shadow);
+    font-size: var(--font-large);
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.formulario_contacto p span{
+    color: var(--text-color-link);
+    cursor: pointer;
+}
+
+.formulario_contacto h4{
+    font-family: "Roboto Condensed", sans-serif;
+    padding: 0 var(--padding-medium) 0 var(--padding-medium);
+    font-size: var(--font-medium);
+    color: var(--text-color-secondary);
+    text-align: center;
+    margin-top: 50px;
+}
+
+#nombre_contacto, #phone_contacto, #direccion_contacto, #comentarios_contacto, #email_contacto{
+    padding: var(--padding-x-small);
+    width: 400px;
+    margin-bottom: var(--margin-small-1);
+    border: 0.3px solid var(--border-color-3);
+}
+
+.button_contacto{
+    padding: var(--padding-x-small);
+    width: 435px;
+    margin-top: var(--margin-small);
+    background-color: var(--bg-color-busqueda);
+    color: var(--text-color-third);
+    border-radius: var(--border-radius-med);
+    cursor: pointer;
+}
+
+.formulario h4{
+    font-family: "Roboto Condensed", sans-serif;
+    padding: var(--padding-medium);
+    font-size: var(--font-medium);
+    color: var(--text-color-secondary);
+    text-align: center;
+}
+
+.login_form{
+    padding: var(--padding-medium);
+}
+
+#email , #password, #nombre_apellido, #phone, #direccion, #comentarios, #razon_social_p, #matricula_usuario_p{
+    padding: var(--padding-x-small);
+    width: 300px;
+    margin-bottom: var(--margin-small-1);
+    border: 0.3px solid var(--border-color-3);
+}
+
+.button{
+    padding: var(--padding-x-small);
+    width: 343px;
+    margin-top: var(--margin-large);
+    background-color: var(--bg-color-busqueda);
+    color: var(--text-color-third);
+    border-radius: var(--border-radius-med);
+    cursor: pointer;
+    font-size: var(--font-x-small);
+}
+
+.button_publicar{
+    font-size: var(--font-x-small);
+    
+    padding: var(--padding-small);
+    width: 300px;
+    background-color: var(--bg-color-busqueda);
+    text-align: center;
+    border-radius: var(--border-radius-med);
+}
+
+.button_publicar a{
+    color: var(--text-color-third);
+    text-decoration: none;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+.contraseña, .ayuda{
+    color: var(--text-color-link);
+    cursor: pointer;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: var(--font-x-small);
+    margin: var(--margin-x-small);
+}
+
+.cbox-login{
+    font-size: var(--font-x-small);
+    color: var(--text-color-principal);
+    cursor: pointer;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.registro_u_p{
+    margin-top: 139px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.registro_title{
+    width: 100%;
+    background: url("../static/img/fondo_cortado_duotono - registro.png");
+}
+
+.registro_title h2{
+    height: 150px;
+    align-content: center;
+    text-align: center;
+    color: var(--text-color-third);
+    text-shadow: var(--text-shadow);
+    font-size: var(--font-large);
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.formularios_usuarios{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.formularios_usuarios h4{
+    font-family: "Roboto Condensed", sans-serif;
+    padding: 0 var(--padding-medium) 0 var(--padding-medium);
+    font-size: var(--font-medium);
+    color: var(--text-color-secondary);
+    text-align: center;
+    margin-top: 50px;
+}
+
+.usuario_form{
+    padding: var(--padding-medium);
+}
+
+#name_usuario, #dni_usuario, #address_usuario, #CPostal_usuario, #email_usuario, #password_usuario, #password2_usuario, #razon_social, #matricula_usuario{
+    padding: var(--padding-x-small);
+    width: 400px;
+    margin-bottom: var(--margin-small-1);
+    border: 0.3px solid var(--border-color-3);
+}
+
+.button_usuario{
+    padding: var(--padding-x-small);
+    width: 435px;
+    margin-top: var(--margin-small);
+    background-color: var(--bg-color-busqueda);
+    color: var(--text-color-third);
+    border-radius: var(--border-radius-med);
+    cursor: pointer;
+    font-size: var(--font-x-small);
+}
+
+.requeridos{
+    font-size: var(--font-x-small);
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    color: var(--text-color-title);
+    font-weight: 500;
+}
+
+.mis_propiedades{
+    margin-top: 139px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.propiedades{
+    width: 100%;
+    background: url("../static/img/fondo_cortado_duotono-alquileres.png");
+}
+
+.propiedades h2{
+    height: 150px;
+    align-content: center;
+    text-align: center;
+    color: var(--text-color-third);
+    text-shadow: var(--text-shadow);
+    font-size: var(--font-large);
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.crear_propiedades{
+    display: flex;
+    flex-direction: column;
+}
+
+.encabezado_crear_propiedades{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--gap-maximo);
+    padding: var(--padding-large);
+    margin: 0 auto;
+}
+
+.encabezado_crear_propiedades h4{
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: var(--font-medium);
+    color: var(--text-color-secondary);
+    text-align: center;
+}
+
+.encabezado_crear_propiedades button{
+    padding: var(--padding-x-small);
+    background-color: var(--bg-color-busqueda);
+    color: var(--text-color-third);
+    border-radius: var(--border-radius-med);
+}
+
+.caracteristicas_propiedades{
+    display: flex;
+    flex-direction: column;
+}
+
+.crear_aviso{
+    width: 70%;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: var(--gap-min2);
+    border: 0.5px solid var(--border-color-3);
+    padding: var(--padding-large);
+    margin: 0 auto;
+    justify-items: center;
+}
+
+.boton_carga_prop{
+    width: 500px;
+    padding: var(--padding-x-small);
+    background-color: var(--bg-color-busqueda);
+    color: var(--text-color-third);
+    border-radius: var(--border-radius-med);
+}
+
+.select_prop{
+    width: 500px;
+    height: 50px;
+}
+
+.prop_alq{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: var(--gap-maximo);
+    justify-content: space-around;
     padding: var(--padding-large);
 }
 
-/*-----------CSS Registro-----------*/
-.registro{
-    height: 750px;
+.prop_ofrecida{
+    width: 400px;
+    height: auto;
+    border: 0.5px solid var(--border-color-2);
 }
 
-/*-----------Termina CSS Registro-----------*/
+.prop_ofrecida img{
+    width: 400px;
+}
 
+.prop_ofrecida p{
+    font-size: var(--font-x-small);
+    font-family: "Roboto Condensed", sans-serif;
+    padding: 0 var(--padding-x-small) var(--padding-x-small);
+    color: var(--text-color-propiedad-p);
+}
 
+.prop_ofrecida span{
+    color: var(--text-color-principal);
+    font-weight: 500;
+}
 
+.mis_clasificados h4{
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: var(--font-medium);
+    color: var(--text-color-secondary);
+    text-align: center;
+    margin-top: var(--margin-small);
+}
