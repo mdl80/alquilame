@@ -291,15 +291,18 @@
     font-optical-sizing: auto;
 }
 
+.boton_busqueda{
+    padding: var(--padding-x-small);
+}
+
 .buscar{
-    width: 100px;
-    height:39px;
     font-family: "Nunito", sans-serif;
-    font-optical-sizing: auto;
-    border-radius: var(--border-radius-med);
-    background-color: var(--bg-color-busqueda);
     color: var(--text-color-third);
-    font-weight: 700;
+    font-weight: 400;
+    text-decoration: none;
+    font-size: var(--font-x-small);
+    background-color: var(--bg-color-busqueda);
+    padding: var(--padding-xx-small)
 }
 
 /* Codigo para el footer */
