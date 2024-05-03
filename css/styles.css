@@ -413,7 +413,213 @@ footer{
     align-items: center;
 }
 
+/*-----------Registro-----------*/
 
+.registro {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.mregistro {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: black;
+    position: auto;
+    padding: 0px auto 30px;
+    justify-content: center;
+    width: 350px;
+    height: 535px;
+    margin: 370px auto 10px;
+    background-color: white;
+    border-radius: var(--border-radius-max);
+    border-color: black;
+    border-top-color: #000000;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid #c2c2c2;
+}
+
+.registro h3 {
+    color: black;
+    background: none;
+    font-family: "Nunito", sans-serif;
+    font-weight: 80px;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px 0px 0px 0px;
+}
+
+.form-control input {
+    width: 100%;
+    background: white;
+    padding: 8px;
+    border-radius: var(--border-radius-min);
+    margin-bottom: 10px;
+    margin-left: -10px;
+    border: 1px solid rgb(194, 194, 194);
+}
+
+.terms {
+    color: black;
+    font-family: "Nunito", sans-serif;
+    font-size: medium;
+    text-align: left;
+    font-weight: normal;
+    padding: 10px 0px;
+}
+
+.form-help a {
+    color: black;
+    font-family: "Nunito", sans-serif;
+    font-size: medium;
+    text-align: left;
+    font-weight: normal;
+    padding: 10px 0px;
+}
+
+button {
+    width: 100%;
+    height: 26px;
+    border-radius: var(--border-radius-med);
+    border-style: none;
+    background-color: #0C1B33;
+    color: white;
+    font-size: medium;
+    padding: 40x 0px;
+}
+
+button:hover {
+    cursor: pointer;
+    border: 3px solid #0eb5aa;
+    background: rgb(235, 234, 241);
+    color: #0C1B33;
+}
+
+.tituloregistro {
+    width: auto;
+    height: auto;
+    background: url('../static/img/fondo-registro.jpg') no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
+    padding: 150px;
+    text-align: center;
+    position: auto;
+    flex-direction: row;
+    margin: 0px;
+    padding: 60px;
+}
+
+/*-----------Ingreso-----------*/
+
+.mingreso {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: black;
+    position: auto;
+    padding: 0px auto 30px;
+    justify-content: center;
+    width: 350px;
+    height: 435px;
+    margin: 370px auto 10px;
+    background-color: white;
+    border-radius: var(--border-radius-max);
+    border-color: black;
+    border-top-color: #000000;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid #c2c2c2;
+}
+
+.tituloingreso {
+    width: auto;
+    height: auto;
+    background: url('../static/img/fondo-ingreso.jpg') no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
+    padding: 150px;
+    text-align: center;
+    position: auto;
+    flex-direction: row;
+    margin: 0px;
+    padding: 60px;
+}
+
+.ingreso {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.ingreso h3 {
+    color: black;
+    background: none;
+    font-family: "Nunito", sans-serif;
+    font-weight: 80px;
+    text-align: center;
+    font-weight: bold;
+    padding: 0px 80px 0px 0px;
+    margin-top: 20px;
+    margin-left: 70px;
+}
+
+.buting {
+    margin: 0px 10px 0px 10px;
+    padding: 0px 10px 0px 0px;
+}
+
+.bingresar img {
+    width: 30px;
+    padding: var(--padding-xx-small);
+    transition: transform .3s;
+    padding: 0px 0px 0px 0px;
+}
+
+.buting button {
+    width: auto;
+    height: 45px;
+    border-radius: var(--border-radius-med);
+    border-style: solid;
+    background-color: #ffffff;
+    color: #0C1B33;
+    font-size: medium;
+    font-weight: bolder;
+    padding: 10px;
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.butpub button {
+    width: auto;
+    height: 45px;
+    border-radius: var(--border-radius-med);
+    border-style: solid;
+    background-color: #0C1B33;
+    color: #ffffff;
+    font-size: medium;
+    font-weight: bolder;
+    padding: 10px;
+    position:relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 
