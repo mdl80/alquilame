@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5055b3fda7.js" crossorigin="anonymous"></script><!--ruta para insertar iconos-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/styles.css">
     <title>Alquilame</title>
 </head>
@@ -41,7 +43,48 @@
                 <a href="registro.html">REGISTRO</a>
             </div>
         </header>
-            <!-- Pagina de contacto. -->
+            <article class="contacto">
+                <section class="contacto_title">
+                    <h2>Contacto</h2>
+                </section>
+                <section class="seccion_contacto">
+                    <div class="formulario_contacto">
+                        <h4>Envíenos un mensaje</h4>
+                        <p>Completá el formulario para conectarnos sobre
+                            cualquier pregunta o comentario que tengas y
+                            nos contactaremos a la brevedad.</p>
+                        <form action="#" class="login_form" method="post">
+                            <div>
+                         
+                            <input type="text" id="nombre_contacto" name="name" placeholder="Nombre y apellido">
+                               
+                            </div>
+                            <div>
+                                <input type="email" id="email_contacto" name="email" placeholder="email@address.com">
+                            </div>
+                            <div>
+                                <input type="phone" id="phone_contacto" name="phone" placeholder="Teléfono">
+                            </div>
+                            <div>
+                                <input type="text" id="direccion_contacto" name="address" placeholder="Dirección">
+                            </div>
+                            <div>
+                                <textarea name="comentarios" id="comentarios_contacto" cols="50" rows="10">Comentarios:</textarea>
+                            </div>
+                            <div>
+                                <input class="button_contacto" type="submit" value="Enviar">
+                            </div>
+                            <div>
+                                <p>Al enviar se están aceptando los Términos y Condiciones de Uso de la <span>"Política de Privacidad"</span></p>
+                            </div>
+                        </form>
+                    </div>
+                    <!--cntenedor de la imagen-->
+                    <div class="img_contacto">
+                        <img src="../static/img/pexels-pixabay-534151.jpg" alt="Imagen de una casa">  
+                    </div> 
+                </section>
+            </article>
         <footer>
             <nav class="footer_nav">
                 <div class="footer_links">
@@ -80,5 +123,7 @@
                 </div>
             </section>
         </footer>
+        <script src="../js/modernizr.js"></script>
+        <script src="../js/scripts.jsgit"></script>
     </body>
 </html>
