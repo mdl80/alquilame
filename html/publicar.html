@@ -41,7 +41,165 @@
                 <a href="registro.html">REGISTRO</a>
             </div>
         </header>
-            <!-- Espacio para publicar los avisos -->
+            <article class="mis_propiedades">
+                <section class="propiedades">
+                    <h2>Mis propiedades</h2>
+                </section>
+                <section class="crear_propiedades">
+                    <div class="encabezado_crear_propiedades">
+                        <h4>Publicar Propiedad</h4>
+                        <button>Nueva Propiedad</button>
+                        <button>Editar Propiedad</button>
+                        <button>Eliminar Propiedad</button>
+                    </div>
+                    <div class="caracteristicas_propiedades">
+                        <div class="crear_aviso">
+                            <select aria-label="state" name="operacion" class="select_prop">
+                                <option value="1" selected>Tipo Operación</option>
+                                <option value="2">Venta</option>
+                                <option value="3">Alquiler</option>
+                                <option value="4">Alquiler temporario</option>
+                            </select>
+                            <select aria-label="state" name="propiedad" class="select_prop">
+                                <option value="1" selected>Tipo Propiedad</option>
+                                <option value="2">Casa</option>
+                                <option value="3">Ph</option>
+                                <option value="4">Oficina</option>
+                                <option value="5">Cochera</option>
+                                <option value="6">Locales</option>
+                                <option value="7">Galpón</option>
+                                <option value="8">Depósito</option>
+                                <option value="9">Terreno</option>
+                            </select>
+                            <select aria-label="state" name="ubicacion" class="select_prop">
+                                <option value="1" selected>Ubicación</option>
+                                <option value="2">CasaCABA</option>
+                                <option value="3">Buenos Aires - zona norte</option>
+                                <option value="4">Buenos Aires - zona sur</option>
+                                <option value="5">Buenos Aires - zona oeste</option>
+                            </select>
+                            <input type="text" class="select_prop" placeholder="Superficie total">
+                            <input type="text" class="select_prop" placeholder="Superficie cubierta">
+                            <select aria-label="state" name="dormitorios" class="select_prop">
+                                <option value="1" selected>Dormitorios</option>
+                                <option value="2">1</option>
+                                <option value="3">2</option>
+                                <option value="4">3</option>
+                                <option value="5">4 ó mas</option>
+                            </select>
+                            <select aria-label="state" name="baños" class="select_prop">
+                                <option value="1" selected>Baños</option>
+                                <option value="2">1</option>
+                                <option value="3">2</option>
+                                <option value="3">3 ó mas</option>
+                            </select>
+                            <select aria-label="state" name="cochera" class="select_prop">
+                                <option value="1" selected>Cochera</option>
+                                <option value="2">SI</option>
+                                <option value="3">NO</option>
+                            </select>
+                            <select aria-label="state" name="amenities" class="select_prop">
+                                <option value="1" selected>Amenities</option>
+                                <option value="2">SI</option>
+                                <option value="3">NO</option>
+                            </select>
+                            <div>
+                                <textarea class="select_prop" name="descripcion_prop" id="descripcion" cols="50" rows="10" placeholder="Descripción de la propiedad"></textarea>
+                            </div>
+                            <form action="submit">
+                                <input type="file" id="myFile" name="filename">
+                                <input type="submit">
+                            </form>
+                            <button class="boton_carga_prop">Cargar nueva propiedad</button>
+                        <div>
+                    </div>
+                </section>                                           
+            </article>
+            <article class="mis_clasificados">
+                <div>
+                    <h4>Propiedades en alquiler</h4>
+                </div>
+                <section class="prop_alq">
+                    <div class="prop_ofrecida">
+                        <img src="../static/img/pexels-binyamin-mellish-186077.jpg" alt="">
+                        <p>Tipo operacion: <span>Venta</span></p>
+                        <p>Tipo propiedad: <span>PH</span></p>
+                        <p>Ubicación: <span>CABA</span></p>
+                        <p>Superficie Cubierta: <span>150m2</span></p>
+                        <p>Superficie total: <span>180m2</span></p>
+                        <p>Dormitorios: <span>3</span></p>
+                        <p>Baños: <span>2</span></p>
+                        <p>Cochera: <span>NO</span></p>
+                        <p>Aménities: <span>NO</span></p>
+                        <p>Descripción: <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui delectus quo blanditiis corporis hic rerum aliquam unde in, saepe commodi.</span></p>
+                    </div>
+                    <div class="prop_ofrecida">
+                        <img src="../static/img/pexels-christa-grover-2121120.jpg" alt="">
+                        <p>Tipo operacion: <span>Venta</span></p>
+                        <p>Tipo propiedad: <span>PH</span></p>
+                        <p>Ubicación: <span>CABA</span></p>
+                        <p>Superficie Cubierta: <span>150m2</span></p>
+                        <p>Superficie total: <span>180m2</span></p>
+                        <p>Dormitorios: <span>3</span></p>
+                        <p>Baños: <span>2</span></p>
+                        <p>Cochera: <span>NO</span></p>
+                        <p>Aménities: <span>NO</span></p>
+                        <p>Descripción: <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui delectus quo blanditiis corporis hic rerum aliquam unde in, saepe commodi.</span></p>
+                    </div>
+                    <div class="prop_ofrecida">
+                        <img src="../static/img/pexels-expect-best-323772.jpg" alt="">
+                        <p>Tipo operacion: <span>Venta</span></p>
+                        <p>Tipo propiedad: <span>PH</span></p>
+                        <p>Ubicación: <span>CABA</span></p>
+                        <p>Superficie Cubierta: <span>150m2</span></p>
+                        <p>Superficie total: <span>180m2</span></p>
+                        <p>Dormitorios: <span>3</span></p>
+                        <p>Baños: <span>2</span></p>
+                        <p>Cochera: <span>NO</span></p>
+                        <p>Aménities: <span>NO</span></p>
+                        <p>Descripción: <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui delectus quo blanditiis corporis hic rerum aliquam unde in, saepe commodi.</span></p>
+                    </div>
+                    <div class="prop_ofrecida">
+                        <img src="../static/img/pexels-mark-2724748.jpg" alt="">
+                        <p>Tipo operacion: <span>Venta</span></p>
+                        <p>Tipo propiedad: <span>PH</span></p>
+                        <p>Ubicación: <span>CABA</span></p>
+                        <p>Superficie Cubierta: <span>150m2</span></p>
+                        <p>Superficie total: <span>180m2</span></p>
+                        <p>Dormitorios: <span>3</span></p>
+                        <p>Baños: <span>2</span></p>
+                        <p>Cochera: <span>NO</span></p>
+                        <p>Aménities: <span>NO</span></p>
+                        <p>Descripción: <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui delectus quo blanditiis corporis hic rerum aliquam unde in, saepe commodi.</span></p>
+                    </div>
+                    <div class="prop_ofrecida">
+                        <img src="../static/img/pexels-pixabay-259962.jpg" alt="">
+                        <p>Tipo operacion: <span>Venta</span></p>
+                        <p>Tipo propiedad: <span>PH</span></p>
+                        <p>Ubicación: <span>CABA</span></p>
+                        <p>Superficie Cubierta: <span>150m2</span></p>
+                        <p>Superficie total: <span>180m2</span></p>
+                        <p>Dormitorios: <span>3</span></p>
+                        <p>Baños: <span>2</span></p>
+                        <p>Cochera: <span>NO</span></p>
+                        <p>Aménities: <span>NO</span></p>
+                        <p>Descripción: <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui delectus quo blanditiis corporis hic rerum aliquam unde in, saepe commodi.</span></p>
+                    </div>
+                    <div class="prop_ofrecida">
+                        <img src="../static/img/pexels-mark-2724749.jpg" alt="">
+                        <p>Tipo operacion: <span>Venta</span></p>
+                        <p>Tipo propiedad: <span>PH</span></p>
+                        <p>Ubicación: <span>CABA</span></p>
+                        <p>Superficie Cubierta: <span>150m2</span></p>
+                        <p>Superficie total: <span>180m2</span></p>
+                        <p>Dormitorios: <span>3</span></p>
+                        <p>Baños: <span>2</span></p>
+                        <p>Cochera: <span>NO</span></p>
+                        <p>Aménities: <span>NO</span></p>
+                        <p>Descripción: <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui delectus quo blanditiis corporis hic rerum aliquam unde in, saepe commodi.</span></p>
+                    </div>
+                </section>
+            </article>
         <footer>
             <nav class="footer_nav">
                 <div class="footer_links">
