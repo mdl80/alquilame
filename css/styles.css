@@ -792,14 +792,13 @@ main {
     justify-content: space-evenly;
 }
 
-input,
-select {
+.form-filter input, .form-filter select{
     box-sizing: border-box;
     width: 375px;
     height: 47px;
 }
 
-label {
+.form-filter label {
     width: 147px;
 }
 
