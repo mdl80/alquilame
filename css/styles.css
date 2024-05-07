@@ -750,6 +750,7 @@ main {
 .container-content {
     max-width: 1186px;
 }
+
 .container .bar {
     display: flex;
     width: 100%;
@@ -762,7 +763,8 @@ main {
 .bar button {
     width: 139px;
     height: 42px;
-    background-color: var(--bg-color-footer);
+    background-color: var(--bg-color-busqueda);
+    color: var(--bg-color-secondary);
     border-radius: 10px;
     border-width: 0;
     font-size: var(--font-x-small);
@@ -792,7 +794,8 @@ main {
     justify-content: space-evenly;
 }
 
-.form-filter input, .form-filter select{
+.form-filter input,
+.form-filter select {
     box-sizing: border-box;
     width: 375px;
     height: 47px;
@@ -819,6 +822,7 @@ main {
     font-weight: 600;
     border-radius: 10px;
 }
+
 /** propiedades**/
 .property-container {
     display: grid;
@@ -829,6 +833,7 @@ main {
     gap: 15px;
     margin-bottom: var(--margin-small);
 }
+
 /** tarjetas **/
 .property {
     display: flex;
@@ -857,7 +862,7 @@ main {
     font-weight: 500;
 }
 
-.info-prop{
+.info-prop {
     padding: var(--padding-x-small);
 }
 
@@ -888,6 +893,7 @@ main {
     font-size: 20px;
     font-weight: 300;
 }
+
 /* -- animaciones propiedades.html -- */
 .magic {
     -webkit-animation: magic 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
