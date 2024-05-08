@@ -1136,7 +1136,7 @@ main {
     text-decoration: underline;
 }
 
-button{
+.ingresarboton{
     width: 100%;
     height: 26px;
     border-radius: var(--border-radius-med);
