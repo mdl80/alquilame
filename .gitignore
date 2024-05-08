@@ -1,3 +1,2 @@
-#Ignorar rutas de IDE
-/vscode/*.*
+# Ignorar rutas de IDE
 .vscode/
