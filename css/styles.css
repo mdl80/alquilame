@@ -59,10 +59,10 @@
     --border-radius-min: 3px;
 
     /*Gap*/
-    --gap-maximo: 3.125rem;
-    --gap-medio: 1.875rem;
-    --gap-min2: 1.25rem;
-    --gap-min: 0.625rem;
+    --gap-maximo: 50px;
+    --gap-medio: 30px;
+    --gap-min2: 20px;
+    --gap-min: 10px;
 
     /*Border color*/
     --border-color-1: #a8a8a8;
@@ -72,7 +72,7 @@
     /*Fuente nunito google predeterminada*/
     font-family: "Nunito", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 400;
+    font-weight: 200;
     font-style: normal;
 }
 
@@ -141,7 +141,7 @@ header {
 }
 
 .iconos_social img {
-    width: 1.4rem;
+    width: 30px;
     padding: var(--padding-xx-small);
     transition: transform .3s;
 }
@@ -158,7 +158,7 @@ header {
 }
 
 .ingreso img {
-    width: 1rem;
+    width: 30px;
 }
 
 .comunicate {
@@ -185,7 +185,6 @@ header {
 
 .ingreso a {
     text-decoration: none;
-    
 }
 
 #publicar {
@@ -197,7 +196,7 @@ header {
 
 #inicio_sesion {
     color: var(--text-color-principal);
-    padding: 0;
+    padding: 0 var(--padding-small) 0 0;
 }
 
 .menu_nav {
@@ -206,6 +205,7 @@ header {
     justify-content: center;
     align-items: center;
     background-color: var(--bg-color-principal);
+    padding: var(--padding-xx-small);
 }
 
 .menu_nav a {
@@ -213,7 +213,7 @@ header {
     font-size: var(--font-x-small);
     transition: 0.5s;
     font-weight: 500;
-    margin: 0 var(--margin-x-small);
+    margin: 0 var(--margin-small);
     color: var(--text-color-third);
 }
 
@@ -233,13 +233,14 @@ header {
     text-align: center;
     color: var(--text-color-third);
     text-shadow: var(--text-shadow);
+    margin-bottom: var(--margin-medium);
     font-size: var(--font-large);
 }
 
 .busqueda {
     width: 70%;
+    display: grid;
     height: 75px;
-    display: grid;    
     grid-template-columns: auto auto auto;
     justify-content: center;
     background-color: var(--bg-color-principal-transp);
@@ -369,7 +370,11 @@ footer {
 }
 
 .nosotros {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     margin-top: 139px;
+    align-items: center;
 }
 
 .quienes_somos {
@@ -377,7 +382,6 @@ footer {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: var(--margin-medium) 0 var(--margin-medium) 0;
 }
 
 .quienes_somos h3 {
@@ -451,14 +455,11 @@ footer {
     text-align: justify;
     font-size: var(--font-x-small);
     margin: var(--margin-x-small) auto;
+
 }
 
 .contacto {
     margin-top: 139px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .img_contacto img {
@@ -666,7 +667,7 @@ main {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 150px;
+    height: 258px;
     background-image: url("../static/img/fondo_cortado_duotono-alquileres.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -675,7 +676,7 @@ main {
 }
 
 .img-fondo h1 {
-    text-shadow: var(--text-shadow);
+    text-shadow: 0px 4px 4px black;
     font-weight: 800;
 }
 
@@ -710,10 +711,6 @@ main {
     border-width: 0;
     font-size: var(--font-x-small);
     font-weight: 600;
-}
-
-.bar h2{
-    color: var(--text-color-secondary);
 }
 
 /**filtros**/
@@ -908,8 +905,6 @@ main {
     }
 }
 
-/* BreakPoints para responsive*/
-
 /* PANTALLAS GRANDES */
 @media screen and (max-width:1920px) {
     
@@ -917,12 +912,11 @@ main {
 
 /* TABLETS */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-
+    
 }
 
 /* CELULARES */
 @media screen and (max-width: 767px) {
 
 }
-
 
