@@ -730,7 +730,7 @@ footer {
         flex-direction: column;
         justify-content: center;
         width: 100%;
-        margin-top: calc(var(--padding-medium) + 119px);
+        margin-top: calc(var(--padding-medium) + 114px);
     }
 
     .img-fondo {
@@ -816,6 +816,7 @@ footer {
 
     .form-filter label {
         width: 147px;
+        font-size: 20px;
     }
 
     .button-container {
