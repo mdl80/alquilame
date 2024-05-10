@@ -188,7 +188,7 @@ header {
 }
 
 #publicar {
-    padding: var(--padding-xxx-small);
+    padding: var(--padding-xxx-small) var(--padding-small);
     background-color: var(--bg-color-busqueda);
     color: var(--text-color-third);
     border-radius: var(--border-radius-med);
@@ -275,11 +275,12 @@ header {
 
 .buscar {
     color: var(--text-color-third);
-    font-weight: 400;
+    font-weight: 500;
     text-decoration: none;
     font-size: var(--font-x-small);
     background-color: var(--bg-color-busqueda);
-    padding: var(--padding-xx-small)
+    padding: var(--padding-xx-small) var(--padding-small);
+    border-radius: var(--border-radius-med);
 }
 
 /* Codigo para el footer */
