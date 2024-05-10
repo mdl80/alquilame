@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
@@ -15,7 +13,7 @@
     <body>
         <header>
             <div class="header">
-                <img src="../static/img/Logo alquilame azul.svg" alt="Logo Alquilame" class="logo_alquilame">
+                <img src="../static/img/Logo-alquilame-azul.svg" alt="Logo Alquilame" class="logo_alquilame">
                 <div class="comunicate">
                     <p>Llamanos: <a href="tel:+5411-5555-5555">(+54-11) 5555-5555</a></p>
                     <p>Escribinos: <a href="mailto:contacto@alquilame.com.ar">contacto@alquilame.com.ar</a></p>
@@ -29,23 +27,53 @@
                         <a href="https://whatsapp.com"><img src="../static/img/WhatsApp.svg" alt="whatsapp"></a>
                     </div>
                 </div>
-                <div class="ingreso">
-                    <img src="../static/img/lock_7542188 (1).png" alt="icono inciar sesión"><a href="./inicio_sesion.html" id="inicio_sesion">INICIAR SESION</a>
-                    <a href="inicio_sesion_propietario.html" id="publicar">PUBLICAR</a>
-                </div>
+                
             </div>
             <div class="menu_nav">
-                <a href="index.html">HOME</a>
-                <a href="nosotros.html">NOSOTROS</a>
-                <a href="contacto.html">CONTACTO</a>
-                <a href="registro.html">REGISTRO</a>
+                <a href="../index.html">HOME</a>
+                <a href="/html/nosotros.html">NOSOTROS</a>
+                <a href="/html/contacto.html">CONTACTO</a>
+                <a href="/html/registro.html">REGISTRO</a>
+                <div class="ingreso">
+                    <img src="../static/img/lock_7542188(1).png" alt="icono inciar sesión"><a href="/html/inicio_sesion.html" id="inicio_sesion">INICIAR SESION</a>
+                    <a href="/html/inicio_sesion_propietario.html" id="publicar">PUBLICAR</a>
+                </div>
             </div>
         </header>
-            <!-- Formulario de inicio de sesión -->
+            <article class="inicio_sesion">
+                <section class="login magic">
+                    <h2>Bienvenido</h2>
+                </section>
+                <section class="formulario">
+                    <h4>Inicio de sesión Cliente</h4>
+                    <form action="#" class="login_form" method="post">
+                        <div>
+                            <input type="email" id="email" name="email" placeholder="email@address.com">
+                        </div>
+                        <div>
+                            <input type="password" id="password" name="password" placeholder="Contraseña">
+                        </div>
+                        <div class="cbox-login">
+                            <label for="cbox1">
+                                <input type="checkbox" id="cbox1"  value="mant_conectado"/>Mantenerme conectado
+                            </label>
+                        </div>
+                        <div>
+                            <p class="contraseña">Olvidé mi contraseña</p>
+                        </div>
+                        <div>
+                            <input class="button" type="submit" value="INGRESAR">
+                        </div>
+                        <div>
+                            <p class="ayuda">¿Necesitas ayuda?</p>
+                        </div>
+                    </form>
+                </section>                           
+            </article>
         <footer>
             <nav class="footer_nav">
                 <div class="footer_links">
-                    <a href="index.html">HOME</a>
+                    <a href="../index.html">HOME</a>
                     <a href="nosotros.html">NOSOTROS</a>
                     <a href="contacto.html">CONTACTO</a>
                     <a href="registro.html">REGISTRO</a>
