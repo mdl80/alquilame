@@ -41,6 +41,7 @@
     --padding-small: 20px;
     --padding-x-small: 15px;
     --padding-xx-small: 10px;
+    --padding-xxx-small: 5px;
 
     /*Margin*/
     --margin-x-large: 120px;
@@ -153,12 +154,11 @@ header {
 .ingreso {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
 }
 
 .ingreso img {
-    width: 30px;
+    width: 25px;
 }
 
 .comunicate {
@@ -188,8 +188,8 @@ header {
 }
 
 #publicar {
-    padding: var(--padding-xx-small);
-    background-color: var(--bg-color-principal);
+    padding: var(--padding-xxx-small);
+    background-color: var(--bg-color-busqueda);
     color: var(--text-color-third);
     border-radius: var(--border-radius-med);
 }
@@ -205,16 +205,16 @@ header {
     justify-content: center;
     align-items: center;
     background-color: var(--bg-color-principal);
-    padding: var(--padding-xx-small);
+    height: 50px;
 }
 
 .menu_nav a {
     text-decoration: none;
     font-size: var(--font-x-small);
     transition: 0.5s;
-    font-weight: 500;
-    margin: 0 var(--margin-small);
+    font-weight: 600;
     color: var(--text-color-third);
+    margin-right: var(--margin-small);
 }
 
 .menu_nav a:hover {
