@@ -54,6 +54,3 @@ function validar() {
 }
 //asignando un listener al boton submit del fomulario
 document.querySelector(".button_publicar a").addEventListener('click', validar);
-
-
-
