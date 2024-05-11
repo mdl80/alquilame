@@ -17,7 +17,6 @@ function createUser(formulario) {
 //esta funcion valida un usuario y devuelve True si es validado, False en caso contrario
 function validarUsuario(user) {
     let validado = true;
-    mostrarUsuario(user);
     validado = (user.email.trim() === "admin@grupo4.com" &&
         user.matricula.trim() === "1111" &&
         user.razonSocial.trim() === "2222" &&
@@ -41,7 +40,7 @@ function mostrarError() {
 //funcion que lleva al html si el usuario es validado,recibe un usuario por parametro
 function abrirPropiedad(user) {
     if (validarUsuario(user)) {
-        window.location.href = '/html/propiedades.html';
+        window.location.href = '../html/propiedades.html';
     } else {
         mostrarError();
     }
@@ -49,11 +48,8 @@ function abrirPropiedad(user) {
 
 //funcion que desempeña la tarea de validacion
 function validar() {
-    console.log("estoy en validar");
     let formulario = obtenerFormulario();
     let user = createUser(formulario);
-    mostrarFormulario(formulario);
-    mostrarUsuario(user);
     abrirPropiedad(user);
 }
 //asignando un listener al boton submit del fomulario
