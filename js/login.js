@@ -40,7 +40,7 @@ function mostrarError() {
 //funcion que lleva al html si el usuario es validado,recibe un usuario por parametro
 function abrirPropiedad(user) {
     if (validarUsuario(user)) {
-        window.location.href = '../html/propiedades.html';
+        window.location.href = '/html/propiedades.html';
     } else {
         mostrarError();
     }
