@@ -86,8 +86,6 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-family: "Nunito", sans-serif;
-    font-optical-sizing: auto;
 }
 
 body {
@@ -648,7 +646,6 @@ footer {
 
 .requeridos {
     font-size: var(--font-x-small);
-    font-optical-sizing: auto;
     color: var(--text-color-title);
     font-weight: 500;
 }
