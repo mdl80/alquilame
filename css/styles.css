@@ -939,7 +939,10 @@ footer {
     #cbox2 {
         grid-column-start: 3;
         grid-column-end: 4;
-        grid-row: 2 3;
+    }
+
+    #quicksearch {
+        font-size: var(--font-x-small);
     }
 
     /** implementacion de propiedades **/
