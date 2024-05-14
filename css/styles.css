@@ -383,6 +383,9 @@ footer {
     flex-direction: row;
     align-items: center;
 }
+.quienes_somos div{
+    width: 50%;
+}
 
 .quienes_somos h3 {
     font-size: var(--font-medium);
@@ -401,7 +404,7 @@ footer {
 }
 
 .foto_nosotros {
-    width: 700px;
+    width: 100%;
     padding: var(--padding-x-small) 0 var(--padding-x-small) var(--padding-x-small);
 }
 
@@ -722,6 +725,32 @@ footer {
 
 /* PANTALLAS GRANDES */
 @media screen and (max-width:1920px) {
+    /** implementacion de nosotros.html***/
+
+    .quienes_somos {
+        align-items: start;
+    }
+
+    .quienes_somos h3 {
+        font-size: var(--font-medium);
+        padding: 30px 0 0 0;
+    }
+
+    .quienes_somos p {
+        font-size: var(--font-small);
+    }
+
+    .quienes_somos div {
+        text-align: center;
+        width: 50%;
+    }
+
+    .foto_nosotros {
+        width: 90%;
+    }
+    #div-foto{
+        padding: 30px 0 0 0;
+    }
     /* -- implementacion de propiedades -- */
 
     main {
@@ -945,6 +974,38 @@ footer {
         font-size: var(--font-x-small);
     }
 
+    /** implementacion de nosotros.html **/
+
+    .nosotros {
+        position: relative;
+        top: -8px;
+    }
+
+    .quienes_somos {
+        align-items: start;
+    }
+
+    .quienes_somos h3 {
+        font-size: var(--font-small);
+        padding: 30px 0 0 0;
+    }
+
+    .quienes_somos p {
+        font-size: var(--font-x-small);
+    }
+
+    .quienes_somos div {
+        text-align: center;
+        width: 50%;
+    }
+
+    .foto_nosotros {
+        width: 90%;
+    }
+    #div-foto{
+        padding: 30px 0 0 0;
+    }
+
     /** implementacion de propiedades **/
     main {
         margin-top: calc(var(--padding-medium) + 114px);
@@ -1026,7 +1087,6 @@ footer {
 
     /** implelemtacion de index.html **/
     .busqueda {
-
         grid-template-columns: 1fr;
         gap: 4px;
     }
@@ -1058,7 +1118,33 @@ footer {
     .cbox {
         font-size: var(--font-x-small);
     }
+    /** implementacion de quienessomos.html **/
+    .nosotros {
+        position: relative;
+        top: -8px;
+        height: 800px;
+    }
 
+    .quienes_somos {
+        align-items: start;
+    }
+
+    .quienes_somos h3 {
+        font-size: var(--font-small);
+        padding: 30px 0 0 0;
+    }
+
+    .quienes_somos p {
+        font-size: var(--font-x-small);
+    }
+
+    .quienes_somos div {
+        text-align: center;
+        width: 100%;
+    }
+    #div-foto{
+        visibility: collapse;
+    }
     /**implementacion para propiedades.html **/
     main {
         margin-top: calc(var(--padding-medium) + 114px);
