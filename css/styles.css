@@ -744,10 +744,7 @@ footer {
         text-align: center;
         width: 50%;
     }
-
-    .foto_nosotros {
-        width: 90%;
-    }
+    
     #div-foto{
         padding: 30px 0 0 0;
     }
@@ -997,13 +994,6 @@ footer {
     .quienes_somos div {
         text-align: center;
         width: 50%;
-    }
-
-    .foto_nosotros {
-        width: 90%;
-    }
-    #div-foto{
-        padding: 30px 0 0 0;
     }
 
     /** implementacion de propiedades **/
