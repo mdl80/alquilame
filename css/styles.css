@@ -225,6 +225,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .busqueda_gral h2 {
@@ -244,7 +245,6 @@ header {
     background-color: var(--bg-color-principal-transp);
     padding: var(--padding-large);
     border-radius: var(--border-radius-max);
-    margin: 0 auto;
 }
 
 .select {
@@ -911,152 +911,197 @@ footer {
 
 /* TABLETS */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-    main {
-        margin-top: calc(var(--padding-medium) + 114px);
-        font-size: 2.4vw;
-    }
+    /** implelemtacion de index.html **/
 
-    .img-fondo {
-        height: 150px;
-        background-image: url("../static/img/fondo_cortado_duotono-alquileres.png");
-    }
 
-    .bar button {
-        width: 109px;
-        height: 32px;
-    }
-
-    .container .bar {
-        margin-top: var(--margin-small-1);
-    }
-
-    /**filtros**/
-    .filter {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin: var(--margin-x-small);
-    }
-
-    .form-filter {
-        font-size: 15px;
-    }
-
-    .form-filter input,
-    .form-filter select {
-        box-sizing: border-box;
-        width: 375px;
-        height: 47px;
-    }
-
-    .form-filter label {
-        width: 147px;
-    }
-
-    .button-container {
-        grid-column-start: 2;
-        grid-column-end: 3;
-        grid-row-start: 6;
-        grid-row-end: 7;
-        display: flex;
-        justify-content: end;
-    }
-
-    .button-container button {
-        width: 375px;
-    }
-
-    #space {
-        visibility: hidden;
-    }
-
-    /** propiedades**/
-    .property-container {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto;
-        height: 600px;
-        overflow-y: scroll;
-    }
-
-    /** navegador de paginas**/
-    .pages-bar ul {
+    .busqueda {
         width: 70%;
-        margin-top: var(--margin-small-1);
-    }
-}
+        display: inline grid;
+        height: auto;
+        grid-template-columns: 25% 25% 50%;
+        gap: 3px;
+        padding-bottom: var(--padding-xxx-small);
 
-/* CELULARES */
-@media screen and (max-width: 767px) {
-    main {
-        margin-top: calc(var(--padding-medium) + 114px);
-        font-size: 3.5vw;
+        .select {
+            border-radius: var(--border-radius-min);
+            font-size: var(--font-x-small);
+            width: 98%;
+            height: 40px;
+        }
+
+        .cbox {
+            font-size: var(--font-x-small);
+            color: var(--text-color-third);
+            padding: var(--padding-x-small);
+            cursor: pointer;
+        }
+
+        #quicksearch {
+            width: 100%;
+            height: 36px;
+            font-size: var(--font-x-small);
+        }
+
+        .boton_busqueda {
+            padding: var(--padding-x-small);
+        }
+
+        .buscar {
+            color: var(--text-color-third);
+            font-weight: 500;
+            text-decoration: none;
+            font-size: var(--font-x-small);
+            background-color: var(--bg-color-busqueda);
+            padding: var(--padding-xx-small) var(--padding-small);
+            border-radius: var(--border-radius-med);
+        }
+    /** implementacion de propiedades **/    
+        main {
+            margin-top: calc(var(--padding-medium) + 114px);
+            font-size: 2.4vw;
+        }
+
+        .img-fondo {
+            height: 150px;
+            background-image: url("../static/img/fondo_cortado_duotono-alquileres.png");
+        }
+
+        .bar button {
+            width: 109px;
+            height: 32px;
+        }
+
+        .container .bar {
+            margin-top: var(--margin-small-1);
+        }
+
+        /**filtros**/
+        .filter {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: var(--margin-x-small);
+        }
+
+        .form-filter {
+            font-size: 15px;
+        }
+
+        .form-filter input,
+        .form-filter select {
+            box-sizing: border-box;
+            width: 375px;
+            height: 47px;
+        }
+
+        .form-filter label {
+            width: 147px;
+        }
+
+        .button-container {
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 6;
+            grid-row-end: 7;
+            display: flex;
+            justify-content: end;
+        }
+
+        .button-container button {
+            width: 375px;
+        }
+
+        #space {
+            visibility: hidden;
+        }
+
+        /** propiedades**/
+        .property-container {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto;
+            height: 600px;
+            overflow-y: scroll;
+        }
+
+        /** navegador de paginas**/
+        .pages-bar ul {
+            width: 70%;
+            margin-top: var(--margin-small-1);
+        }
     }
 
-    .img-fondo {
-        height: 110px;
-        background-image: url("../static/img/fondo_cortado_duotono-alquileres.png");
-    }
+    /* CELULARES */
+    @media screen and (max-width: 767px) {
+        main {
+            margin-top: calc(var(--padding-medium) + 114px);
+            font-size: 3.5vw;
+        }
 
-    .bar-buttons {
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-        margin-top: var(--margin-min);
-    }
+        .img-fondo {
+            height: 110px;
+            background-image: url("../static/img/fondo_cortado_duotono-alquileres.png");
+        }
 
-    .bar button {
-        width: 99px;
-        height: 32px;
-    }
+        .bar-buttons {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            margin-top: var(--margin-min);
+        }
 
-    .container .bar {
-        flex-direction: column;
-        margin-top: var(--margin-small-1);
-    }
+        .bar button {
+            width: 99px;
+            height: 32px;
+        }
 
-    /**filtros**/
-    .form-filter {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
+        .container .bar {
+            flex-direction: column;
+            margin-top: var(--margin-small-1);
+        }
 
-    .filter {
-        justify-content: space-around;
-        margin: var(--margin-x-small);
-    }
+        /**filtros**/
+        .form-filter {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
 
-    .button-container {
-        order: 12;
-    }
+        .filter {
+            justify-content: space-around;
+            margin: var(--margin-x-small);
+        }
 
-    #space {
-        order: 11;
-    }
+        .button-container {
+            order: 12;
+        }
 
-    #upload-file {
-        order: 10;
-    }
+        #space {
+            order: 11;
+        }
 
-    #archivo {
-        min-width: 230px;
-    }
+        #upload-file {
+            order: 10;
+        }
 
-    .button-container button {
-        width: 375px;
-    }
+        #archivo {
+            min-width: 230px;
+        }
 
-    /** propiedades**/
-    .property-container {
-        display: flex;
-        flex-direction: column;
-        height: 400px;
-        overflow-y: scroll;
-    }
+        .button-container button {
+            width: 375px;
+        }
 
-    /** navegador de paginas**/
-    .pages-bar ul {
-        width: 90%;
-        margin-top: var(--margin-small-1);
+        /** propiedades**/
+        .property-container {
+            display: flex;
+            flex-direction: column;
+            height: 400px;
+            overflow-y: scroll;
+        }
+
+        /** navegador de paginas**/
+        .pages-bar ul {
+            width: 90%;
+            margin-top: var(--margin-small-1);
+        }
     }
-}
