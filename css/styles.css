@@ -239,18 +239,19 @@ header {
 .busqueda {
     width: 70%;
     display: grid;
-    height: 75px;
+    height: auto;
     grid-template-columns: auto auto auto;
     justify-content: center;
     background-color: var(--bg-color-principal-transp);
     padding: var(--padding-large);
+    padding-bottom: var(--padding-xxx-small);
     border-radius: var(--border-radius-max);
 }
 
 .select {
     border-radius: var(--border-radius-min);
     font-size: var(--font-x-small);
-    width: 240px;
+    width: 97%;
     height: 40px;
 }
 
@@ -262,7 +263,7 @@ header {
 }
 
 #quicksearch {
-    width: 400px;
+    width: 97%;
     height: 36px;
     font-size: var(--font-x-small);
 }
@@ -911,197 +912,221 @@ footer {
 
 /* TABLETS */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+
     /** implelemtacion de index.html **/
-
-
     .busqueda {
-        width: 70%;
-        display: inline grid;
-        height: auto;
         grid-template-columns: 25% 25% 50%;
         gap: 3px;
-        padding-bottom: var(--padding-xxx-small);
-
-        .select {
-            border-radius: var(--border-radius-min);
-            font-size: var(--font-x-small);
-            width: 98%;
-            height: 40px;
-        }
-
-        .cbox {
-            font-size: var(--font-x-small);
-            color: var(--text-color-third);
-            padding: var(--padding-x-small);
-            cursor: pointer;
-        }
-
-        #quicksearch {
-            width: 100%;
-            height: 36px;
-            font-size: var(--font-x-small);
-        }
-
-        .boton_busqueda {
-            padding: var(--padding-x-small);
-        }
-
-        .buscar {
-            color: var(--text-color-third);
-            font-weight: 500;
-            text-decoration: none;
-            font-size: var(--font-x-small);
-            background-color: var(--bg-color-busqueda);
-            padding: var(--padding-xx-small) var(--padding-small);
-            border-radius: var(--border-radius-med);
-        }
-    /** implementacion de propiedades **/    
-        main {
-            margin-top: calc(var(--padding-medium) + 114px);
-            font-size: 2.4vw;
-        }
-
-        .img-fondo {
-            height: 150px;
-            background-image: url("../static/img/fondo_cortado_duotono-alquileres.png");
-        }
-
-        .bar button {
-            width: 109px;
-            height: 32px;
-        }
-
-        .container .bar {
-            margin-top: var(--margin-small-1);
-        }
-
-        /**filtros**/
-        .filter {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            margin: var(--margin-x-small);
-        }
-
-        .form-filter {
-            font-size: 15px;
-        }
-
-        .form-filter input,
-        .form-filter select {
-            box-sizing: border-box;
-            width: 375px;
-            height: 47px;
-        }
-
-        .form-filter label {
-            width: 147px;
-        }
-
-        .button-container {
-            grid-column-start: 2;
-            grid-column-end: 3;
-            grid-row-start: 6;
-            grid-row-end: 7;
-            display: flex;
-            justify-content: end;
-        }
-
-        .button-container button {
-            width: 375px;
-        }
-
-        #space {
-            visibility: hidden;
-        }
-
-        /** propiedades**/
-        .property-container {
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: auto;
-            height: 600px;
-            overflow-y: scroll;
-        }
-
-        /** navegador de paginas**/
-        .pages-bar ul {
-            width: 70%;
-            margin-top: var(--margin-small-1);
-        }
     }
 
-    /* CELULARES */
-    @media screen and (max-width: 767px) {
-        main {
-            margin-top: calc(var(--padding-medium) + 114px);
-            font-size: 3.5vw;
-        }
-
-        .img-fondo {
-            height: 110px;
-            background-image: url("../static/img/fondo_cortado_duotono-alquileres.png");
-        }
-
-        .bar-buttons {
-            display: flex;
-            width: 100%;
-            justify-content: space-between;
-            margin-top: var(--margin-min);
-        }
-
-        .bar button {
-            width: 99px;
-            height: 32px;
-        }
-
-        .container .bar {
-            flex-direction: column;
-            margin-top: var(--margin-small-1);
-        }
-
-        /**filtros**/
-        .form-filter {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-        }
-
-        .filter {
-            justify-content: space-around;
-            margin: var(--margin-x-small);
-        }
-
-        .button-container {
-            order: 12;
-        }
-
-        #space {
-            order: 11;
-        }
-
-        #upload-file {
-            order: 10;
-        }
-
-        #archivo {
-            min-width: 230px;
-        }
-
-        .button-container button {
-            width: 375px;
-        }
-
-        /** propiedades**/
-        .property-container {
-            display: flex;
-            flex-direction: column;
-            height: 400px;
-            overflow-y: scroll;
-        }
-
-        /** navegador de paginas**/
-        .pages-bar ul {
-            width: 90%;
-            margin-top: var(--margin-small-1);
-        }
+    .select {
+        border-radius: var(--border-radius-min);
+        font-size: var(--font-xx-small);
+        width: 98%;
+        height: 40px;
     }
+
+    .cbox {
+        font-size: var(--font-x-small);
+    }
+
+    #cbox1 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row: 2;
+    }
+
+    #cbox2 {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row: 2 3;
+    }
+
+    /** implementacion de propiedades **/
+    main {
+        margin-top: calc(var(--padding-medium) + 114px);
+        font-size: 2.4vw;
+    }
+
+    .img-fondo {
+        height: 150px;
+        background-image: url("../static/img/fondo_cortado_duotono-alquileres.png");
+    }
+
+    .bar button {
+        width: 109px;
+        height: 32px;
+    }
+
+    .container .bar {
+        margin-top: var(--margin-small-1);
+    }
+
+    /**filtros**/
+    .filter {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: var(--margin-x-small);
+    }
+
+    .form-filter {
+        font-size: 15px;
+    }
+
+    .form-filter input,
+    .form-filter select {
+        box-sizing: border-box;
+        width: 375px;
+        height: 47px;
+    }
+
+    .form-filter label {
+        width: 147px;
+    }
+
+    .button-container {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 6;
+        grid-row-end: 7;
+        display: flex;
+        justify-content: end;
+    }
+
+    .button-container button {
+        width: 375px;
+    }
+
+    #space {
+        visibility: hidden;
+    }
+
+    /** propiedades**/
+    .property-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        height: 600px;
+        overflow-y: scroll;
+    }
+
+    /** navegador de paginas**/
+    .pages-bar ul {
+        width: 70%;
+        margin-top: var(--margin-small-1);
+    }
+}
+
+
+/* CELULARES */
+@media screen and (max-width: 767px) {
+
+    /** implelemtacion de index.html **/
+    .busqueda {
+
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+
+    .busqueda div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .select {
+        border-radius: var(--border-radius-min);
+        font-size: var(--font-xx-small);
+        width: 100%;
+        height: 40px;
+        text-align: center;
+    }
+
+    #quicksearch {
+        text-align: center;
+        margin-bottom: 4px;
+        font-size: var(--font-xx-small);
+        width: 99%;
+    }
+
+    .boton_busqueda {
+        padding: var(--padding-x-small);
+    }
+
+    .cbox {
+        font-size: var(--font-x-small);
+    }
+
+    /**implementacion para propiedades.html **/
+    main {
+        margin-top: calc(var(--padding-medium) + 114px);
+        font-size: 3.5vw;
+    }
+
+    .img-fondo {
+        height: 110px;
+        background-image: url("../static/img/fondo_cortado_duotono-alquileres.png");
+    }
+
+    .bar-buttons {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin-top: var(--margin-min);
+    }
+
+    .bar button {
+        width: 99px;
+        height: 32px;
+    }
+
+    .container .bar {
+        flex-direction: column;
+        margin-top: var(--margin-small-1);
+    }
+
+    /**filtros**/
+    .form-filter {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .filter {
+        justify-content: space-around;
+        margin: var(--margin-x-small);
+    }
+
+    .button-container {
+        order: 12;
+    }
+
+    #space {
+        order: 11;
+    }
+
+    #upload-file {
+        order: 10;
+    }
+
+    #archivo {
+        min-width: 230px;
+    }
+
+    .button-container button {
+        width: 375px;
+    }
+
+    /** propiedades**/
+    .property-container {
+        display: flex;
+        flex-direction: column;
+        height: 400px;
+        overflow-y: scroll;
+    }
+
+    /** navegador de paginas**/
+    .pages-bar ul {
+        width: 90%;
+        margin-top: var(--margin-small-1);
+    }
+}
