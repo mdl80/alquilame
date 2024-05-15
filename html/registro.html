@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
@@ -29,26 +27,28 @@
                         <a href="https://whatsapp.com"><img src="../static/img/WhatsApp.svg" alt="whatsapp"></a>
                     </div>
                 </div>
+                
+            </div>
+            <div class="menu_nav">
+                <a href="../index.html">HOME</a>
+                <a href="/html/nosotros.html">NOSOTROS</a>
+                <a href="/html/contacto.html">CONTACTO</a>
+                <a href="/html/registro.html">REGISTRO</a>
                 <div class="ingreso">
                     <img src="../static/img/lock_7542188(1).png" alt="icono inciar sesión"><a href="/html/inicio_sesion.html" id="inicio_sesion">INICIAR SESION</a>
                     <a href="/html/inicio_sesion_propietario.html" id="publicar">PUBLICAR</a>
                 </div>
             </div>
-            <div class="menu_nav">
-                <a href="../index.html">HOME</a>
-                <a href="nosotros.html">NOSOTROS</a>
-                <a href="contacto.html">CONTACTO</a>
-                <a href="registro.html">REGISTRO</a>
-            </div>
         </header>
             <article class="registro_u_p">
-                <section class="registro_title">
+                <section class="registro_title magic">
                     <h2>Registro</h2>
                 </section>
                 <section class="formularios_usuarios">
                     <div class="formulario_registro_usuario">
                         <h4>Registro Clientes</h4>
-                        <form action="#" class="usuario_form" method="post">
+                            <div class="form-user">
+                            <form action="#" class="usuario_form" method="post">
                             <div>
                                 <input type="text" id="name_usuario" name="name" placeholder="Nombre y apellido *">
                             </div>
@@ -73,7 +73,7 @@
                             <div>
                                 <p class="requeridos">Los campos marcados con * son requeridos</p>
                             </div>
-                            <div>
+                            <div class="boton-form">
                                 <input class="button_usuario" type="submit" value="Crear nuevo usuario">
                             </div>
                             
@@ -81,45 +81,48 @@
                                 <p class="ayuda">¿Necesitas ayuda?</p>
                             </div>
                         </form>
+                        </div>
                     </div>
                     <div class="formulario_registro_propietario">
                         <h4>Registro Propietarios</h4>
-                        <form action="#" class="usuario_form" method="post">
-                            <div>
-                                <input type="text" id="name_usuario" name="name" placeholder="Nombre y apellido *">
-                            </div>
-                            <div>
-                                <input type="text" id="address_usuario" name="address" placeholder="Dirección *">
-                            </div>
-                            <div>
-                                <input type="text" id="CPostal_usuario" name="cpostal" placeholder="Código postal *">
-                            </div>
-                            <div>
-                                <input type="email" id="email_usuario" name="email" placeholder="email@address.com *">
-                            </div>
-                            <div>
-                                <input type="text" id="razon_social" name="razon_social" placeholder="Razón Social *">
-                            </div>
-                            <div>
-                                <input type="text" id="matricula_usuario" name="matricula" placeholder="Matricula inmobiliaria *">
-                            </div>
-                            <div>
-                                <input type="password" id="password_usuario" name="password" placeholder="Contraseña *">
-                            </div>
-                            <div>
-                                <input type="password" id="password2_usuario" name="password" placeholder="Repetir contraseña *">
-                            </div>
-                            <div>
-                                <p class="requeridos">Los campos marcados con * son requeridos</p>
-                            </div>
-                            <div>
-                                <input class="button_usuario" type="submit" value="Crear nuevo propietario">
-                            </div>
-                            
-                            <div>
-                                <p class="ayuda">¿Necesitas ayuda?</p>
-                            </div>
-                        </form>
+                        <div class="form-prop">
+                            <form action="#" class="usuario_form" method="post">
+                                <div>
+                                    <input type="text" id="name_usuario" name="name" placeholder="Nombre y apellido *">
+                                </div>
+                                <div>
+                                    <input type="text" id="address_usuario" name="address" placeholder="Dirección *">
+                                </div>
+                                <div>
+                                    <input type="text" id="CPostal_usuario" name="cpostal" placeholder="Código postal *">
+                                </div>
+                                <div>
+                                    <input type="email" id="email_usuario" name="email" placeholder="email@address.com *">
+                                </div>
+                                <div>
+                                    <input type="text" id="razon_social" name="razon_social" placeholder="Razón Social *">
+                                </div>
+                                <div>
+                                    <input type="text" id="matricula_usuario" name="matricula" placeholder="Matricula inmobiliaria *">
+                                </div>
+                                <div>
+                                    <input type="password" id="password_usuario" name="password" placeholder="Contraseña *">
+                                </div>
+                                <div>
+                                    <input type="password" id="password2_usuario" name="password" placeholder="Repetir contraseña *">
+                                </div>
+                                <div>
+                                    <p class="requeridos">Los campos marcados con * son requeridos</p>
+                                </div>
+                                <div class="boton-form">
+                                    <input class="button_usuario" type="submit" value="Crear nuevo propietario">
+                                </div>
+                                
+                                <div>
+                                    <p class="ayuda">¿Necesitas ayuda?</p>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </section>
             </article>

@@ -1,17 +1,3 @@
-/* .nunito-<uniquifier> {
-    font-family: "Nunito", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
-  }*/
-
-.roboto-condensed {
-    font-family: "Roboto Condensed", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 200;
-    font-style: normal;
-}
-
 :root {
     font-size: 23px;
 
@@ -55,6 +41,7 @@
     --padding-small: 20px;
     --padding-x-small: 15px;
     --padding-xx-small: 10px;
+    --padding-xxx-small: 5px;
 
     /*Margin*/
     --margin-x-large: 120px;
@@ -126,7 +113,7 @@ header {
 }
 
 .logo_alquilame {
-    width: 25%;
+    width: 20%;
 }
 
 .comunicate {
@@ -144,8 +131,6 @@ header {
 }
 
 .social h4 {
-    font-family: "Roboto Condensed", sans-serif;
-    font-optical-sizing: auto;
     font-size: var(--font-x-small);
 }
 
@@ -167,17 +152,14 @@ header {
 .ingreso {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
 }
 
 .ingreso img {
-    width: 30px;
+    width: 25px;
 }
 
 .comunicate {
-    font-family: "Roboto Condensed", sans-serif;
-    font-optical-sizing: auto;
     font-size: var(--font-x-small);
 }
 
@@ -196,8 +178,6 @@ header {
 }
 
 .ingreso {
-    font-family: "Roboto Condensed", sans-serif;
-    font-optical-sizing: auto;
     font-size: var(--font-x-small);
 }
 
@@ -206,8 +186,8 @@ header {
 }
 
 #publicar {
-    padding: var(--padding-xx-small);
-    background-color: var(--bg-color-principal);
+    padding: var(--padding-xxx-small) var(--padding-small);
+    background-color: var(--bg-color-busqueda);
     color: var(--text-color-third);
     border-radius: var(--border-radius-med);
 }
@@ -223,18 +203,16 @@ header {
     justify-content: center;
     align-items: center;
     background-color: var(--bg-color-principal);
-    padding: var(--padding-xx-small);
+    height: 50px;
 }
 
 .menu_nav a {
     text-decoration: none;
     font-size: var(--font-x-small);
     transition: 0.5s;
-    font-weight: 500;
-    margin: 0 var(--margin-small);
+    font-weight: 600;
     color: var(--text-color-third);
-    font-family: "Roboto Condensed", sans-serif;
-    font-optical-sizing: auto;
+    margin-right: var(--margin-small);
 }
 
 .menu_nav a:hover {
@@ -247,6 +225,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .busqueda_gral h2 {
@@ -255,29 +234,25 @@ header {
     text-shadow: var(--text-shadow);
     margin-bottom: var(--margin-medium);
     font-size: var(--font-large);
-    font-family: "Nunito", sans-serif;
-    font-optical-sizing: auto;
 }
 
 .busqueda {
     width: 70%;
     display: grid;
-    height: 75px;
+    height: auto;
     grid-template-columns: auto auto auto;
     justify-content: center;
     background-color: var(--bg-color-principal-transp);
     padding: var(--padding-large);
+    padding-bottom: var(--padding-xxx-small);
     border-radius: var(--border-radius-max);
-    margin: 0 auto;
 }
 
 .select {
     border-radius: var(--border-radius-min);
     font-size: var(--font-x-small);
-    width: 240px;
+    width: 97%;
     height: 40px;
-    font-family: "Nunito", sans-serif;
-    font-optical-sizing: auto;
 }
 
 .cbox {
@@ -285,16 +260,12 @@ header {
     color: var(--text-color-third);
     padding: var(--padding-x-small);
     cursor: pointer;
-    font-family: "Nunito", sans-serif;
-    font-optical-sizing: auto;
 }
 
 #quicksearch {
-    width: 400px;
+    width: 97%;
     height: 36px;
     font-size: var(--font-x-small);
-    font-family: "Nunito", sans-serif;
-    font-optical-sizing: auto;
 }
 
 .boton_busqueda {
@@ -302,13 +273,13 @@ header {
 }
 
 .buscar {
-    font-family: "Nunito", sans-serif;
     color: var(--text-color-third);
-    font-weight: 400;
+    font-weight: 500;
     text-decoration: none;
     font-size: var(--font-x-small);
     background-color: var(--bg-color-busqueda);
-    padding: var(--padding-xx-small)
+    padding: var(--padding-xx-small) var(--padding-small);
+    border-radius: var(--border-radius-med);
 }
 
 /* Codigo para el footer */
@@ -331,8 +302,6 @@ footer {
 
 .footer_links a {
     text-decoration: none;
-    font-family: "Roboto Condensed", sans-serif;
-    font-optical-sizing: auto;
     font-size: var(--font-x-small);
     color: var(--text-color-copyright);
     font-weight: 800;
@@ -350,15 +319,11 @@ footer {
 }
 
 .info h3 {
-    font-family: "Roboto Condensed", sans-serif;
-    font-optical-sizing: auto;
     font-size: var(--font-x-small);
     color: var(--text-color-principal);
 }
 
 .info p {
-    font-family: "Roboto Condensed", sans-serif;
-    font-optical-sizing: auto;
     font-size: var(--font-xx-small);
     text-align: justify;
     font-weight: lighter;
@@ -375,16 +340,12 @@ footer {
 
 .copyright {
     font-size: var(--font-xx-small);
-    font-family: "Roboto Condensed", sans-serif;
-    font-optical-sizing: auto;
 }
 
 .diseñador a {
     text-decoration: none;
     font-size: var(--font-x-small);
     color: var(--text-color-principal);
-    font-family: "Roboto Condensed", sans-serif;
-    font-optical-sizing: auto;
 }
 
 .diseñador a span {
@@ -406,8 +367,6 @@ footer {
     color: var(--text-color-third);
     text-shadow: var(--text-shadow);
     font-size: var(--font-large);
-    font-family: "Nunito", sans-serif;
-    font-optical-sizing: auto;
 }
 
 .nosotros {
@@ -425,8 +384,11 @@ footer {
     align-items: center;
 }
 
+.quienes_somos div {
+    width: 50%;
+}
+
 .quienes_somos h3 {
-    font-family: "Roboto Condensed", sans-serif;
     font-size: var(--font-medium);
     padding: var(--padding-medium) var(--padding-x-large) 0 var(--padding-x-large);
     color: var(--text-color-secondary);
@@ -437,14 +399,13 @@ footer {
     flex-direction: row;
     justify-content: center;
     padding: var(--padding-small) var(--padding-x-large);
-    font-family: "Roboto Condensed", sans-serif;
     font-size: var(--font-x-small);
     text-align: justify;
     color: var(--text-color-propiedad-p);
 }
 
 .foto_nosotros {
-    width: 700px;
+    width: 100%;
     padding: var(--padding-x-small) 0 var(--padding-x-small) var(--padding-x-small);
 }
 
@@ -466,8 +427,6 @@ footer {
     color: var(--text-color-third);
     text-shadow: var(--text-shadow);
     font-size: var(--font-large);
-    font-family: "Nunito", sans-serif;
-    font-optical-sizing: auto;
 }
 
 .seccion_contacto {
@@ -497,7 +456,6 @@ footer {
 
 .formulario_contacto p {
     width: 400px;
-    font-family: "Roboto Condensed", sans-serif;
     text-align: justify;
     font-size: var(--font-x-small);
     margin: var(--margin-x-small) auto;
@@ -516,6 +474,10 @@ footer {
 .contacto_title {
     width: 100%;
     background: url("../static/img/fondo_cortado_duotono_contacto.png");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    top: -8px;
 }
 
 .contacto_title h2 {
@@ -525,8 +487,6 @@ footer {
     color: var(--text-color-third);
     text-shadow: var(--text-shadow);
     font-size: var(--font-large);
-    font-family: "Nunito", sans-serif;
-    font-optical-sizing: auto;
 }
 
 .formulario_contacto p span {
@@ -535,7 +495,6 @@ footer {
 }
 
 .formulario_contacto h4 {
-    font-family: "Roboto Condensed", sans-serif;
     padding: 0 var(--padding-medium) 0 var(--padding-medium);
     font-size: var(--font-medium);
     color: var(--text-color-secondary);
@@ -565,7 +524,6 @@ footer {
 }
 
 .formulario h4 {
-    font-family: "Roboto Condensed", sans-serif;
     padding: var(--padding-medium);
     font-size: var(--font-medium);
     color: var(--text-color-secondary);
@@ -614,14 +572,12 @@ footer {
 .button_publicar a {
     color: var(--text-color-third);
     text-decoration: none;
-    font-family: "Roboto Condensed", sans-serif;
 }
 
 .contraseña,
 .ayuda {
     color: var(--text-color-link);
     cursor: pointer;
-    font-family: "Roboto Condensed", sans-serif;
     font-size: var(--font-x-small);
     margin: var(--margin-x-small);
 }
@@ -630,8 +586,6 @@ footer {
     font-size: var(--font-x-small);
     color: var(--text-color-principal);
     cursor: pointer;
-    font-family: "Nunito", sans-serif;
-    font-optical-sizing: auto;
 }
 
 .registro_u_p {
@@ -653,18 +607,21 @@ footer {
     color: var(--text-color-third);
     text-shadow: var(--text-shadow);
     font-size: var(--font-large);
-    font-family: "Nunito", sans-serif;
-    font-optical-sizing: auto;
 }
 
 .formularios_usuarios {
+    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
+}
+
+.form-user,
+.form-prop {
+    width: 90%;
 }
 
 .formularios_usuarios h4 {
-    font-family: "Roboto Condensed", sans-serif;
     padding: 0 var(--padding-medium) 0 var(--padding-medium);
     font-size: var(--font-medium);
     color: var(--text-color-secondary);
@@ -686,14 +643,14 @@ footer {
 #razon_social,
 #matricula_usuario {
     padding: var(--padding-x-small);
-    width: 400px;
+    width: 100%;
     margin-bottom: var(--margin-small-1);
     border: 0.3px solid var(--border-color-3);
 }
 
 .button_usuario {
     padding: var(--padding-x-small);
-    width: 435px;
+    width: 100%;
     margin-top: var(--margin-small);
     background-color: var(--bg-color-busqueda);
     color: var(--text-color-third);
@@ -704,194 +661,8 @@ footer {
 
 .requeridos {
     font-size: var(--font-x-small);
-    font-family: "Roboto Condensed", sans-serif;
-    font-optical-sizing: auto;
     color: var(--text-color-title);
     font-weight: 500;
-}
-
-/* -- implementacion de propiedades -- */
-
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    margin-top: calc(var(--padding-medium) + 119px);
-}
-
-.img-fondo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 258px;
-    background-image: url(../static/img/fondo_cortado_duotono-alquileres.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    color: var(--bg-color-secondary);
-}
-
-.img-fondo h1 {
-    text-shadow: 0px 4px 4px black;
-    font-weight: 800;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: auto;
-    align-items: center;
-    justify-content: center;
-}
-
-.container-content {
-    max-width: 1186px;
-}
-
-.container .bar {
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: var(--margin-medium);
-}
-
-.bar button {
-    width: 139px;
-    height: 42px;
-    background-color: var(--bg-color-busqueda);
-    color: var(--bg-color-secondary);
-    border-radius: 10px;
-    border-width: 0;
-    font-size: var(--font-x-small);
-    font-weight: 600;
-}
-
-/**filtros**/
-.filter-container {
-    border: 0.5px solid var(--bg-color-footer);
-    margin-top: var(--margin-small);
-    margin-bottom: var(--margin-small);
-}
-
-.filter {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: var(--margin-small-2);
-}
-
-.form-filter {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: repeat(6, 1fr);
-    width: 100%;
-    font-size: 16px;
-    justify-content: space-evenly;
-}
-
-.form-filter input,
-.form-filter select {
-    box-sizing: border-box;
-    width: 375px;
-    height: 47px;
-}
-
-.form-filter label {
-    width: 147px;
-}
-
-.button-container {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 6;
-    grid-row-end: 7;
-    display: flex;
-    justify-content: end;
-}
-
-.button-container button {
-    width: 375px;
-    height: 47px;
-    background-color: var(--bg-color-busqueda);
-    color: var(--text-color-third);
-    font-weight: 600;
-    border-radius: 10px;
-}
-
-/** propiedades**/
-.property-container {
-    display: grid;
-    grid-template-columns: repeat(4, 280px);
-    grid-template-rows: repeat(2, 1fr);
-    height: auto;
-    justify-content: space-between;
-    gap: 15px;
-    margin-bottom: var(--margin-small);
-}
-
-/** tarjetas **/
-.property {
-    display: flex;
-    box-sizing: border-box;
-    flex-direction: column;
-    width: 280px;
-    height: auto;
-    border-radius: var(--border-radius-max);
-    background-color: #D9D9D9;
-    justify-content: center;
-}
-
-.property img {
-    width: 100%;
-    height: 70%;
-    border-top-left-radius: var(--border-radius-max);
-    border-top-right-radius: var(--border-radius-max);
-}
-
-.property p {
-    font-size: var(--font-x-small);
-}
-
-.property span {
-    color: var(--text-color-principal);
-    font-weight: 500;
-}
-
-.info-prop {
-    padding: var(--padding-x-small);
-}
-
-/** navegador de paginas**/
-.pages-bar {
-    display: flex;
-    flex-direction: row;
-    width: 415px;
-    height: 39px;
-    margin-bottom: var(--margin-small);
-    align-items: center;
-}
-
-.pages-bar ul {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-}
-
-.pages-bar li {
-    list-style: none;
-    display: inline-block;
-}
-
-.pages-bar li a {
-    text-decoration: none;
-    color: #000000;
-    font-size: 20px;
-    font-weight: 300;
 }
 
 /* -- animaciones propiedades.html -- */
@@ -963,102 +734,714 @@ main {
     }
 }
 
+/* PANTALLAS GRANDES */
+@media screen and (max-width:1920px) {
+    /** implementacion de nosotros.html***/
 
-/* 
+    .quienes_somos {
+        align-items: start;
+    }
 
-.mis_propiedades {
-    margin-top: 139px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    .quienes_somos h3 {
+        font-size: var(--font-medium);
+        padding: 30px 0 0 0;
+    }
+
+    .quienes_somos p {
+        font-size: var(--font-small);
+    }
+
+    .quienes_somos div {
+        text-align: center;
+        width: 50%;
+    }
+
+    #div-foto {
+        padding: 30px 0 0 0;
+    }
+
+    /** implementacion de registros **/
+    .formulario_registro_usuario,
+    .formulario_registro_propietario {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .formularios_usuarios h4 {
+        width: 100%;
+        padding: 0 var(--padding-medium) 0 var(--padding-medium);
+        font-size: var(--font-small);
+        color: var(--text-color-secondary);
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .form-user,
+    .form-prop {
+        width: 70%;
+    }
+
+    .boton-form {
+        width: 60%;
+    }
+
+    /* -- implementacion de propiedades -- */
+
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        margin-top: calc(var(--padding-medium) + 114px);
+    }
+
+    .img-fondo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 258px;
+        background-image: url("../static/img/fondo_cortado_duotono-alquileres.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        color: var(--bg-color-secondary);
+    }
+
+    .img-fondo h1 {
+        text-shadow: 0px 4px 4px black;
+        font-weight: 800;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container-content {
+        max-width: 95%;
+    }
+
+    .container .bar {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: var(--margin-medium-2);
+    }
+
+    .bar button {
+        width: 139px;
+        height: 42px;
+        background-color: var(--bg-color-busqueda);
+        color: var(--bg-color-secondary);
+        border-radius: 10px;
+        border-width: 0;
+        font-size: var(--font-x-small);
+        font-weight: 600;
+    }
+
+    /**filtros**/
+    .filter-container {
+        border: 0.5px solid var(--bg-color-footer);
+        margin-top: var(--margin-small);
+        margin-bottom: var(--margin-small);
+    }
+
+    .filter {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: var(--margin-small-2);
+    }
+
+    .form-filter {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: repeat(6, 1fr);
+        width: 100%;
+        font-size: 16px;
+        justify-content: space-evenly;
+    }
+
+    .form-filter input,
+    .form-filter select {
+        box-sizing: border-box;
+        width: 375px;
+        height: 47px;
+    }
+
+    .form-filter label {
+        width: 147px;
+        font-size: 20px;
+    }
+
+    .button-container {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 6;
+        grid-row-end: 7;
+        display: flex;
+        justify-content: end;
+    }
+
+    .button-container button {
+        width: 320px;
+        height: 47px;
+        background-color: var(--bg-color-busqueda);
+        color: var(--text-color-third);
+        font-weight: 600;
+        border-radius: 10px;
+    }
+
+    #archivo {
+        align-content: center;
+    }
+
+    /** propiedades**/
+    .property-container {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        gap: 20px;
+        margin-bottom: var(--margin-small);
+    }
+
+    /** tarjetas **/
+    .property {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        height: auto;
+        border-radius: var(--border-radius-max);
+        background-color: #D9D9D9;
+        justify-content: center;
+    }
+
+    .property img {
+        width: 100%;
+        height: 70%;
+        border-top-left-radius: var(--border-radius-max);
+        border-top-right-radius: var(--border-radius-max);
+    }
+
+    .property p {
+        font-size: var(--font-x-small);
+    }
+
+    .property span {
+        color: var(--text-color-principal);
+        font-weight: 500;
+    }
+
+    .info-prop {
+        padding: var(--padding-x-small);
+    }
+
+    /** navegador de paginas**/
+    .pages-bar {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 39px;
+        margin-bottom: var(--margin-small);
+        justify-content: center;
+    }
+
+    .pages-bar ul {
+        display: flex;
+        width: 40%;
+        justify-content: space-around;
+    }
+
+    .pages-bar li {
+        list-style: none;
+        display: inline-block;
+    }
+
+    .pages-bar li a {
+        text-decoration: none;
+        color: #000000;
+        font-size: 20px;
+        font-weight: 300;
+    }
 }
 
-.propiedades {
-    width: 100%;
-    background: url("../static/img/fondo_cortado_duotono-alquileres.png");
+/* TABLETS */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+    /** implelemtacion de index.html **/
+    .busqueda {
+        grid-template-columns: 25% 25% 50%;
+        gap: 3px;
+    }
+
+    .select {
+        border-radius: var(--border-radius-min);
+        font-size: var(--font-xx-small);
+        width: 98%;
+        height: 40px;
+    }
+
+    .cbox {
+        font-size: var(--font-x-small);
+    }
+
+    #cbox1 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row: 2;
+    }
+
+    #cbox2 {
+        grid-column-start: 3;
+        grid-column-end: 4;
+    }
+
+    #quicksearch {
+        font-size: var(--font-x-small);
+    }
+
+    /** implementacion de nosotros.html **/
+
+    .nosotros {
+        position: relative;
+        top: -8px;
+    }
+
+    .quienes_somos {
+        align-items: start;
+    }
+
+    .quienes_somos h3 {
+        font-size: var(--font-small);
+        padding: 30px 0 0 0;
+    }
+
+    .quienes_somos p {
+        font-size: var(--font-x-small);
+    }
+
+    .quienes_somos div {
+        text-align: center;
+        width: 50%;
+    }
+
+    /** implementacion de registro **/
+    .formulario_registro_usuario,
+    .formulario_registro_propietario {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .formularios_usuarios h4 {
+        width: 100%;
+        padding: 0 var(--padding-medium) 0 var(--padding-medium);
+        font-size: var(--font-small);
+        color: var(--text-color-secondary);
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .boton-form {
+        width: 90%;
+    }
+
+    /** implementacion de propiedades **/
+    main {
+        margin-top: calc(var(--padding-medium) + 114px);
+        font-size: 2.4vw;
+    }
+
+    .img-fondo {
+        height: 150px;
+        background-image: url("../static/img/fondo_cortado_duotono-alquileres.png");
+    }
+
+    .bar button {
+        width: 109px;
+        height: 32px;
+    }
+
+    .container .bar {
+        margin-top: var(--margin-small-1);
+    }
+
+    /**filtros**/
+    .filter {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: var(--margin-x-small);
+    }
+
+    .form-filter {
+        font-size: 15px;
+    }
+
+    .form-filter input,
+    .form-filter select {
+        box-sizing: border-box;
+        width: 375px;
+        height: 47px;
+    }
+
+    .form-filter label {
+        width: 147px;
+    }
+
+    .button-container {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 6;
+        grid-row-end: 7;
+        display: flex;
+        justify-content: end;
+    }
+
+    .button-container button {
+        width: 375px;
+    }
+
+    #space {
+        visibility: hidden;
+    }
+
+    /** propiedades**/
+    .property-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        height: 600px;
+        overflow-y: scroll;
+    }
+
+    /** navegador de paginas**/
+    .pages-bar ul {
+        width: 70%;
+        margin-top: var(--margin-small-1);
+    }
 }
 
-.propiedades h2 {
-    height: 150px;
-    align-content: center;
-    text-align: center;
-    color: var(--text-color-third);
-    text-shadow: var(--text-shadow);
-    font-size: var(--font-large);
-    font-family: "Nunito", sans-serif;
-    font-optical-sizing: auto;
+
+/* CELULARES */
+@media screen and (max-width: 767px) {
+
+    /** implelemtacion de index.html **/
+    .busqueda {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+
+    .busqueda div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .select {
+        border-radius: var(--border-radius-min);
+        font-size: var(--font-xx-small);
+        width: 100%;
+        height: 40px;
+        text-align: center;
+    }
+
+    #quicksearch {
+        text-align: center;
+        margin-bottom: 4px;
+        font-size: var(--font-xx-small);
+        width: 99%;
+    }
+
+    .boton_busqueda {
+        padding: var(--padding-x-small);
+    }
+
+    .cbox {
+        font-size: var(--font-x-small);
+    }
+
+    /** implementacion de quienessomos.html **/
+    .nosotros {
+        position: relative;
+        top: -8px;
+    }
+
+    .quienes_somos {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .quienes_somos h3 {
+        font-size: var(--font-small);
+        padding: 30px 0 0 0;
+    }
+
+    .quienes_somos p {
+        font-size: var(--font-x-small);
+    }
+
+    .quienes_somos div {
+        text-align: center;
+        width: 100%;
+    }
+
+    #div-foto {
+        display: none;
+    }
+
+    /**implementacion de contacto.html**/
+
+    .seccion_contacto {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login_form {
+        width: 100%;
+        padding: 0;
+    }
+
+    .formulario_contacto {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .formulario_contacto p {
+        width: 100%;
+        text-align: justify;
+        font-size: var(--font-x-small);
+        margin: var(--margin-x-small) auto;
+
+    }
+
+    .contacto {
+        margin-top: 139px;
+    }
+
+    .img_contacto {
+        visibility: collapse;
+    }
+
+    .formulario_contacto h4 {
+        font-size: var(--font-small);
+        color: var(--text-color-secondary);
+        margin-top: var(--margin-small-2);
+    }
+
+    .login_form div {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #nombre_contacto,
+    #phone_contacto,
+    #direccion_contacto,
+    #comentarios_contacto,
+    #email_contacto {
+        height: 15px;
+        width: 100%;
+    }
+
+    #comentarios_contacto {
+        height: 60px;
+    }
+
+    .button_contacto {
+        padding: var(--padding-x-small);
+        width: 100%;
+        margin-top: var(--margin-small);
+    }
+
+    /**implementacion de registro**/
+    .formulario_registro_usuario,
+    .formulario_registro_propietario {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-user,
+    .form-prop {
+        width: 90%;
+    }
+
+    .formularios_usuarios h4 {
+        width: 100%;
+        padding: 0 var(--padding-medium) 0 var(--padding-medium);
+        font-size: var(--font-x-small);
+        color: var(--text-color-secondary);
+        text-align: center;
+        margin-top: 50px;
+        overflow-x: visible;
+    }
+
+    .boton-form {
+        width: 90%;
+    }
+
+    .usuario_form input {
+        font-size: var(--font-xx-small);
+    }
+
+    #name_usuario,
+    #dni_usuario,
+    #address_usuario,
+    #CPostal_usuario,
+    #email_usuario,
+    #password_usuario,
+    #password2_usuario,
+    #razon_social,
+    #matricula_usuario {
+        padding: var(--padding-x-small);
+        width: 90%;
+        margin-bottom: var(--margin-small-1);
+        border: 0.3px solid var(--border-color-3);
+    }
+
+    .formularios_usuarios {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /**implementacion inicio sesion **/
+    .inicio_sesion {
+        margin-top: 139px;
+        width: 100%;
+    }
+
+    .formulario {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: var(--padding-small);
+        margin: var(--margin-small) auto;
+        border: 1px solid var(--border-color-3);
+    }
+
+    #email,
+    #password,
+    #nombre_apellido,
+    #phone,
+    #direccion,
+    #comentarios,
+    #razon_social_p,
+    #matricula_usuario_p {
+        padding: var(--padding-x-small);
+        width: 90%;
+        margin-bottom: var(--margin-small-1);
+        border: 0.3px solid var(--border-color-3);
+    }
+
+    .formulario h4 {
+        padding: var(--padding-x-small);
+        font-size: var(--font-small);
+        color: var(--text-color-secondary);
+        text-align: center;
+    }
+
+    .button {
+        padding: var(--padding-x-small);
+        width: 100%;
+        margin-top: var(--margin-small);
+        background-color: var(--bg-color-busqueda);
+        color: var(--text-color-third);
+        border-radius: var(--border-radius-med);
+        cursor: pointer;
+        font-size: var(--font-x-small);
+    }
+
+    /**implementacion para propiedades.html **/
+    main {
+        margin-top: calc(var(--padding-medium) + 114px);
+        font-size: 3.5vw;
+    }
+
+    .img-fondo {
+        height: 110px;
+        background-image: url("../static/img/fondo_cortado_duotono-alquileres.png");
+    }
+
+    .bar-buttons {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin-top: var(--margin-min);
+    }
+
+    .bar button {
+        width: 99px;
+        height: 32px;
+    }
+
+    .container .bar {
+        flex-direction: column;
+        margin-top: var(--margin-small-1);
+    }
+
+    /**filtros**/
+    .form-filter {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .filter {
+        justify-content: space-around;
+        margin: var(--margin-x-small);
+    }
+
+    .button-container {
+        order: 12;
+    }
+
+    #space {
+        order: 11;
+    }
+
+    #upload-file {
+        order: 10;
+    }
+
+    #archivo {
+        min-width: 230px;
+    }
+
+    .button-container button {
+        width: 375px;
+    }
+
+    /** propiedades**/
+    .property-container {
+        display: flex;
+        flex-direction: column;
+        height: 400px;
+        overflow-y: scroll;
+    }
+
+    /** navegador de paginas**/
+    .pages-bar ul {
+        width: 90%;
+        margin-top: var(--margin-small-1);
+    }
 }
-
-.crear_propiedades {
-    display: flex;
-    flex-direction: column;
-}
-
-.encabezado_crear_propiedades {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: var(--gap-maximo);
-    padding: var(--padding-large);
-    margin: 0 auto;
-}
-
-.encabezado_crear_propiedades h4 {
-    font-family: "Roboto Condensed", sans-serif;
-    font-size: var(--font-medium);
-    color: var(--text-color-secondary);
-    text-align: center;
-}
-
-.encabezado_crear_propiedades button {
-    padding: var(--padding-x-small);
-    background-color: var(--bg-color-busqueda);
-    color: var(--text-color-third);
-    border-radius: var(--border-radius-med);
-}
-
-.caracteristicas_propiedades {
-    display: flex;
-    flex-direction: column;
-}
-
-.crear_aviso {
-    width: 70%;
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: var(--gap-min2);
-    border: 0.5px solid var(--border-color-3);
-    padding: var(--padding-large);
-    margin: 0 auto;
-    justify-items: center;
-}
-
-.boton_carga_prop {
-    width: 500px;
-    padding: var(--padding-x-small);
-    background-color: var(--bg-color-busqueda);
-    color: var(--text-color-third);
-    border-radius: var(--border-radius-med);
-}
-
-.select_prop {
-    width: 500px;
-    height: 50px;
-}
-
-.prop_alq {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap: var(--gap-maximo);
-    justify-content: space-around;
-    padding: var(--padding-large);
-}*/
-
-/*
-.mis_clasificados h4 {
-    font-family: "Roboto Condensed", sans-serif;
-    font-size: var(--font-medium);
-    color: var(--text-color-secondary);
-    text-align: center;
-    margin-top: var(--margin-small);
-} */
