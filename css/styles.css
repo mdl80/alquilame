@@ -1197,7 +1197,7 @@ footer {
     }
 
     #div-foto {
-        visibility: collapse;
+        display: none;
     }
 
     /**implementacion de contacto.html**/
