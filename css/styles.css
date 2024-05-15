@@ -1372,14 +1372,11 @@ footer {
     }
 
     .button_publicar {
-        /*   */
         padding: 0px;
         height: 50px;
-        /* width: 200px; */
         background-color: var(--bg-color-busqueda);
         justify-content: center;
         align-content: center;
-        /* border-radius: var(--border-radius-med); */
     }
 
     /**implementacion para propiedades.html **/
