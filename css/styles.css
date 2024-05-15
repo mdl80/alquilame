@@ -476,7 +476,7 @@ footer {
     background: url("../static/img/fondo_cortado_duotono_contacto.png");
     background-size: cover;
     background-position: center;
-    position:relative;
+    position: relative;
     top: -8px;
 }
 
@@ -1174,11 +1174,12 @@ footer {
     .nosotros {
         position: relative;
         top: -8px;
-        height: 800px;
     }
 
     .quienes_somos {
-        align-items: start;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
     }
 
     .quienes_somos h3 {
@@ -1240,7 +1241,7 @@ footer {
         font-size: var(--font-small);
         color: var(--text-color-secondary);
         margin-top: var(--margin-small-2);
-      }
+    }
 
     .login_form div {
         width: 100%;
