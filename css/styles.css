@@ -383,7 +383,8 @@ footer {
     flex-direction: row;
     align-items: center;
 }
-.quienes_somos div{
+
+.quienes_somos div {
     width: 50%;
 }
 
@@ -605,9 +606,15 @@ footer {
 }
 
 .formularios_usuarios {
+    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
+}
+
+.form-user,
+.form-prop {
+    width: 90%;
 }
 
 .formularios_usuarios h4 {
@@ -632,14 +639,14 @@ footer {
 #razon_social,
 #matricula_usuario {
     padding: var(--padding-x-small);
-    width: 400px;
+    width: 100%;
     margin-bottom: var(--margin-small-1);
     border: 0.3px solid var(--border-color-3);
 }
 
 .button_usuario {
     padding: var(--padding-x-small);
-    width: 435px;
+    width: 100%;
     margin-top: var(--margin-small);
     background-color: var(--bg-color-busqueda);
     color: var(--text-color-third);
@@ -744,10 +751,38 @@ footer {
         text-align: center;
         width: 50%;
     }
-    
-    #div-foto{
+
+    #div-foto {
         padding: 30px 0 0 0;
     }
+
+    /** implementacion de registros **/
+    .formulario_registro_usuario,
+    .formulario_registro_propietario {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .formularios_usuarios h4 {
+        width: 100%;
+        padding: 0 var(--padding-medium) 0 var(--padding-medium);
+        font-size: var(--font-small);
+        color: var(--text-color-secondary);
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .form-user,
+    .form-prop {
+        width: 70%;
+    }
+
+    .boton-form {
+        width: 60%;
+    }
+
     /* -- implementacion de propiedades -- */
 
     main {
@@ -996,6 +1031,28 @@ footer {
         width: 50%;
     }
 
+    /** implementacion de registro **/
+    .formulario_registro_usuario,
+    .formulario_registro_propietario {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .formularios_usuarios h4 {
+        width: 100%;
+        padding: 0 var(--padding-medium) 0 var(--padding-medium);
+        font-size: var(--font-small);
+        color: var(--text-color-secondary);
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .boton-form {
+        width: 90%;
+    }
+
     /** implementacion de propiedades **/
     main {
         margin-top: calc(var(--padding-medium) + 114px);
@@ -1108,6 +1165,7 @@ footer {
     .cbox {
         font-size: var(--font-x-small);
     }
+
     /** implementacion de quienessomos.html **/
     .nosotros {
         position: relative;
@@ -1132,9 +1190,66 @@ footer {
         text-align: center;
         width: 100%;
     }
-    #div-foto{
+
+    #div-foto {
         visibility: collapse;
     }
+
+    /**implementacion de registro**/
+    .formulario_registro_usuario,
+    .formulario_registro_propietario {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-user,
+    .form-prop {
+        width: 90%;
+    }
+
+    .formularios_usuarios h4 {
+        width: 100%;
+        padding: 0 var(--padding-medium) 0 var(--padding-medium);
+        font-size: var(--font-x-small);
+        color: var(--text-color-secondary);
+        text-align: center;
+        margin-top: 50px;
+        overflow-x: visible;
+    }
+
+    .boton-form {
+        width: 90%;
+    }
+
+    .usuario_form input {
+        font-size: var(--font-xx-small);
+    }
+
+    #name_usuario,
+    #dni_usuario,
+    #address_usuario,
+    #CPostal_usuario,
+    #email_usuario,
+    #password_usuario,
+    #password2_usuario,
+    #razon_social,
+    #matricula_usuario {
+        padding: var(--padding-x-small);
+        width: 90%;
+        margin-bottom: var(--margin-small-1);
+        border: 0.3px solid var(--border-color-3);
+    }
+
+    .formularios_usuarios {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
     /**implementacion para propiedades.html **/
     main {
         margin-top: calc(var(--padding-medium) + 114px);
