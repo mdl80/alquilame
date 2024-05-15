@@ -1249,7 +1249,43 @@ footer {
         justify-content: center;
         align-items: center;
     }
+    /**implementacion inicio sesion **/
+    .inicio_sesion {
+        margin-top: 139px;
+        width: 100%;
+      }
+    .formulario {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: var(--padding-small);
+        margin: var(--margin-small) auto;
+        border: 1px solid var(--border-color-3);
+      }
 
+      #email, #password, #nombre_apellido, #phone, #direccion, #comentarios, #razon_social_p, #matricula_usuario_p {
+        padding: var(--padding-x-small);
+        width: 90%;
+        margin-bottom: var(--margin-small-1);
+        border: 0.3px solid var(--border-color-3);
+      }
+      .formulario h4 {
+        padding: var(--padding-x-small);
+        font-size: var(--font-small);
+        color: var(--text-color-secondary);
+        text-align: center;
+      }
+      .button {
+        padding: var(--padding-x-small);
+        width: 100%;
+        margin-top: var(--margin-small);
+        background-color: var(--bg-color-busqueda);
+        color: var(--text-color-third);
+        border-radius: var(--border-radius-med);
+        cursor: pointer;
+        font-size: var(--font-x-small);
+      }
     /**implementacion para propiedades.html **/
     main {
         margin-top: calc(var(--padding-medium) + 114px);
