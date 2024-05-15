@@ -474,6 +474,10 @@ footer {
 .contacto_title {
     width: 100%;
     background: url("../static/img/fondo_cortado_duotono_contacto.png");
+    background-size: cover;
+    background-position: center;
+    position:relative;
+    top: -8px;
 }
 
 .contacto_title h2 {
@@ -1195,6 +1199,74 @@ footer {
         visibility: collapse;
     }
 
+    /**implementacion de contacto.html**/
+
+    .seccion_contacto {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login_form {
+        width: 100%;
+        padding: 0;
+    }
+
+    .formulario_contacto {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .formulario_contacto p {
+        width: 100%;
+        text-align: justify;
+        font-size: var(--font-x-small);
+        margin: var(--margin-x-small) auto;
+
+    }
+
+    .contacto {
+        margin-top: 139px;
+    }
+
+    .img_contacto {
+        visibility: collapse;
+    }
+
+    .formulario_contacto h4 {
+        font-size: var(--font-small);
+        color: var(--text-color-secondary);
+        margin-top: var(--margin-small-2);
+      }
+
+    .login_form div {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #nombre_contacto,
+    #phone_contacto,
+    #direccion_contacto,
+    #comentarios_contacto,
+    #email_contacto {
+        height: 15px;
+        width: 100%;
+    }
+
+    #comentarios_contacto {
+        height: 60px;
+    }
+
+    .button_contacto {
+        padding: var(--padding-x-small);
+        width: 100%;
+        margin-top: var(--margin-small);
+    }
+
     /**implementacion de registro**/
     .formulario_registro_usuario,
     .formulario_registro_propietario {
@@ -1249,11 +1321,13 @@ footer {
         justify-content: center;
         align-items: center;
     }
+
     /**implementacion inicio sesion **/
     .inicio_sesion {
         margin-top: 139px;
         width: 100%;
-      }
+    }
+
     .formulario {
         width: 80%;
         display: flex;
@@ -1262,21 +1336,30 @@ footer {
         padding: var(--padding-small);
         margin: var(--margin-small) auto;
         border: 1px solid var(--border-color-3);
-      }
+    }
 
-      #email, #password, #nombre_apellido, #phone, #direccion, #comentarios, #razon_social_p, #matricula_usuario_p {
+    #email,
+    #password,
+    #nombre_apellido,
+    #phone,
+    #direccion,
+    #comentarios,
+    #razon_social_p,
+    #matricula_usuario_p {
         padding: var(--padding-x-small);
         width: 90%;
         margin-bottom: var(--margin-small-1);
         border: 0.3px solid var(--border-color-3);
-      }
-      .formulario h4 {
+    }
+
+    .formulario h4 {
         padding: var(--padding-x-small);
         font-size: var(--font-small);
         color: var(--text-color-secondary);
         text-align: center;
-      }
-      .button {
+    }
+
+    .button {
         padding: var(--padding-x-small);
         width: 100%;
         margin-top: var(--margin-small);
@@ -1285,7 +1368,8 @@ footer {
         border-radius: var(--border-radius-med);
         cursor: pointer;
         font-size: var(--font-x-small);
-      }
+    }
+
     /**implementacion para propiedades.html **/
     main {
         margin-top: calc(var(--padding-medium) + 114px);
