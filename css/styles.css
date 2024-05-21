@@ -8,8 +8,10 @@
     --bg-color-cards-price: rgb(0, 162, 255);
     --bg-gradient-color: linear-gradient(to right, rgb(0, 162, 255), rgb(6, 37, 104));
     --bg-color-secondary: #ffffff;
-    --bg-color-footer: #B2AA8E;
+    --bg-color-footer: #d6d2c1;
+    --bg-color-header: #ffffff;
     --bg-color-destacadas-titulos: #DBFE87;
+    --box-shadow: 0px 2px 20px #383838;
 
     /*Colores textos*/
     --text-color-principal: #000000;
@@ -29,7 +31,7 @@
     --font-x-large: 2.5rem;
     --font-large: 2rem;
     --font-medium: 1.5rem;
-    --font-small: 1rem;
+    --font-small: 1em;
     --font-x-small: 0.73rem;
     --font-xx-small: 0.55rem;
 
@@ -41,7 +43,7 @@
     --padding-small: 20px;
     --padding-x-small: 15px;
     --padding-xx-small: 10px;
-    --padding-xxx-small: 5px;
+    --padding-xxx-small: 8px;
 
     /*Margin*/
     --margin-x-large: 120px;
@@ -60,10 +62,11 @@
     --border-radius-min: 3px;
 
     /*Gap*/
-    --gap-maximo: 50px;
-    --gap-medio: 30px;
-    --gap-min2: 20px;
-    --gap-min: 10px;
+    --gap-maximo: 3.125rem;
+    --gap-medio: 1.875rem;
+    --gap_medio2: 1rem;
+    --gap-min2: 1.25rem;
+    --gap-min: 0.625rem;
 
     /*Border color*/
     --border-color-1: #a8a8a8;
@@ -80,17 +83,15 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 html {
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-body {
-    margin: 0 auto;
-    width: 100%;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
 }
 
 /* Codigo para el header */
@@ -99,7 +100,7 @@ header {
     width: 100%;
     position: fixed;
     margin: 0%;
-    background-color: var(--bg-color-secondary);
+    background-color: var(--bg-color-header);
     z-index: 9999;
     display: flex;
     flex-direction: column;
@@ -110,10 +111,15 @@ header {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    
 }
 
 .logo_alquilame {
-    width: 20%;
+    max-width: 11rem;
+}
+
+.abrir-menu{
+    display: none;
 }
 
 .comunicate {
@@ -123,11 +129,22 @@ header {
     text-align: center;
 }
 
+.comunicate p{
+    font-size: var(--font-x-small);
+    font-weight: 700;
+}
+
+.comunicate a{
+    text-decoration: none;
+    color: var(--text-color-principal);
+}
+
 .social {
     display: flex;
     flex-direction: column;
     justify-items: center;
     text-align: center;
+    padding: 1rem;
 }
 
 .social h4 {
@@ -137,11 +154,12 @@ header {
 .iconos_social {
     display: flex;
     flex-direction: row;
+    padding: var(--padding-xxx-small);
+    gap: var(--gap_medio2);
 }
 
 .iconos_social img {
     width: 30px;
-    padding: var(--padding-xx-small);
     transition: transform .3s;
 }
 
@@ -149,78 +167,72 @@ header {
     transform: scale(1.3);
 }
 
-.ingreso {
-    display: flex;
-    flex-direction: row;
+.abrir-menu, 
+.cerrar-menu{
+    display: none;
+}
+
+.nav{
+    background-color: var(--bg-color-principal);
     align-items: center;
 }
 
-.ingreso img {
-    width: 25px;
-}
-
-.comunicate {
-    font-size: var(--font-x-small);
-}
-
-.comunicate p {
-    font-weight: 700;
-}
-
-.comunicate a {
-    color: var(--text-color-principal);
-    text-decoration: none;
-    font-weight: 400;
-}
-
-.comunicate a:hover {
-    color: var(--text-color-secondary);
-}
-
-.ingreso {
-    font-size: var(--font-x-small);
-}
-
-.ingreso a {
-    text-decoration: none;
-}
-
-#publicar {
-    padding: var(--padding-xxx-small) var(--padding-small);
-    background-color: var(--bg-color-busqueda);
-    color: var(--text-color-third);
-    border-radius: var(--border-radius-med);
-}
-
-#inicio_sesion {
-    color: var(--text-color-principal);
-    padding: 0 var(--padding-small) 0 0;
-}
-
-.menu_nav {
+.menu_nav{
+    height: 48px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: var(--bg-color-principal);
-    height: 50px;
-}
-
-.menu_nav a {
-    text-decoration: none;
-    font-size: var(--font-x-small);
-    transition: 0.5s;
-    font-weight: 600;
+    gap: 2rem;
     color: var(--text-color-third);
-    margin-right: var(--margin-small);
 }
 
-.menu_nav a:hover {
+.menu_nav li{
+    list-style-type: none;
+}
+
+.menu_nav li a{
+    font-size: var(--font-x-small);
+    font-weight: 600;
+    cursor: pointer;
+    align-content: center;
+    text-decoration: none;
+    color: var(--text-color-third);
+}
+
+.menu_nav li a:hover{
     color: var(--text-color-nav-a-hover);
 }
 
+.ingreso li{
+    display: flex;
+    justify-content: center;
+    color: var(--text-color-principal);
+}
+
+.ingreso img{
+    width: 1rem;
+}
+
+.btn-publicar{
+    padding: .1rem .7rem;
+    background-color: var(--bg-color-busqueda);
+    border-radius: var(--border-radius-med);
+}
+
+.btn-publicar:hover{
+    background-color: var(--bg-color-footer);
+    font-weight: bolder;
+}
+
+.btn-publicar li:hover{
+    color: var(--text-color-nav-a-hover);
+    
+}
+/* Fin codigo header*/
+
 .busqueda_gral {
-    height: 700px;
+    height: 800px;
     background-image: url("../static/img/Fondo\ index\ duotono.png");
     display: flex;
     flex-direction: column;
@@ -284,129 +296,168 @@ header {
 
 /* Codigo para el footer */
 
-footer {
+.footer_nav{
     background-color: var(--bg-color-footer);
-}
-
-.footer_nav {
-    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    padding: 1rem;
 }
 
-.footer_links {
-    width: 300px;
+.footer_links{
+    width: 250px;
+    padding: 1rem;
 }
 
-.footer_links a {
+.footer_links li{
+    list-style-type: none;
+    font-size: var(--font-x-small);
+}
+
+.footer_links a{
+    cursor: pointer;
+    font-weight: 400;
     text-decoration: none;
-    font-size: var(--font-x-small);
-    color: var(--text-color-copyright);
-    font-weight: 800;
-    margin: var(--margin-medium);
-}
-
-.footer_links a:hover {
-    color: var(--text-color-nav-a-hover);
-}
-
-.info {
-    width: 380px;
-    padding: var(--padding-large);
-    font-weight: 600;
-}
-
-.info h3 {
-    font-size: var(--font-x-small);
     color: var(--text-color-principal);
 }
 
-.info p {
-    font-size: var(--font-xx-small);
-    text-align: justify;
-    font-weight: lighter;
+.footer_links a:hover{
     color: var(--text-color-third);
 }
 
-.footer_info {
-    height: 50px;
+.iconos_social_footer {
+    display: flex;
+    flex-direction: row;
+    padding: var(--padding-xxx-small);
+    gap: var(--gap_medio2);
+}
+
+.iconos_social_footer img {
+    width: 30px;
+    transition: transform .3s;
+}
+
+.iconos_social_footer img:hover {
+    transform: scale(1.3);
+}
+
+.info{
+    padding: 2rem;
+}
+
+.info h3{
+    font-size: var(--font-small);
+}
+
+.info p{
+    font-size: var(--font-x-small);
+    text-align: justify;
+    font-weight: 300;
+}
+
+.social_footer{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+    background-color: var(--bg-color-footer);
+    padding: 1rem
 }
 
-.copyright {
+.social_footer h3{
+    font-size: var(--font-small);
+}
+
+.copyright{
     font-size: var(--font-xx-small);
 }
 
-.diseñador a {
+.diseñador a{
     text-decoration: none;
     font-size: var(--font-x-small);
     color: var(--text-color-principal);
+    font-weight: 600;
 }
 
-.diseñador a span {
+.diseñador span{
     color: var(--text-color-grupocreador);
-    font-weight: 500;
 }
+
+
+/*Fin codigo footer*/
 
 /* Codigo Nosotros */
 
 .sobre_nosotros {
     width: 100%;
     background: url("../static/img/fondo_cortado_duotono.png");
+    margin-top: 170px;
 }
 
 .sobre_nosotros h2 {
-    height: 150px;
+    height: 100px;
     align-content: center;
     text-align: center;
     color: var(--text-color-third);
     text-shadow: var(--text-shadow);
     font-size: var(--font-large);
+    justify-content: center;
+}
+
+.contacto_title {
+    width: 100%;
+    background: url("../static/img/fondo_cortado_duotono_contacto.png");
+    margin-top: 170px;    
+}
+
+.contacto_title h2 {
+    align-content: center;
+    text-align: center;
+    color: var(--text-color-third);
+    text-shadow: var(--text-shadow);
+    font-size: var(--font-large);
+    justify-content: center;
 }
 
 .nosotros {
+    height: 800px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-top: 139px;
-    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
 }
 
 .quienes_somos {
     width: 100%;
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
     align-items: center;
-}
-
-.quienes_somos div {
-    width: 50%;
 }
 
 .quienes_somos h3 {
     font-size: var(--font-medium);
-    padding: var(--padding-medium) var(--padding-x-large) 0 var(--padding-x-large);
     color: var(--text-color-secondary);
+    padding: 0 var(--padding-medium) 0 ;
 }
 
 .quienes_somos p {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    padding: var(--padding-small) var(--padding-x-large);
+    justify-content: space-around;
+    padding: var(--padding-medium);
     font-size: var(--font-x-small);
     text-align: justify;
     color: var(--text-color-propiedad-p);
 }
 
+.info-nosotros{
+    width: 700px;
+}
+
 .foto_nosotros {
-    width: 100%;
-    padding: var(--padding-x-small) 0 var(--padding-x-small) var(--padding-x-small);
+    width: 800px;
 }
 
 /* Codigo formulario Log in */
@@ -418,31 +469,32 @@ footer {
 .login {
     width: 100%;
     background: url("../static/img/fondo_cortado_duotono_ingreso.png");
+    margin-top: 170px;
 }
 
 .login h2 {
-    height: 150px;
+    height: 100px;
     align-content: center;
     text-align: center;
     color: var(--text-color-third);
     text-shadow: var(--text-shadow);
     font-size: var(--font-large);
+    justify-content: center;
 }
 
 .seccion_contacto {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
 .formulario {
-    width: 400px;
+    width: 600px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: var(--padding-small);
-    margin: var(--margin-small) auto;
+    margin: var(--margin-medium-2) auto;
     border: 1px solid var(--border-color-3);
 }
 
@@ -455,42 +507,35 @@ footer {
 }
 
 .formulario_contacto p {
-    width: 400px;
+    width: 500px;
     text-align: justify;
     font-size: var(--font-x-small);
     margin: var(--margin-x-small) auto;
-
-}
-
-.contacto {
-    margin-top: 139px;
 }
 
 .img_contacto img {
-    width: 950px;
-    height: auto;
+    width: 800px;
 }
 
 .contacto_title {
     width: 100%;
     background: url("../static/img/fondo_cortado_duotono_contacto.png");
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    top: -8px;
+    margin-top: 170px;    
 }
 
 .contacto_title h2 {
-    height: 150px;
+    height: 100px;
     align-content: center;
     text-align: center;
     color: var(--text-color-third);
     text-shadow: var(--text-shadow);
     font-size: var(--font-large);
+    justify-content: center;
 }
 
 .formulario_contacto p span {
     color: var(--text-color-link);
+    font-weight: 400;
     cursor: pointer;
 }
 
@@ -508,14 +553,14 @@ footer {
 #comentarios_contacto,
 #email_contacto {
     padding: var(--padding-x-small);
-    width: 400px;
+    width: 500px;
     margin-bottom: var(--margin-small-1);
     border: 0.3px solid var(--border-color-3);
 }
 
 .button_contacto {
     padding: var(--padding-x-small);
-    width: 435px;
+    width: 500px;
     margin-top: var(--margin-small);
     background-color: var(--bg-color-busqueda);
     color: var(--text-color-third);
@@ -531,7 +576,15 @@ footer {
 }
 
 .login_form {
-    padding: var(--padding-medium);
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.term-condiciones{
+    width: 500px;
 }
 
 #email,
@@ -550,7 +603,7 @@ footer {
 
 .button {
     padding: var(--padding-x-small);
-    width: 343px;
+    width: 300px;
     margin-top: var(--margin-large);
     background-color: var(--bg-color-busqueda);
     color: var(--text-color-third);
@@ -589,7 +642,6 @@ footer {
 }
 
 .registro_u_p {
-    margin-top: 139px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -598,15 +650,17 @@ footer {
 .registro_title {
     width: 100%;
     background: url("../static/img/fondo_cortado_duotono - registro.png");
+    margin-top: 170px;
 }
 
 .registro_title h2 {
-    height: 150px;
+    height: 100px;
     align-content: center;
     text-align: center;
     color: var(--text-color-third);
     text-shadow: var(--text-shadow);
     font-size: var(--font-large);
+    justify-content: center;
 }
 
 .formularios_usuarios {
@@ -616,17 +670,17 @@ footer {
     justify-content: space-around;
 }
 
-.form-user,
-.form-prop {
-    width: 90%;
-}
-
 .formularios_usuarios h4 {
     padding: 0 var(--padding-medium) 0 var(--padding-medium);
     font-size: var(--font-medium);
     color: var(--text-color-secondary);
     text-align: center;
     margin-top: 50px;
+}
+
+.form-user,
+.form-prop{
+    width: 500px;
 }
 
 .usuario_form {
@@ -736,247 +790,41 @@ footer {
 
 /* PANTALLAS GRANDES */
 @media screen and (max-width:1920px) {
-    /** implementacion de nosotros.html***/
-
-    .quienes_somos {
-        align-items: start;
-    }
-
-    .quienes_somos h3 {
-        font-size: var(--font-medium);
-        padding: 30px 0 0 0;
-    }
-
-    .quienes_somos p {
-        font-size: var(--font-small);
-    }
-
-    .quienes_somos div {
-        text-align: center;
-        width: 50%;
-    }
-
-    #div-foto {
-        padding: 30px 0 0 0;
-    }
-
-    /** implementacion de registros **/
-    .formulario_registro_usuario,
-    .formulario_registro_propietario {
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .formularios_usuarios h4 {
-        width: 100%;
-        padding: 0 var(--padding-medium) 0 var(--padding-medium);
-        font-size: var(--font-small);
-        color: var(--text-color-secondary);
-        text-align: center;
-        margin-top: 50px;
-    }
-
-    .form-user,
-    .form-prop {
-        width: 70%;
-    }
-
-    .boton-form {
-        width: 60%;
-    }
-
-    /* -- implementacion de propiedades -- */
-
-    main {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 100%;
-        margin-top: calc(var(--padding-medium) + 114px);
-    }
-
-    .img-fondo {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 258px;
-        background-image: url("../static/img/fondo_cortado_duotono-alquileres.png");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        color: var(--bg-color-secondary);
-    }
-
-    .img-fondo h1 {
-        text-shadow: 0px 4px 4px black;
-        font-weight: 800;
-    }
-
-    .container {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: auto;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .container-content {
-        max-width: 95%;
-    }
-
-    .container .bar {
-        display: flex;
-        width: 100%;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: var(--margin-medium-2);
-    }
-
-    .bar button {
-        width: 139px;
-        height: 42px;
-        background-color: var(--bg-color-busqueda);
-        color: var(--bg-color-secondary);
-        border-radius: 10px;
-        border-width: 0;
-        font-size: var(--font-x-small);
-        font-weight: 600;
-    }
-
-    /**filtros**/
-    .filter-container {
-        border: 0.5px solid var(--bg-color-footer);
-        margin-top: var(--margin-small);
-        margin-bottom: var(--margin-small);
-    }
-
-    .filter {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin: var(--margin-small-2);
-    }
-
-    .form-filter {
-        display: grid;
-        grid-template-columns: 50% 50%;
-        grid-template-rows: repeat(6, 1fr);
-        width: 100%;
-        font-size: 16px;
-        justify-content: space-evenly;
-    }
-
-    .form-filter input,
-    .form-filter select {
-        box-sizing: border-box;
-        width: 375px;
-        height: 47px;
-    }
-
-    .form-filter label {
-        width: 147px;
-        font-size: 20px;
-    }
-
-    .button-container {
-        grid-column-start: 2;
-        grid-column-end: 3;
-        grid-row-start: 6;
-        grid-row-end: 7;
-        display: flex;
-        justify-content: end;
-    }
-
-    .button-container button {
-        width: 320px;
-        height: 47px;
-        background-color: var(--bg-color-busqueda);
-        color: var(--text-color-third);
-        font-weight: 600;
-        border-radius: 10px;
-    }
-
-    #archivo {
-        align-content: center;
-    }
-
-    /** propiedades**/
-    .property-container {
-        display: grid;
-        width: 100%;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: auto;
-        gap: 20px;
-        margin-bottom: var(--margin-small);
-    }
-
-    /** tarjetas **/
-    .property {
-        display: flex;
-        width: 100%;
-        flex-direction: column;
-        height: auto;
-        border-radius: var(--border-radius-max);
-        background-color: #D9D9D9;
-        justify-content: center;
-    }
-
-    .property img {
-        width: 100%;
-        height: 70%;
-        border-top-left-radius: var(--border-radius-max);
-        border-top-right-radius: var(--border-radius-max);
-    }
-
-    .property p {
-        font-size: var(--font-x-small);
-    }
-
-    .property span {
-        color: var(--text-color-principal);
-        font-weight: 500;
-    }
-
-    .info-prop {
-        padding: var(--padding-x-small);
-    }
-
-    /** navegador de paginas**/
-    .pages-bar {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        height: 39px;
-        margin-bottom: var(--margin-small);
-        justify-content: center;
-    }
-
-    .pages-bar ul {
-        display: flex;
-        width: 40%;
-        justify-content: space-around;
-    }
-
-    .pages-bar li {
-        list-style: none;
-        display: inline-block;
-    }
-
-    .pages-bar li a {
-        text-decoration: none;
-        color: #000000;
-        font-size: 20px;
-        font-weight: 300;
-    }
 }
+
 
 /* TABLETS */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+
+    /* Header */
+
+    .comunicate p{
+        font-size: var(--font-xx-small);
+        font-weight: 700;
+    }
+
+    .menu_nav li{
+        font-size: var(--font-xx-small);
+        font-weight: 500;
+    }
+    /* Fin Header */
+
+    /* Footer */
+
+    .footer_nav{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer_links{
+        display: none;
+    }
+
+    .social_footer{
+        flex-direction: column;
+    }
+
+    /* Fin Footer */
 
     /** implelemtacion de index.html **/
     .busqueda {
@@ -1136,6 +984,47 @@ footer {
 /* CELULARES */
 @media screen and (max-width: 767px) {
 
+    /* Header */
+
+    .header{
+        padding: var(--padding-small);
+    }
+
+    .comunicate{
+        display: block;
+    }
+
+    .social{
+        display: none;
+    }
+
+    .comunicate p{
+        font-size: var(--font-xx-small);
+    }
+
+    .menu_nav li{
+        font-size: var(--font-xx-small);
+        font-weight: 500;
+    }
+    /* Fin Header */
+
+    /* Footer */
+
+    .footer_nav{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer_links{
+        display: none;
+    }
+
+    .social_footer{
+        flex-direction: column;
+    }
+
+    /* Fin Footer */
+
     /** implelemtacion de index.html **/
     .busqueda {
         grid-template-columns: 1fr;
@@ -1264,7 +1153,7 @@ footer {
 
     .button_contacto {
         padding: var(--padding-x-small);
-        width: 100%;
+        width: 300px;
         margin-top: var(--margin-small);
     }
 
@@ -1275,11 +1164,6 @@ footer {
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-
-    .form-user,
-    .form-prop {
-        width: 90%;
     }
 
     .formularios_usuarios h4 {
@@ -1452,4 +1336,75 @@ footer {
         width: 90%;
         margin-top: var(--margin-small-1);
     }
+}
+
+
+@media screen and (max-width: 750px){
+
+    /* Header */
+
+    .abrir-menu,
+    .cerrar-menu{
+        display: block;
+        border: 0;
+        font-size: 1.1rem;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    .cerrar-menu{
+        color: var(--text-color-third);
+    }
+    
+    .comunicate{
+        display: none;
+    }  
+
+    .nav{
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        position: absolute;
+        gap: 1rem;
+        top: 0;
+        right: 0;
+        padding: 2rem;
+        background-color: var(--bg-color-principal);        
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+    }
+
+    .nav.visible{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .menu_nav{
+        flex-direction: column;
+        align-items: end;
+    }
+
+    .menu_nav li:hover{
+        color: var(--text-color-nav-a-hover);
+    }
+    /* Fin Header */
+
+    /* Footer */
+
+    .footer_nav{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer_links{
+        display: none;
+    }
+
+    .social_footer{
+        flex-direction: column;
+    }
+
+    /* Fin Footer */
+
 }
