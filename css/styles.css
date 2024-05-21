@@ -86,6 +86,8 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
 }
 
 body {
@@ -225,7 +227,6 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
 
 .busqueda_gral h2 {
@@ -239,19 +240,19 @@ header {
 .busqueda {
     width: 70%;
     display: grid;
-    height: auto;
+    height: 75px;
     grid-template-columns: auto auto auto;
     justify-content: center;
     background-color: var(--bg-color-principal-transp);
     padding: var(--padding-large);
-    padding-bottom: var(--padding-xxx-small);
     border-radius: var(--border-radius-max);
+    margin: 0 auto;
 }
 
 .select {
     border-radius: var(--border-radius-min);
     font-size: var(--font-x-small);
-    width: 97%;
+    width: 240px;
     height: 40px;
 }
 
@@ -263,7 +264,7 @@ header {
 }
 
 #quicksearch {
-    width: 97%;
+    width: 400px;
     height: 36px;
     font-size: var(--font-x-small);
 }
@@ -384,10 +385,6 @@ footer {
     align-items: center;
 }
 
-.quienes_somos div {
-    width: 50%;
-}
-
 .quienes_somos h3 {
     font-size: var(--font-medium);
     padding: var(--padding-medium) var(--padding-x-large) 0 var(--padding-x-large);
@@ -405,7 +402,7 @@ footer {
 }
 
 .foto_nosotros {
-    width: 100%;
+    width: 700px;
     padding: var(--padding-x-small) 0 var(--padding-x-small) var(--padding-x-small);
 }
 
@@ -474,10 +471,6 @@ footer {
 .contacto_title {
     width: 100%;
     background: url("../static/img/fondo_cortado_duotono_contacto.png");
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    top: -8px;
 }
 
 .contacto_title h2 {
@@ -610,15 +603,9 @@ footer {
 }
 
 .formularios_usuarios {
-    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-}
-
-.form-user,
-.form-prop {
-    width: 90%;
+    justify-content: space-evenly;
 }
 
 .formularios_usuarios h4 {
@@ -643,14 +630,14 @@ footer {
 #razon_social,
 #matricula_usuario {
     padding: var(--padding-x-small);
-    width: 100%;
+    width: 400px;
     margin-bottom: var(--margin-small-1);
     border: 0.3px solid var(--border-color-3);
 }
 
 .button_usuario {
     padding: var(--padding-x-small);
-    width: 100%;
+    width: 435px;
     margin-top: var(--margin-small);
     background-color: var(--bg-color-busqueda);
     color: var(--text-color-third);
@@ -661,6 +648,7 @@ footer {
 
 .requeridos {
     font-size: var(--font-x-small);
+    font-optical-sizing: auto;
     color: var(--text-color-title);
     font-weight: 500;
 }
@@ -736,57 +724,6 @@ footer {
 
 /* PANTALLAS GRANDES */
 @media screen and (max-width:1920px) {
-    /** implementacion de nosotros.html***/
-
-    .quienes_somos {
-        align-items: start;
-    }
-
-    .quienes_somos h3 {
-        font-size: var(--font-medium);
-        padding: 30px 0 0 0;
-    }
-
-    .quienes_somos p {
-        font-size: var(--font-small);
-    }
-
-    .quienes_somos div {
-        text-align: center;
-        width: 50%;
-    }
-
-    #div-foto {
-        padding: 30px 0 0 0;
-    }
-
-    /** implementacion de registros **/
-    .formulario_registro_usuario,
-    .formulario_registro_propietario {
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .formularios_usuarios h4 {
-        width: 100%;
-        padding: 0 var(--padding-medium) 0 var(--padding-medium);
-        font-size: var(--font-small);
-        color: var(--text-color-secondary);
-        text-align: center;
-        margin-top: 50px;
-    }
-
-    .form-user,
-    .form-prop {
-        width: 70%;
-    }
-
-    .boton-form {
-        width: 60%;
-    }
-
     /* -- implementacion de propiedades -- */
 
     main {
@@ -977,87 +914,6 @@ footer {
 
 /* TABLETS */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-
-    /** implelemtacion de index.html **/
-    .busqueda {
-        grid-template-columns: 25% 25% 50%;
-        gap: 3px;
-    }
-
-    .select {
-        border-radius: var(--border-radius-min);
-        font-size: var(--font-xx-small);
-        width: 98%;
-        height: 40px;
-    }
-
-    .cbox {
-        font-size: var(--font-x-small);
-    }
-
-    #cbox1 {
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row: 2;
-    }
-
-    #cbox2 {
-        grid-column-start: 3;
-        grid-column-end: 4;
-    }
-
-    #quicksearch {
-        font-size: var(--font-x-small);
-    }
-
-    /** implementacion de nosotros.html **/
-
-    .nosotros {
-        position: relative;
-        top: -8px;
-    }
-
-    .quienes_somos {
-        align-items: start;
-    }
-
-    .quienes_somos h3 {
-        font-size: var(--font-small);
-        padding: 30px 0 0 0;
-    }
-
-    .quienes_somos p {
-        font-size: var(--font-x-small);
-    }
-
-    .quienes_somos div {
-        text-align: center;
-        width: 50%;
-    }
-
-    /** implementacion de registro **/
-    .formulario_registro_usuario,
-    .formulario_registro_propietario {
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .formularios_usuarios h4 {
-        width: 100%;
-        padding: 0 var(--padding-medium) 0 var(--padding-medium);
-        font-size: var(--font-small);
-        color: var(--text-color-secondary);
-        text-align: center;
-        margin-top: 50px;
-    }
-
-    .boton-form {
-        width: 90%;
-    }
-
-    /** implementacion de propiedades **/
     main {
         margin-top: calc(var(--padding-medium) + 114px);
         font-size: 2.4vw;
@@ -1132,254 +988,8 @@ footer {
     }
 }
 
-
 /* CELULARES */
 @media screen and (max-width: 767px) {
-
-    /** implelemtacion de index.html **/
-    .busqueda {
-        grid-template-columns: 1fr;
-        gap: 4px;
-    }
-
-    .busqueda div {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .select {
-        border-radius: var(--border-radius-min);
-        font-size: var(--font-xx-small);
-        width: 100%;
-        height: 40px;
-        text-align: center;
-    }
-
-    #quicksearch {
-        text-align: center;
-        margin-bottom: 4px;
-        font-size: var(--font-xx-small);
-        width: 99%;
-    }
-
-    .boton_busqueda {
-        padding: var(--padding-x-small);
-    }
-
-    .cbox {
-        font-size: var(--font-x-small);
-    }
-
-    /** implementacion de quienessomos.html **/
-    .nosotros {
-        position: relative;
-        top: -8px;
-    }
-
-    .quienes_somos {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .quienes_somos h3 {
-        font-size: var(--font-small);
-        padding: 30px 0 0 0;
-    }
-
-    .quienes_somos p {
-        font-size: var(--font-x-small);
-    }
-
-    .quienes_somos div {
-        text-align: center;
-        width: 100%;
-    }
-
-    #div-foto {
-        display: none;
-    }
-
-    /**implementacion de contacto.html**/
-
-    .seccion_contacto {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .login_form {
-        width: 100%;
-        padding: 0;
-    }
-
-    .formulario_contacto {
-        width: 90%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .formulario_contacto p {
-        width: 100%;
-        text-align: justify;
-        font-size: var(--font-x-small);
-        margin: var(--margin-x-small) auto;
-
-    }
-
-    .contacto {
-        margin-top: 139px;
-    }
-
-    .img_contacto {
-        visibility: collapse;
-    }
-
-    .formulario_contacto h4 {
-        font-size: var(--font-small);
-        color: var(--text-color-secondary);
-        margin-top: var(--margin-small-2);
-    }
-
-    .login_form div {
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    #nombre_contacto,
-    #phone_contacto,
-    #direccion_contacto,
-    #comentarios_contacto,
-    #email_contacto {
-        height: 15px;
-        width: 100%;
-    }
-
-    #comentarios_contacto {
-        height: 60px;
-    }
-
-    .button_contacto {
-        padding: var(--padding-x-small);
-        width: 100%;
-        margin-top: var(--margin-small);
-    }
-
-    /**implementacion de registro**/
-    .formulario_registro_usuario,
-    .formulario_registro_propietario {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .form-user,
-    .form-prop {
-        width: 90%;
-    }
-
-    .formularios_usuarios h4 {
-        width: 100%;
-        padding: 0 var(--padding-medium) 0 var(--padding-medium);
-        font-size: var(--font-x-small);
-        color: var(--text-color-secondary);
-        text-align: center;
-        margin-top: 50px;
-        overflow-x: visible;
-    }
-
-    .boton-form {
-        width: 90%;
-    }
-
-    .usuario_form input {
-        font-size: var(--font-xx-small);
-    }
-
-    #name_usuario,
-    #dni_usuario,
-    #address_usuario,
-    #CPostal_usuario,
-    #email_usuario,
-    #password_usuario,
-    #password2_usuario,
-    #razon_social,
-    #matricula_usuario {
-        padding: var(--padding-x-small);
-        width: 90%;
-        margin-bottom: var(--margin-small-1);
-        border: 0.3px solid var(--border-color-3);
-    }
-
-    .formularios_usuarios {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    /**implementacion inicio sesion **/
-    .inicio_sesion {
-        margin-top: 139px;
-        width: 100%;
-    }
-
-    .formulario {
-        width: 80%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: var(--padding-small);
-        margin: var(--margin-small) auto;
-        border: 1px solid var(--border-color-3);
-    }
-
-    #email,
-    #password,
-    #nombre_apellido,
-    #phone,
-    #direccion,
-    #comentarios,
-    #razon_social_p,
-    #matricula_usuario_p {
-        padding: var(--padding-x-small);
-        width: 90%;
-        margin-bottom: var(--margin-small-1);
-        border: 0.3px solid var(--border-color-3);
-    }
-
-    .formulario h4 {
-        padding: var(--padding-x-small);
-        font-size: var(--font-small);
-        color: var(--text-color-secondary);
-        text-align: center;
-    }
-
-    .button {
-        padding: var(--padding-x-small);
-        width: 100%;
-        margin-top: var(--margin-small);
-        background-color: var(--bg-color-busqueda);
-        color: var(--text-color-third);
-        border-radius: var(--border-radius-med);
-        cursor: pointer;
-        font-size: var(--font-x-small);
-    }
-
-    .button_publicar {
-        padding: 0px;
-        height: 50px;
-        background-color: var(--bg-color-busqueda);
-        justify-content: center;
-        align-content: center;
-    }
-
-    /**implementacion para propiedades.html **/
     main {
         margin-top: calc(var(--padding-medium) + 114px);
         font-size: 3.5vw;
