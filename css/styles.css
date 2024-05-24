@@ -1389,7 +1389,6 @@ footer{
     .formulario h4 {
         padding: var(--padding-x-small);
         font-size: var(--font-small);
-        color: var(--text-color-secondary);
         text-align: center;
     }
 
