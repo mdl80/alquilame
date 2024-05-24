@@ -78,7 +78,6 @@
 
     /*Fuente nunito google predeterminada*/
     font-family: "Nunito", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 200;
     font-style: normal;
 }
@@ -88,7 +87,6 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "Raleway", sans-serif;
-    font-optical-sizing: auto;
 }
 
 html {
@@ -1572,7 +1570,7 @@ footer{
     color: rgb(255, 255, 255);
     text-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
     text-align: center;
-    padding: 210px 0px 80px 0px;
+    padding: 90px 0px 80px 0px;
 }
 
 .menregistro {
@@ -1661,7 +1659,6 @@ button:hover {
     border-color: black;
     border-top-color: #000000;
     font-family: "Nunito", sans-serif;
-    font-optical-sizing: auto;
     text-align: center;
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
     border: 1px solid #c2c2c2;
@@ -1679,7 +1676,7 @@ button:hover {
     color: rgb(255, 255, 255);
     text-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
     text-align: center;
-    padding: 200px 0px 80px 0px;
+    padding: 90px 0px 80px 0px;
     flex-wrap: wrap;
 }
 
@@ -1687,13 +1684,13 @@ button:hover {
     color: black;
     background: none;
     font-family: "Nunito", sans-serif;
-    font-weight: 80px;
     text-align: center;
     font-size: 25px;
     font-weight: bold;
     padding: 0px 80px 0px 0px;
     margin-top: 20px;
     margin-left: 70px;
+    margin-bottom: 50%;
 }
 
 .buting {
