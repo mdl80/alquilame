@@ -377,7 +377,7 @@ footer{
 .quienes_somos h3 {
     font-size: var(--font-medium);
     padding: var(--padding-medium) var(--padding-x-large) 0 var(--padding-x-large);
-    color: var(--text-color-secondary);
+    color: var(--text-color-blue-logo);
 }
 
 .quienes_somos p {
@@ -729,7 +729,7 @@ footer{
     }
 
     .quienes_somos p {
-        font-size: var(--font-small);
+        font-size: 0.8rem;
     }
 
     .quienes_somos div {
@@ -1274,7 +1274,6 @@ footer{
 
     .formulario_contacto h4 {
         font-size: var(--font-small);
-        color: var(--text-color-secondary);
         margin-top: var(--margin-small-2);
     }
 
