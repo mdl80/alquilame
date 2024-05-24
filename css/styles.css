@@ -543,10 +543,9 @@ footer{
 
 .button_publicar {
     font-size: var(--font-x-small);
-
     padding: var(--padding-small);
-    width: 300px;
-    background-color: var(--bg-color-busqueda);
+    width: 100%;
+    background-color: var(--text-color-blue-logo);
     text-align: center;
     border-radius: var(--border-radius-med);
 }
@@ -554,6 +553,7 @@ footer{
 .button_publicar a {
     color: var(--text-color-third);
     text-decoration: none;
+    font-weight: 400;
 }
 
 .contraseña,
