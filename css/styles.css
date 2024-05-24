@@ -494,9 +494,9 @@ footer{
 
 .button_contacto {
     padding: var(--padding-x-small);
-    width: 435px;
+    width: 100%;
     margin-top: var(--margin-small);
-    background-color: var(--bg-color-busqueda);
+    background-color: var(--bg-color-principal);
     color: var(--text-color-third);
     border-radius: var(--border-radius-med);
     cursor: pointer;
