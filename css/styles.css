@@ -604,7 +604,7 @@ footer{
 
 .formularios_usuarios h4 {
     padding: 0 var(--padding-medium) 0 var(--padding-medium);
-    font-size: var(--font-medium);
+    font-size: 1rem;
     color: var(--text-color-blue-logo);
     text-align: center;
     margin-top: 50px;
@@ -753,7 +753,6 @@ footer{
     .formularios_usuarios h4 {
         width: 100%;
         padding: 0 var(--padding-medium) 0 var(--padding-medium);
-        font-size: var(--font-small);
         text-align: center;
         margin-top: 50px;
     }
@@ -1319,18 +1318,13 @@ footer{
     .formularios_usuarios h4 {
         width: 100%;
         padding: 0 var(--padding-medium) 0 var(--padding-medium);
-        font-size: var(--font-x-small);
         text-align: center;
         margin-top: 50px;
         overflow-x: visible;
     }
 
-    .boton-form {
-        width: 90%;
-    }
-
     .usuario_form input {
-        font-size: var(--font-xx-small);
+        font-size: 0.7rem;
     }
 
     #name_usuario,
@@ -1343,7 +1337,6 @@ footer{
     #razon_social,
     #matricula_usuario {
         padding: var(--padding-x-small);
-        width: 90%;
         margin-bottom: var(--margin-small-1);
         border: 0.3px solid var(--border-color-3);
     }
