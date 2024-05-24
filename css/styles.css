@@ -146,6 +146,22 @@ header{
     font-weight: 700;
     cursor: pointer;
 }
+#boton-publicar {
+    display: inline-block;
+    padding: 6px 14px;
+    background-color: var(--bg-color-principal);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer; 
+    box-shadow: 2px 2px 2px 2px var(--bg-color-principal-transp);
+}
+
+#boton-publicar:hover {
+    color: var(--text-color-blue-light);
+    box-shadow: 2px 2px 2px 3px var(--bg-color-principal-transp);
+}
 
 .busqueda_gral {
     height: 700px;
@@ -189,6 +205,15 @@ header{
     padding: var(--padding-x-small);
     cursor: pointer;
 }
+.select, .cbox, #quicsearch{
+    width: 100%;
+}
+    .select {
+        border-radius: var(--border-radius-min);
+        font-size: var(--font-xx-small);
+        width: 98%;
+        height: 40px;
+    }
 
 #quicksearch {
     width: 100%;
@@ -927,7 +952,7 @@ footer{
         font-weight: 300;
     }
 }
-/*
+
 @media screen and (min-width: 1321px) and (max-width: 1500px){
     .img-contacto img{
         display: none;
@@ -969,7 +994,7 @@ footer{
         margin: 0 auto;
     }
 
-}*/
+}
 
 /* TABLETS */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -980,12 +1005,12 @@ footer{
         gap: 3px;
     }
 
-    .select {
+    /* .select {
         border-radius: var(--border-radius-min);
         font-size: var(--font-xx-small);
         width: 98%;
         height: 40px;
-    }
+    } */
 
     .cbox {
         font-size: var(--font-x-small);
@@ -1145,10 +1170,6 @@ footer{
         grid-template-columns: auto;
         text-align: center;
         gap: 1rem;
-    }
-
-    .select, .cbox, #quicsearch{
-        width: 100%;
     }
 
     .social-footer{
