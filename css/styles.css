@@ -155,12 +155,11 @@ header{
     text-decoration: none;
     border-radius: 5px;
     cursor: pointer; 
-    box-shadow: 2px 2px 2px 2px var(--bg-color-principal-transp);
+    box-shadow: 2px 2px 2px 1px var(--bg-color-principal-transp);
 }
 
 #boton-publicar:hover {
     color: var(--text-color-blue-light);
-    box-shadow: 2px 2px 2px 3px var(--bg-color-principal-transp);
 }
 
 .busqueda_gral {
