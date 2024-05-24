@@ -1373,6 +1373,14 @@ footer {
         font-size: var(--font-x-small);
     }
 
+    .button_publicar {
+        padding: 0px;
+        height: 50px;
+        background-color: var(--bg-color-busqueda);
+        justify-content: center;
+        align-content: center;
+    }
+
     /**implementacion para propiedades.html **/
     main {
         margin-top: calc(var(--padding-medium) + 114px);
@@ -1451,7 +1459,7 @@ footer {
 
 /*-----------Registro-----------*/
 
-.menregistro {
+.mregistro {
     display: flex;
     flex-wrap: wrap;
 }
@@ -1466,7 +1474,7 @@ footer {
     padding: 210px 0px 80px 0px;
 }
 
-.mregistro {
+.menregistro {
     color: black;
     width: 412px;
     height: 646px;
@@ -1482,7 +1490,7 @@ footer {
     justify-content: center;
 }
 
-.mregistro h3 {
+.mregistro h2 {
     color: black;
     font-family: "Nunito", sans-serif;
     font-size: 25px;
