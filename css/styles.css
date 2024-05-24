@@ -388,6 +388,7 @@ footer{
     font-size: var(--font-x-small);
     text-align: justify;
     color: var(--text-color-propiedad-p);
+    font-weight: 400;
 }
 
 .foto_nosotros {
