@@ -476,7 +476,7 @@ footer{
 .formulario_contacto h4 {
     padding: 0 var(--padding-medium) 0 var(--padding-medium);
     font-size: var(--font-medium);
-    color: var(--text-color-secondary);
+    color: var(--text-color-blue-logo);
     text-align: center;
     margin-top: 50px;
 }
