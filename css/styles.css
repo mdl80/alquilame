@@ -816,7 +816,7 @@ footer{
     .bar button {
         width: 139px;
         height: 42px;
-        background-color: var(--bg-color-busqueda);
+        background-color: var(--text-color-blue-logo);
         color: var(--bg-color-secondary);
         border-radius: 10px;
         border-width: 0;
@@ -871,7 +871,7 @@ footer{
     .button-container button {
         width: 320px;
         height: 47px;
-        background-color: var(--bg-color-busqueda);
+        background-color: var(--text-color-blue-logo);
         color: var(--text-color-third);
         font-weight: 600;
         border-radius: 10px;
