@@ -729,7 +729,7 @@ footer{
     }
 
     .quienes_somos p {
-        font-size: var(--font-small);
+        font-size: 0.8rem;
     }
 
     .quienes_somos div {
