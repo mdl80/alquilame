@@ -505,7 +505,7 @@ footer{
 .formulario h4 {
     padding: var(--padding-medium);
     font-size: var(--font-medium);
-    color: var(--text-color-secondary);
+    color: var(--text-color-blue-logo);
     text-align: center;
 }
 
@@ -532,9 +532,9 @@ footer{
 
 .button {
     padding: var(--padding-x-small);
-    width: 343px;
+    width: 100%;
     margin-top: var(--margin-large);
-    background-color: var(--bg-color-busqueda);
+    background-color: var(--text-color-blue-logo);
     color: var(--text-color-third);
     border-radius: var(--border-radius-med);
     cursor: pointer;
