@@ -526,6 +526,9 @@ footer{
     margin-bottom: var(--margin-small-1);
     border: 0.3px solid var(--border-color-3);
 }
+.boton-form {
+    width: 100%;
+}
 
 .button {
     padding: var(--padding-x-small);
@@ -758,10 +761,6 @@ footer{
     .form-user,
     .form-prop {
         width: 70%;
-    }
-
-    .boton-form {
-        width: 60%;
     }
 
     /* -- implementacion de propiedades -- */
@@ -1072,9 +1071,6 @@ footer{
         margin-top: 50px;
     }
 
-    .boton-form {
-        width: 90%;
-    }
 
     /** implementacion de propiedades **/
     main {
@@ -1325,7 +1321,6 @@ footer{
         width: 100%;
         padding: 0 var(--padding-medium) 0 var(--padding-medium);
         font-size: var(--font-x-small);
-        color: var(--text-color-secondary);
         text-align: center;
         margin-top: 50px;
         overflow-x: visible;
