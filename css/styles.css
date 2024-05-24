@@ -377,7 +377,7 @@ footer{
 .quienes_somos h3 {
     font-size: var(--font-medium);
     padding: var(--padding-medium) var(--padding-x-large) 0 var(--padding-x-large);
-    color: var(--text-color-secondary);
+    color: var(--text-color-blue-logo);
 }
 
 .quienes_somos p {
