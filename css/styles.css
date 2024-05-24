@@ -146,6 +146,21 @@ header{
     font-weight: 700;
     cursor: pointer;
 }
+#boton-publicar {
+    display: inline-block;
+    padding: 6px 14px;
+    background-color: var(--bg-color-principal);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer; 
+    box-shadow: 2px 2px 2px 1px var(--bg-color-principal-transp);
+}
+
+#boton-publicar:hover {
+    color: var(--text-color-blue-light);
+}
 
 .busqueda_gral {
     height: 700px;
@@ -189,10 +204,19 @@ header{
     padding: var(--padding-x-small);
     cursor: pointer;
 }
+.select, .cbox, #quicsearch{
+    width: 100%;
+}
+    .select {
+        border-radius: var(--border-radius-min);
+        font-size: var(--font-xx-small);
+        width: 98%;
+        height: 40px;
+    }
 
 #quicksearch {
-    width: 97%;
-    height: 36px;
+    width: 100%;
+    height: 40px;
     font-size: var(--font-x-small);
 }
 
@@ -205,9 +229,10 @@ header{
     font-weight: 500;
     text-decoration: none;
     font-size: var(--font-x-small);
-    background-color: var(--bg-color-busqueda);
+    background-color: var(--bg-color-principal);
     padding: var(--padding-xx-small) var(--padding-small);
     border-radius: var(--border-radius-med);
+    margin-top: 10px;
 }
 
 /* Codigo para el footer */
@@ -363,6 +388,7 @@ footer{
     font-size: var(--font-x-small);
     text-align: justify;
     color: var(--text-color-propiedad-p);
+    font-weight: 400;
 }
 
 .foto_nosotros {
@@ -468,9 +494,9 @@ footer{
 
 .button_contacto {
     padding: var(--padding-x-small);
-    width: 435px;
+    width: 100%;
     margin-top: var(--margin-small);
-    background-color: var(--bg-color-busqueda);
+    background-color: var(--bg-color-principal);
     color: var(--text-color-third);
     border-radius: var(--border-radius-med);
     cursor: pointer;
@@ -479,7 +505,7 @@ footer{
 .formulario h4 {
     padding: var(--padding-medium);
     font-size: var(--font-medium);
-    color: var(--text-color-secondary);
+    color: var(--text-color-blue-logo);
     text-align: center;
 }
 
@@ -500,12 +526,15 @@ footer{
     margin-bottom: var(--margin-small-1);
     border: 0.3px solid var(--border-color-3);
 }
+.boton-form {
+    width: 100%;
+}
 
 .button {
     padding: var(--padding-x-small);
-    width: 343px;
+    width: 100%;
     margin-top: var(--margin-large);
-    background-color: var(--bg-color-busqueda);
+    background-color: var(--text-color-blue-logo);
     color: var(--text-color-third);
     border-radius: var(--border-radius-med);
     cursor: pointer;
@@ -514,10 +543,9 @@ footer{
 
 .button_publicar {
     font-size: var(--font-x-small);
-
     padding: var(--padding-small);
-    width: 300px;
-    background-color: var(--bg-color-busqueda);
+    width: 100%;
+    background-color: var(--text-color-blue-logo);
     text-align: center;
     border-radius: var(--border-radius-med);
 }
@@ -525,6 +553,7 @@ footer{
 .button_publicar a {
     color: var(--text-color-third);
     text-decoration: none;
+    font-weight: 400;
 }
 
 .contraseña,
@@ -576,7 +605,7 @@ footer{
 .formularios_usuarios h4 {
     padding: 0 var(--padding-medium) 0 var(--padding-medium);
     font-size: var(--font-medium);
-    color: var(--text-color-secondary);
+    color: var(--text-color-blue-logo);
     text-align: center;
     margin-top: 50px;
 }
@@ -604,7 +633,7 @@ footer{
     padding: var(--padding-x-small);
     width: 100%;
     margin-top: var(--margin-small);
-    background-color: var(--bg-color-busqueda);
+    background-color: var(--bg-color-principal);
     color: var(--text-color-third);
     border-radius: var(--border-radius-med);
     cursor: pointer;
@@ -725,7 +754,6 @@ footer{
         width: 100%;
         padding: 0 var(--padding-medium) 0 var(--padding-medium);
         font-size: var(--font-small);
-        color: var(--text-color-secondary);
         text-align: center;
         margin-top: 50px;
     }
@@ -733,10 +761,6 @@ footer{
     .form-user,
     .form-prop {
         width: 70%;
-    }
-
-    .boton-form {
-        width: 60%;
     }
 
     /* -- implementacion de propiedades -- */
@@ -792,7 +816,7 @@ footer{
     .bar button {
         width: 139px;
         height: 42px;
-        background-color: var(--bg-color-busqueda);
+        background-color: var(--text-color-blue-logo);
         color: var(--bg-color-secondary);
         border-radius: 10px;
         border-width: 0;
@@ -847,7 +871,7 @@ footer{
     .button-container button {
         width: 320px;
         height: 47px;
-        background-color: var(--bg-color-busqueda);
+        background-color: var(--text-color-blue-logo);
         color: var(--text-color-third);
         font-weight: 600;
         border-radius: 10px;
@@ -979,12 +1003,12 @@ footer{
         gap: 3px;
     }
 
-    .select {
+    /* .select {
         border-radius: var(--border-radius-min);
         font-size: var(--font-xx-small);
         width: 98%;
         height: 40px;
-    }
+    } */
 
     .cbox {
         font-size: var(--font-x-small);
@@ -1043,14 +1067,10 @@ footer{
         width: 100%;
         padding: 0 var(--padding-medium) 0 var(--padding-medium);
         font-size: var(--font-small);
-        color: var(--text-color-secondary);
         text-align: center;
         margin-top: 50px;
     }
 
-    .boton-form {
-        width: 90%;
-    }
 
     /** implementacion de propiedades **/
     main {
@@ -1146,10 +1166,6 @@ footer{
         gap: 1rem;
     }
 
-    .select, .cbox, #quicsearch{
-        width: 300px;
-    }
-
     .social-footer{
         flex-direction: column;
     }
@@ -1182,7 +1198,7 @@ footer{
         text-align: center;
         margin-bottom: 4px;
         font-size: var(--font-xx-small);
-        width: 99%;
+        width: 100%;
     }
 
     .boton_busqueda {
@@ -1305,7 +1321,6 @@ footer{
         width: 100%;
         padding: 0 var(--padding-medium) 0 var(--padding-medium);
         font-size: var(--font-x-small);
-        color: var(--text-color-secondary);
         text-align: center;
         margin-top: 50px;
         overflow-x: visible;
