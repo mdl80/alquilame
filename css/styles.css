@@ -613,12 +613,18 @@ footer{
 }
 
 #name_usuario,
+#name_usuario2,
 #dni_usuario,
 #address_usuario,
+#address_usuario2,
 #CPostal_usuario,
+#CPostal_usuario2,
 #email_usuario,
+#email_usuario2,
 #password_usuario,
+#password_usuario2,
 #password2_usuario,
+#password2_usuario2,
 #razon_social,
 #matricula_usuario {
     padding: var(--padding-x-small);
