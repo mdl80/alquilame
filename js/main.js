@@ -72,10 +72,40 @@ function validar() {
 //document.querySelector(".button_publicar a").addEventListener('click', validar);
 //cambiar lo de arriba para que se pueda mantener el js
 
-//Registro js
 
-const  usuario_form = document.querySelector('.usuario_form')
-usuario_form.addEventListener('submit', (e)=>{
+
+/* registro */
+//obteniendo los formularios de registro.html
+const form_usuario = document.querySelector('usuario_form"');
+const form_prop = document.querySelector('prop_form')
+
+//funcion para registrar dependiendo tipo de usuario
+function registrarUsuario(formulario, tipoUsuario) {
+    formulario.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        if (tipoUsuario === 'cliente') {
+            const name_usuario = document.querySelector('#name_usuario').value
+            const dni_usuario = document.querySelector('#dni_usuario').value
+            const address_usuario = document.querySelector('#address_usuario').value
+            const CPostal_usuario = document.querySelector('#CPostal_usuario').value
+            const email_usuario = document.querySelector('#email_usuario').value
+            const password_usuario = document.querySelector('#password_usuario').value
+            const password2_usuario = document.querySelector('#password2_usuario').value
+        }
+        if(tipoUsuario==='propietario'){
+            const name_usuario = document.querySelector('#name_usuario').value;            const address_usuario = document.querySelector('#address_usuario').value
+            const CPostal_usuario = document.querySelector('#CPostal_usuario').value
+            const email_usuario = document.querySelector('#email_usuario').value
+            const razonSocial = document.querySelector('#razonSocial');
+            const password_usuario = document.querySelector('#password_usuario').value
+            const password2_usuario = document.querySelector('#password2_usuario').value
+        }
+
+    })
+}
+const usuario_form = document.querySelector('.usuario_form')
+usuario_form.addEventListener('submit', (e) => {
     e.preventDefault()
     //tomamos los 3 campos del formulario con el .value
     const name_usuario = document.querySelector('#name_usuario').value
@@ -85,7 +115,7 @@ usuario_form.addEventListener('submit', (e)=>{
     const email_usuario = document.querySelector('#email_usuario').value
     const password_usuario = document.querySelector('#password_usuario').value
     const password2_usuario = document.querySelector('#password2_usuario').value
-    
+
     // Validación de contraseñas
     if (password_usuario !== password2_usuario) {
         return alert('Las contraseñas no coinciden');
@@ -100,44 +130,44 @@ usuario_form.addEventListener('submit', (e)=>{
     //chequear que el mail que ingresa el usuario no este registrado si esta variable tiene un valor valido, esta registrado
     const Users = JSON.parse(localStorage.getItem('Users')) || []
     const isUserRegistered = Users.find(user => user.email === email_usuario)
-    if(isUserRegistered) {
+    if (isUserRegistered) {
         return alert('El usario ya existe')
-    } 
-    Users.push({name: name_usuario, dni:dni_usuario, address: address_usuario , CPostal: CPostal_usuario,  email: email_usuario, password: password_usuario, password2: password2_usuario})
-    localStorage.setItem('Users',JSON.stringify(Users))
+    }
+    Users.push({ name: name_usuario, dni: dni_usuario, address: address_usuario, CPostal: CPostal_usuario, email: email_usuario, password: password_usuario, password2: password2_usuario })
+    localStorage.setItem('Users', JSON.stringify(Users))
     alert('Registrado Exitoso')
-    window.location.href= 'inicio_sesion.html'
+    window.location.href = 'inicio_sesion.html'
 })
 
 //Scripts js
 
 const datos = {
-    nombre_contacto:'',
+    nombre_contacto: '',
     email_contacto: '',
     phone_contacto: '',
     direccion_contacto: '',
-    comentarios_contacto:''
+    comentarios_contacto: ''
 
 }
 
 document.getElementById('login_form')
-    addEventListener('submit', function(e) {
-        e.preventDefault(); // Evita que el formulario se envíe
-    
-        // Obtén el valor del campo de texto
-     
-    
-        // Define la expresión regular para validar el texto (al menos 3 caracteres alfabéticos)
-       
-    
-        // Valida el texto con la expresión regular
-     
-    });
+addEventListener('submit', function (e) {
+    e.preventDefault(); // Evita que el formulario se envíe
+
+    // Obtén el valor del campo de texto
+
+
+    // Define la expresión regular para validar el texto (al menos 3 caracteres alfabéticos)
+
+
+    // Valida el texto con la expresión regular
+
+});
 
 // submit
 const formulario = document.querySelector('.login_form');
 
-formulario.addEventListener('submit', function(e) {
+formulario.addEventListener('submit', function (e) {
     e.preventDefault();
     console.log(e);
 
@@ -146,32 +176,32 @@ formulario.addEventListener('submit', function(e) {
     console.log(datos);
     var texto = document.getElementById('nombre_contacto').value;
     var expresionRegular = /^[a-zA-Z]{3,}$/;
-       if (expresionRegular.test(texto)) {
-            // Si es válido, envía el formulario
-            
-            alert('Texto válido: ' + texto);
-            
-           
-            // this.submit(); // Puedes enviar el formulario si lo deseas
-        } else {
-            // Si no es válido, muestra un mensaje de error
-            
-            alert('Por favor, ingresa al menos 3 letras del alfabeto en el campo Nombre.');
-            return;
-        }
- // Validar el Formulario...
+    if (expresionRegular.test(texto)) {
+        // Si es válido, envía el formulario
 
- const { nombre_contacto, email_contacto, phone_contacto, direccion_contacto, comentarios_contacto} = datos;
+        alert('Texto válido: ' + texto);
 
- if(nombre_contacto === '' || email_contacto === '' || phone_contacto=== '' || direccion_contacto=== '') {
-     //console.log('Al menos un campo esta vacio');
-     mostrarError('Todos los campos son obligatorios');
-     return; // Detiene la ejecución de esta función
- }
 
-// console.log('Todo bien...')
+        // this.submit(); // Puedes enviar el formulario si lo deseas
+    } else {
+        // Si no es válido, muestra un mensaje de error
 
- mostrarMensaje('Mensaje enviado correctamente');
+        alert('Por favor, ingresa al menos 3 letras del alfabeto en el campo Nombre.');
+        return;
+    }
+    // Validar el Formulario...
+
+    const { nombre_contacto, email_contacto, phone_contacto, direccion_contacto, comentarios_contacto } = datos;
+
+    if (nombre_contacto === '' || email_contacto === '' || phone_contacto === '' || direccion_contacto === '') {
+        //console.log('Al menos un campo esta vacio');
+        mostrarError('Todos los campos son obligatorios');
+        return; // Detiene la ejecución de esta función
+    }
+
+    // console.log('Todo bien...')
+
+    mostrarMensaje('Mensaje enviado correctamente');
 });
 
 
