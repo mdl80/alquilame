@@ -638,7 +638,7 @@ input[type="text"].error,
 input[type="email"].error,
 input[type="tel"].error,
 textarea.error,
-select.error {
+select.error, .error {
     font-weight: bold;
     background-color: #ffe6e6; /* Cambia el fondo a un color rojo claro */
 }

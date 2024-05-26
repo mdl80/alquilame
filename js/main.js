@@ -85,6 +85,11 @@ function registrarUsuario(formulario, tipoUsuario) {
 
         let name, dni, address, CPostal, email, password, password2, razon_Social, matricula;
 
+        // Eliminar clases de error anteriores
+        document.querySelectorAll('.error').forEach(element => {
+            element.classList.remove('error');
+        });
+
         if (!marcarError(formulario, tipoUsuario)) {
             alert("Para continuar el registro debe completar todos los campos obligatorios");
             return;
@@ -246,20 +251,24 @@ function marcarError(formulario, tipoUsuario) {
 
     return true;
 }
-
-
-// llamando a la función registrarUsuario, activa el listener en el form cliente
-registrarUsuario(form_usuario, 'cliente');
-// llamando a la función registrarUsuario, activa el listener en el form propietario
-registrarUsuario(form_prop, 'propietario');
+//comprobacion para no meter un listener sobre nulo y llamar a la funcion
+if (!(form_usuario === null && form_prop === null)) {
+    // llamando a la función registrarUsuario, activa el listener en el form cliente
+    registrarUsuario(form_usuario, 'cliente');
+    // llamando a la función registrarUsuario, activa el listener en el form propietario
+    registrarUsuario(form_prop, 'propietario');
+}
 
 /*Contacto*/
 //Scripts js
 
-document.querySelector('.contact_form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    validarFormulario();
-});
+//comprbacion de no nulo sobre formulario
+if (!(document.querySelector('.contact_form')) === null) {
+    document.querySelector('.contact_form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        validarFormulario();
+    });
+}
 
 function validarFormulario() {
     const nombre = document.querySelector('#nombre_contacto').value;
