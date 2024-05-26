@@ -69,7 +69,8 @@ function validar() {
     abrirPropiedad(user);
 }
 //asignando un listener al boton submit del fomulario
-document.querySelector(".button_publicar a").addEventListener('click', validar);
+//document.querySelector(".button_publicar a").addEventListener('click', validar);
+//cambiar lo de arriba para que se pueda mantener el js
 
 //Registro js
 
