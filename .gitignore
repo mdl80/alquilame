@@ -1,2 +1,4 @@
 # Ignorar rutas de IDE
 .vscode/
+#Ignorar archivo temporal de excel
+static/.~lock.Criterios de Evaluacion TPO.xlsx#
