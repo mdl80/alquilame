@@ -450,9 +450,12 @@ footer {
     margin: var(--margin-x-small) auto;
 
 }
+.img_contacto{
+    overflow: hidden;
+}
 
 .img_contacto img {
-    width: 950px;
+    width:950px ;
     height: auto;
 }
 
@@ -497,7 +500,9 @@ footer {
     margin-bottom: var(--margin-small-1);
     border: 0.3px solid var(--border-color-3);
 }
-
+.login_form div{
+    font-size: 0.8rem;
+}
 .button_contacto {
     padding: var(--padding-x-small);
     width: 100%;
