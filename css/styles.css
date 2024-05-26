@@ -634,9 +634,17 @@ footer {
     border: 0.3px solid var(--border-color-3);
 }
 
-.error {
+input[type="text"].error,
+input[type="email"].error,
+input[type="tel"].error,
+textarea.error,
+select.error {
     font-weight: bold;
-    background-color: #eca3a3a3;
+    background-color: #ffe6e6; /* Cambia el fondo a un color rojo claro */
+}
+
+label.error {
+    text-shadow:2px 2px 2px red;
 }
 
 .button_usuario {
