@@ -75,7 +75,6 @@ function validar() {
 
 /* registro */
 // obteniendo los formularios de registro.html
-localStorage.clear();
 const form_usuario = document.querySelector('.usuario_form');
 const form_prop = document.querySelector('.prop_form');
 
