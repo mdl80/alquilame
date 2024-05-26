@@ -455,8 +455,9 @@ footer {
 }
 
 .img_contacto img {
-    width:950px ;
+    width:950px;
     height: auto;
+    object-fit: cover;
 }
 
 .contacto_title {
@@ -500,9 +501,7 @@ footer {
     margin-bottom: var(--margin-small-1);
     border: 0.3px solid var(--border-color-3);
 }
-.login_form div{
-    font-size: 0.8rem;
-}
+
 .button_contacto {
     padding: var(--padding-x-small);
     width: 100%;
@@ -520,7 +519,7 @@ footer {
     text-align: center;
 }
 
-.login_form {
+.contact_form {
     padding: var(--padding-medium);
 }
 
@@ -1260,7 +1259,7 @@ footer {
         align-items: center;
     }
 
-    .login_form {
+    .contact_form {
         width: 100%;
         padding: 0;
     }
@@ -1289,10 +1288,8 @@ footer {
         margin-top: var(--margin-small-2);
     }
 
-    .login_form div {
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
+    .contact_form div{
+        font-size: 0.8rem;
     }
 
     #nombre_contacto,
