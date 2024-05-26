@@ -132,7 +132,7 @@ function registrarUsuario(formulario, tipoUsuario) {
             Users.push(usuario);
             localStorage.setItem('Users', JSON.stringify(Users));
             alert('Registro Exitoso');
-            //window.location.href = 'inicio_sesion.html';
+            window.location.href = 'inicio_sesion.html';
         } else {
             alert("Para continuar el registro debe completar todos los campos obligatorios");
         }
@@ -184,7 +184,6 @@ function validarUsuario(usuario) {
     for (const atributo in usuario) {
         if (Object.hasOwnProperty.call(usuario, atributo)) {
             const valor = usuario[atributo];
-            console.log(atributo + "," + valor);
             if (valor === null || valor === '') {
                 validado = false;
                 return validado;
