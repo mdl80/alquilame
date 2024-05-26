@@ -216,7 +216,7 @@ function marcarError(formulario, tipoUsuario) {
             if (!CPostal) document.querySelector('#CPostal_usuario').classList.add('error');
             if (!email) document.querySelector('#email_usuario').classList.add('error');
             if (!password) document.querySelector('#password_usuario').classList.add('error');
-            if (!password2) document.querySelector('#password2_usuario').classList.add('error ');
+            if (!password2) document.querySelector('#password2_usuario').classList.add('error');
             return false;
         }
 
