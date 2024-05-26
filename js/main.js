@@ -86,6 +86,10 @@ function registrarUsuario(formulario, tipoUsuario) {
 
         let name, dni, address, CPostal, email, password, password2, razon_Social, matricula;
 
+        if (!marcarError(formulario, tipoUsuario)) {
+            alert("Para continuar el registro debe completar todos los campos obligatorios");
+            return;
+        }
         if (tipoUsuario === 'cliente') {
             name = document.querySelector('#name_usuario').value;
             dni = document.querySelector('#dni_usuario').value;
@@ -111,7 +115,7 @@ function registrarUsuario(formulario, tipoUsuario) {
         let usuario = crearUsuario(tipoUsuario, name, dni, address, CPostal, email, password, password2, razon_Social, matricula);
 
         // validar Usuario
-        let validado = validarUsuario(usuario);
+        let validado = validarUsuarios(usuario);
 
         if (validado) {
             // Validación de contraseñas
@@ -179,8 +183,9 @@ function crearUsuario(tipoUsuario, name, dni, address, CPostal, email, password,
 }
 
 // la función devuelve false si un campo es nulo o vacío, true en caso contrario
-function validarUsuario(usuario) {
+function validarUsuarios(usuario) {
     let validado = true;
+    let tag ;
     for (const atributo in usuario) {
         if (Object.hasOwnProperty.call(usuario, atributo)) {
             const valor = usuario[atributo];
@@ -192,6 +197,57 @@ function validarUsuario(usuario) {
     }
     return validado;
 }
+function marcarError(formulario, tipoUsuario) {
+    let name, dni, address, CPostal, email, password, password2, razon_Social, matricula;
+
+    if (tipoUsuario === 'cliente') {
+        name = document.querySelector('#name_usuario').value;
+        dni = document.querySelector('#dni_usuario').value;
+        address = document.querySelector('#address_usuario').value;
+        CPostal = document.querySelector('#CPostal_usuario').value;
+        email = document.querySelector('#email_usuario').value;
+        password = document.querySelector('#password_usuario').value;
+        password2 = document.querySelector('#password2_usuario').value;
+
+        if (!name || !dni || !address || !CPostal || !email || !password || !password2) {
+            // Marcar los campos que faltan
+            if (!name) document.querySelector('#name_usuario').classList.add('error');
+            if (!dni) document.querySelector('#dni_usuario').classList.add('error');
+            if (!address) document.querySelector('#address_usuario').classList.add('error');
+            if (!CPostal) document.querySelector('#CPostal_usuario').classList.add('error');
+            if (!email) document.querySelector('#email_usuario').classList.add('error');
+            if (!password) document.querySelector('#password_usuario').classList.add('error');
+            if (!password2) document.querySelector('#password2_usuario').classList.add('error ');
+            return false;
+        }
+
+    } else if (tipoUsuario === 'propietario') {
+        name = document.querySelector('#name_prop').value;
+        address = document.querySelector('#address_prop').value;
+        CPostal = document.querySelector('#CPostal_prop').value;
+        email = document.querySelector('#email_prop').value;
+        razon_Social = document.querySelector('#razon_social').value;
+        matricula = document.querySelector('#matricula_prop').value;
+        password = document.querySelector('#password_prop').value;
+        password2 = document.querySelector('#password2_prop').value;
+
+        if (!name || !address || !CPostal || !email || !razon_Social || !matricula || !password || !password2) {
+            // Marcar los campos que faltan
+            if (!name) document.querySelector('#name_prop').classList.add('error');
+            if (!address) document.querySelector('#address_prop').classList.add('error');
+            if (!CPostal) document.querySelector('#CPostal_prop').classList.add('error');
+            if (!email) document.querySelector('#email_prop').classList.add('error');
+            if (!razon_Social) document.querySelector('#razon_social').classList.add('error');
+            if (!matricula) document.querySelector('#matricula_prop').classList.add('error');
+            if (!password) document.querySelector('#password_prop').classList.add('error');
+            if (!password2) document.querySelector('#password2_prop').classList.add('error');
+            return false;
+        }
+    }
+
+    return true;
+}
+
 
 // llamando a la función registrarUsuario, activa el listener en el form cliente
 registrarUsuario(form_usuario, 'cliente');

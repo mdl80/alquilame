@@ -528,7 +528,7 @@ footer {
 #razon_social_p,
 #matricula_usuario_p {
     padding: var(--padding-x-small);
-    width: 300px;
+    width: 100%;
     margin-bottom: var(--margin-small-1);
     border: 0.3px solid var(--border-color-3);
 }
@@ -628,6 +628,11 @@ footer {
     width: 100%;
     margin-bottom: var(--margin-small-1);
     border: 0.3px solid var(--border-color-3);
+}
+
+.error {
+    font-weight: bold;
+    background-color: #eca3a3a3;
 }
 
 .button_usuario {
