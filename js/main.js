@@ -76,69 +76,106 @@ function validar() {
 
 /* registro */
 //obteniendo los formularios de registro.html
-const form_usuario = document.querySelector('usuario_form"');
-const form_prop = document.querySelector('prop_form')
+const form_usuario = document.querySelector('.usuario_form');
+const form_prop = document.querySelector('.prop_form')
 
-//funcion para registrar dependiendo tipo de usuario
+//funcion para registrar usuario dependiendo de su tipo
 function registrarUsuario(formulario, tipoUsuario) {
     formulario.addEventListener('submit', (e) => {
         e.preventDefault();
 
+        let name, dni, address, CPostal, email, password, password2;
+
         if (tipoUsuario === 'cliente') {
-            const name_usuario = document.querySelector('#name_usuario').value
-            const dni_usuario = document.querySelector('#dni_usuario').value
-            const address_usuario = document.querySelector('#address_usuario').value
-            const CPostal_usuario = document.querySelector('#CPostal_usuario').value
-            const email_usuario = document.querySelector('#email_usuario').value
-            const password_usuario = document.querySelector('#password_usuario').value
-            const password2_usuario = document.querySelector('#password2_usuario').value
-        }
-        if(tipoUsuario==='propietario'){
-            const name_usuario = document.querySelector('#name_usuario').value;            const address_usuario = document.querySelector('#address_usuario').value
-            const CPostal_usuario = document.querySelector('#CPostal_usuario').value
-            const email_usuario = document.querySelector('#email_usuario').value
-            const razonSocial = document.querySelector('#razonSocial');
-            const password_usuario = document.querySelector('#password_usuario').value
-            const password2_usuario = document.querySelector('#password2_usuario').value
+            name = document.querySelector('#name_usuario').value;
+            dni = document.querySelector('#dni_usuario').value;
+            address = document.querySelector('#address_usuario').value;
+            CPostal = document.querySelector('#CPostal_usuario').value;
+            email = document.querySelector('#email_usuario').value;
+            password = document.querySelector('#password_usuario').value;
+            password2 = document.querySelector('#password2_usuario').value;
         }
 
+        if (tipoUsuario === 'propietario') {
+            name = document.querySelector('#name_usuario').value;
+            address = document.querySelector('#address_usuario').value;
+            CPostal = document.querySelector('#CPostal_usuario').value;
+            email = document.querySelector('#email_usuario').value;
+            razon_Social = document.querySelector('#razonSocial');
+            matricula = document.querySelector('#matricula_prop').value;
+            password = document.querySelector('#password_prop').value;
+            password2 = document.querySelector('#password2_prop').value;
+            usuario = crearUsuario(tipoUsuario);
+        }
+        // Validación de contraseñas
+        validarContraseña(password, password2);
+
+        //validacion de correo electronico
+        validarMail(email);
+
+        //se crea un array de objetos
+        //chequear que el mail que ingresa el usuario no este registrado si esta variable tiene un valor valido, esta registrado
+        const Users = JSON.parse(localStorage.getItem('Users')) || []
+        const isUserRegistered = Users.find(user => user.email === email_usuario)
+        if (isUserRegistered) {
+            return alert('El usario ya existe')
+        }
+
+        Users.push(usuario)
+        localStorage.setItem('Users', JSON.stringify(Users))
+        alert('Registrado Exitoso')
+        window.location.href = 'inicio_sesion.html'
     })
 }
-const usuario_form = document.querySelector('.usuario_form')
-usuario_form.addEventListener('submit', (e) => {
-    e.preventDefault()
-    //tomamos los 3 campos del formulario con el .value
-    const name_usuario = document.querySelector('#name_usuario').value
-    const dni_usuario = document.querySelector('#dni_usuario').value
-    const address_usuario = document.querySelector('#address_usuario').value
-    const CPostal_usuario = document.querySelector('#CPostal_usuario').value
-    const email_usuario = document.querySelector('#email_usuario').value
-    const password_usuario = document.querySelector('#password_usuario').value
-    const password2_usuario = document.querySelector('#password2_usuario').value
 
-    // Validación de contraseñas
-    if (password_usuario !== password2_usuario) {
+//funcion para validar contraseña    
+function validarContraseña(pass1, pass2) {
+    if (pass1 !== pass2) {
         return alert('Las contraseñas no coinciden');
     }
-
-    // Validación de correo electrónico
+}
+//funcion para validar correo electronico
+function validarMail(mail) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email_usuario)) {
         return alert('Por favor, ingrese un correo electrónico válido');
     }
-    //se crea un array de objetos
-    //chequear que el mail que ingresa el usuario no este registrado si esta variable tiene un valor valido, esta registrado
-    const Users = JSON.parse(localStorage.getItem('Users')) || []
-    const isUserRegistered = Users.find(user => user.email === email_usuario)
-    if (isUserRegistered) {
-        return alert('El usario ya existe')
+}
+//funcion para crear un usuario 
+function crearUsuario(tipoUsuario, name, dni, address, CPostal, email, password, password2) {
+    let user = null;
+    if (tipo === 'cliente') {
+        user = {
+            name,
+            dni,
+            address,
+            CPostal,
+            email,
+            password,
+            password2
+        };
+        if (tipo === 'propietario') {
+            user = {
+                name,
+                address,
+                CPostal,
+                email,
+                razon_Social,
+                matricula,
+                password,
+                password2
+            }
+        }
     }
-    Users.push({ name: name_usuario, dni: dni_usuario, address: address_usuario, CPostal: CPostal_usuario, email: email_usuario, password: password_usuario, password2: password2_usuario })
-    localStorage.setItem('Users', JSON.stringify(Users))
-    alert('Registrado Exitoso')
-    window.location.href = 'inicio_sesion.html'
-})
+    return user;
+}
+//llamando a la funcion registrarUsuario, activa el listener en el form cliente
+registrarUsuario(form_usuario, 'cliente');
+//llamando a la funcion registrarUsuario activa el listener en el form Cliente
+registrarUsuario(form_prop, 'propietario');
 
+
+/*Contacto*/
 //Scripts js
 
 const datos = {
