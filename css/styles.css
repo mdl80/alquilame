@@ -614,15 +614,7 @@ footer{
     padding: var(--padding-medium);
 }
 
-#name_usuario,
-#dni_usuario,
-#address_usuario,
-#CPostal_usuario,
-#email_usuario,
-#password_usuario,
-#password2_usuario,
-#razon_social,
-#matricula_usuario {
+.usuario_form input{
     padding: var(--padding-x-small);
     width: 100%;
     margin-bottom: var(--margin-small-1);
@@ -1325,20 +1317,6 @@ footer{
 
     .usuario_form input {
         font-size: 0.7rem;
-    }
-
-    #name_usuario,
-    #dni_usuario,
-    #address_usuario,
-    #CPostal_usuario,
-    #email_usuario,
-    #password_usuario,
-    #password2_usuario,
-    #razon_social,
-    #matricula_usuario {
-        padding: var(--padding-x-small);
-        margin-bottom: var(--margin-small-1);
-        border: 0.3px solid var(--border-color-3);
     }
 
     .formularios_usuarios {
