@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,31 +36,44 @@
                         <p>Completá el formulario para conectarnos sobre
                             cualquier pregunta o comentario que tengas y
                             nos contactaremos a la brevedad.</p>
-                        <form action="#" class="login_form" method="post">
-                            <div>
-                         
-                            <input type="text" id="nombre_contacto" name="name" placeholder="Nombre y apellido">
-                               
-                            </div>
-                            <div>
-                                <input type="email" id="email_contacto" name="email" placeholder="email@address.com">
-                            </div>
-                            <div>
-                                <input type="tel" id="phone_contacto" name="phone" placeholder="Teléfono">
-                            </div>
-                            <div>
-                                <input type="text" id="direccion_contacto" name="address" placeholder="Dirección">
-                            </div>
-                            <div>
-                                <textarea name="comentarios" id="comentarios_contacto" cols="50" rows="10">Comentarios:</textarea>
-                            </div>
-                            <div>
-                                <input class="button_contacto" type="submit" value="ENVIAR">
-                            </div>
-                            <div>
-                                <p>Al enviar se están aceptando los Términos y Condiciones de Uso de la <span>"Política de Privacidad"</span></p>
-                            </div>
-                        </form>
+                            <form action="#" class="contact_form" method="post">
+                                <div>
+                                    <input type="text" id="nombre_contacto" name="name" placeholder="Nombre y apellido"> 
+                                </div>
+                                <div>
+                                    <input type="email" id="email_contacto" name="email" placeholder="email@address.com">
+                                </div>
+                                <div>
+                                    <input type="tel" id="phone_contacto" name="phone" placeholder="Teléfono">
+                                </div>
+                                <div>
+                                    <label for="preferencia">Preferencia de Contacto:</label><br>
+                                    <input type="radio" id="emailRadio" name="contacto" value="email">
+                                    <label for="emailRadio">Email</label><br>
+                                    <input type="radio" id="telefonoRadio" name="contacto" value="telefono">
+                                    <label for="telefonoRadio">Teléfono</label>
+                                </div><br>
+                                <div>
+                                    <label for="motivo">Seleccione un motivo:</label>
+                                    <select id="motivo" name="motivo">
+                                        <option value="">Seleccione...</option>
+                                        <option value="motivo1">Error de acceso</option>
+                                        <option value="motivo2">Error de busqueda</option>
+                                        <option value="motivo3">Error de publicacion</option>
+                                        <option value="motivo4">Otro motivo</option>
+                                    </select>
+                                </div>
+                                <br>
+                                <div>
+                                    <textarea name="comentarios" id="comentarios_contacto" cols="50" rows="10" placeholder="Comentarios:"></textarea>
+                                </div>
+                                <div>
+                                    <input class="button_contacto" type="submit" value="ENVIAR">
+                                </div>
+                                <div>
+                                    <p>Al enviar se están aceptando los Términos y Condiciones de Uso de la <span>"Política de Privacidad"</span></p>
+                                </div>
+                            </form>
                     </div>
                     <!--cntenedor de la imagen-->
                     <div class="img_contacto">
