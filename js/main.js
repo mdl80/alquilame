@@ -262,13 +262,10 @@ if (!(form_usuario === null && form_prop === null)) {
 /*Contacto*/
 //Scripts js
 
-//comprbacion de no nulo sobre formulario
-if (!(document.querySelector('.contact_form')) === null) {
-    document.querySelector('.contact_form').addEventListener('submit', function (e) {
-        e.preventDefault();
-        validarFormulario();
-    });
-}
+document.querySelector('.contact_form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    validarFormulario();
+});
 
 function validarFormulario() {
     const nombre = document.querySelector('#nombre_contacto').value;
