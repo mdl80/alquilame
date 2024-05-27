@@ -1287,7 +1287,7 @@ label.error {
     }
 
     .img_contacto {
-        visibility: collapse;
+        display:none;
     }
 
     .formulario_contacto h4 {
