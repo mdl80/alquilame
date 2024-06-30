@@ -75,12 +75,19 @@ if (document.querySelector(".button_publicar a") !== null) {
 //cambiar lo de arriba para que se pueda mantener el js
 
 
-/* registro */
+/********registro*****************/
 // obteniendo los formularios de registro.html
 const form_usuario = document.querySelector('.usuario_form');
 const form_prop = document.querySelector('.prop_form');
 
 // función para registrar usuario dependiendo de su tipo
+
+/**
+ * Esta funcion registra un  usuario, dependiendo de los campos completados por el usuario
+ * y el boton que utilizo para el registro
+ * @param {formulario} formulario - El formulario que va a recibir la funcion
+ * @param {String} tipoUsuario - El tipo de cliente , Inquilino o Propietario
+ */
 function registrarUsuario(formulario, tipoUsuario) {
     formulario.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -96,7 +103,9 @@ function registrarUsuario(formulario, tipoUsuario) {
             alert("Para continuar el registro debe completar todos los campos obligatorios");
             return;
         }
-        if (tipoUsuario === 'cliente') {
+        //se podria sacar a una funcion, guarda los datos segun tipo de usuario 
+        //los datos los saca del formulario segun su tipo de usuario
+        if (tipoUsuario === 'Inquilino') {
             name = document.querySelector('#name_usuario').value;
             dni = document.querySelector('#dni_usuario').value;
             address = document.querySelector('#address_usuario').value;
@@ -106,7 +115,7 @@ function registrarUsuario(formulario, tipoUsuario) {
             password2 = document.querySelector('#password2_usuario').value;
         }
 
-        if (tipoUsuario === 'propietario') {
+        if (tipoUsuario === 'Locatario') {
             name = document.querySelector('#name_prop').value;
             address = document.querySelector('#address_prop').value;
             CPostal = document.querySelector('#CPostal_prop').value;
@@ -117,11 +126,11 @@ function registrarUsuario(formulario, tipoUsuario) {
             password2 = document.querySelector('#password2_prop').value;
         }
 
-        // crear usuario
-        let usuario = crearUsuario(tipoUsuario, name, dni, address, CPostal, email, password, password2, razon_Social, matricula);
-
+        // crear usuario, 
+        let usuario = crearUsuario(tipoUsuario, name, dni, address, CPostal, email, password, razon_Social, matricula);
+        enviar(empaquetar(usuario))
         // validar Usuario
-        let validado = validarUsuarios(usuario);
+        let validado = validarUsuarios(usuario, tipoUsuario);
 
         if (validado) {
             // Validación de contraseñas
@@ -131,6 +140,12 @@ function registrarUsuario(formulario, tipoUsuario) {
             // validación de correo electrónico
             if (!validarMail(email)) {
                 return alert('Por favor, ingrese un correo electrónico válido');
+            }
+            //si fue validado y no hubo errores empaqueto y envio
+            function empaquetar(usuario) {
+                const usuarioJson = JSON.stringify(usuario)
+                console.log('Usuario empaquetado:' + usuario)
+                return usuarioJson
             }
             // se crea un array de objetos
             const Users = JSON.parse(localStorage.getItem('Users')) || [];
@@ -142,28 +157,60 @@ function registrarUsuario(formulario, tipoUsuario) {
             Users.push(usuario);
             localStorage.setItem('Users', JSON.stringify(Users));
             alert('Registro Exitoso');
-            window.location.href = 'inicio_sesion.html';
+            window.location.href = 'inicio_sesion.html';//va a la pagina de perfil no a la de inicio
         } else {
             alert("Para continuar el registro debe completar todos los campos obligatorios");
         }
     });
 }
 
-// función que devuelve true si la contraseña es validada, false en caso contrario  
+// función que devuelve true si la contraseña es validada, false en caso contrario 
+/**
+ * Esta funcion valida si dos campos contienen la misma contraseña,devuelve True en el caso de que 
+ * que se asi, False en caso de que sean distintas
+ * @param {String} pass1 
+ * @param {String} pass2 
+ * @returns Boolean
+ */
 function validarContraseña(pass1, pass2) {
     return (pass1 === pass2);
 }
 
 // función que devuelve true si el mail es validado, false en caso contrario
+/**
+ * Esta funcion valida si es valida la cuenta de correo ingresada, en ese caso devuelte True
+ * en caso contrario False
+ * @param {String} mail 
+ * @returns  Boolean
+ */
 function validarMail(mail) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
     return emailRegex.test(mail);
 }
 
 // función para crear un usuario 
-function crearUsuario(tipoUsuario, name, dni, address, CPostal, email, password, password2, razon_Social, matricula) {
+/**
+ * Esta funcion devuelve un usuario,posee un atributo repetido para validacion posterior (Password)
+ * se puede mejorar
+ * @param {String} tipoUsuario - identificador de tipo de usuario
+ * @param {*} name - nombre y apellido del usuario
+ * @param {*} dni - DNI del usuario
+ * @param {*} address -direccion del usuario
+ * @param {*} CPostal - codigo postal del usuario
+ * @param {*} email - correo electronico del usuariop
+ * @param {*} password - contraseña del usuario
+ * @param {*} password2 - contraseña del usuario para verificacion 
+ * @param {*} razon_Social - razon social (solo para Locatario)
+ * @param {*} matricula - matricula (solo para Locatario)
+ * @returns Usuario -el usuario creado
+ */
+
+/*
+function crearUsuario(tipoUsuario, name, dni, address, CPostal, email, password, razon_Social, matricula) {
     let user = null;
-    if (tipoUsuario === 'cliente') {
+    if (tipoUsuario === 'Inquilino') {
+        razon_Social = ''
+        matricula = ''
         user = {
             name,
             dni,
@@ -171,42 +218,96 @@ function crearUsuario(tipoUsuario, name, dni, address, CPostal, email, password,
             CPostal,
             email,
             password,
-            password2
+            razon_Social,
+            matricula
         };
-    } else if (tipoUsuario === 'propietario') {
+    } else if (tipoUsuario === 'Locatario') {
         user = {
             name,
             address,
             CPostal,
             email,
+            password,
             razon_Social,
             matricula,
-            password,
-            password2
+        };
+    }
+    return user;
+}*/
+function crearUsuario(tipoUsuario, name, dni, address, CPostal, email, password, razon_Social, matricula) {
+    let user = null;
+    if (tipoUsuario === 'Inquilino') {
+        user = {
+            name: name,
+            dni: dni,
+            address: address,
+            CPostal: CPostal,
+            email: email,
+            password: password,
+            razon_Social: '',
+            matricula: ''
+        };
+    } else if (tipoUsuario === 'Locatario') {
+        user = {
+            name: name,
+            dni: '',
+            address: address,
+            CPostal: CPostal,
+            email: email,
+            razon_Social: razon_Social,
+            matricula: matricula,
+            password: password
         };
     }
     return user;
 }
 
 // la función devuelve false si un campo es nulo o vacío, true en caso contrario
-function validarUsuarios(usuario) {
+/**
+ * Esta funcion valida si los campos de usuario son correctos para el tipo de usuario, devolviendo
+ * Treu en caso de ser validado o False en caso contrario , cuando uno de sus campos es nulo o vacio
+ * @param {Usuario} usuario 
+ * @returns Boolean
+ */
+function validarUsuarios(usuario, tipoUsuario) {
     let validado = true;
-    let tag;
+
     for (const atributo in usuario) {
         if (Object.hasOwnProperty.call(usuario, atributo)) {
             const valor = usuario[atributo];
-            if (valor === null || valor === '') {
-                validado = false;
-                return validado;
+            if (tipoUsuario === 'Inquilino') {
+                // Si es Inquilino, ignoramos razon_social y matricula
+                if ((atributo !== 'razon_social' && atributo !== 'matricula') && (valor === null || valor === '')) {
+                    validado = false;
+                    return validado;
+                }
+            }
+            if (tipoUsuario === 'Locador') {
+                // Si es Locador, ignoramos dni
+                if ((atributo !== 'dni') && (valor === null || valor === '')) {
+                    validado = false;
+                    return validado;
+                }
             }
         }
     }
     return validado;
 }
+
+
+
+
+/**
+ * Esta funcion marca los errores en el formulario dependiendo de sus valores y devuelve True si es validado
+ * o False en caso contrario
+ * @param {formulario} formulario 
+ * @param {String} tipoUsuario 
+ * @returns Boolean
+ */
 function marcarError(formulario, tipoUsuario) {
     let name, dni, address, CPostal, email, password, password2, razon_Social, matricula;
 
-    if (tipoUsuario === 'cliente') {
+    if (tipoUsuario === 'Inquilino') {
         name = document.querySelector('#name_usuario').value;
         dni = document.querySelector('#dni_usuario').value;
         address = document.querySelector('#address_usuario').value;
@@ -227,7 +328,7 @@ function marcarError(formulario, tipoUsuario) {
             return false;
         }
 
-    } else if (tipoUsuario === 'propietario') {
+    } else if (tipoUsuario === 'Locatario') {
         name = document.querySelector('#name_prop').value;
         address = document.querySelector('#address_prop').value;
         CPostal = document.querySelector('#CPostal_prop').value;
@@ -256,12 +357,42 @@ function marcarError(formulario, tipoUsuario) {
 //comprobacion para no meter un listener sobre nulo y llamar a la funcion
 if (!(form_usuario === null && form_prop === null)) {
     // llamando a la función registrarUsuario, activa el listener en el form cliente
-    registrarUsuario(form_usuario, 'cliente');
+    registrarUsuario(form_usuario, 'Inquilino');
     // llamando a la función registrarUsuario, activa el listener en el form propietario
-    registrarUsuario(form_prop, 'propietario');
+    registrarUsuario(form_prop, 'Locatario');
 }
 
-/*Contacto*/
+function empaquetar(usuario) {
+    const usuarioJson = JSON.stringify(usuario)
+    console.log('Usuario empaquetado:' + usuario)
+    return usuarioJson
+}
+function enviar(paquete) {
+    fetch('ruta de la api',
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: paquete
+        }
+    )
+        .then(Response => {
+            if (!Response.ok) {
+                throw new Error('Error en la solicitud' + Response.status)
+            }
+            return Response.json()
+        })
+        .catch(error => {
+            console.error('Error en la solicitud:', error); // si hay error lo muestro en consola
+        })
+}
+
+
+
+
+
+/***************Contacto*****************/
 //Scripts js
 if (document.querySelector('.contact_form') !== null) {
     document.querySelector('.contact_form').addEventListener('submit', function (e) {
@@ -301,125 +432,9 @@ if (document.querySelector('.contact_form') !== null) {
             console.log('email validado?: ' + validarMail(email) + ' mail: ' + email)
             alert("Formulario enviado con exito!!!!");
             formulario.reset();
-            
+
         }
     }
 }
 
-
-
-
-/*
-const datos = {
-    nombre_contacto: '',
-    email_contacto: '',
-    phone_contacto: '',
-    direccion_contacto: '',
-    comentarios_contacto: ''
-
-}
-
-document.getElementById('contact_form')
-addEventListener('submit', function (e) {
-    e.preventDefault(); // Evita que el formulario se envíe
-
-    // Obtén el valor del campo de texto
-
-
-    // Define la expresión regular para validar el texto (al menos 3 caracteres alfabéticos)
-
-
-    // Valida el texto con la expresión regular
-
-});
-
-// submit
-const formulario = document.querySelector('.contact_form');
-
-if (formulario !== null) {
-    formulario.addEventListener('submit', function (e) {
-        e.preventDefault();
-        console.log(e);
-
-        console.log('Di click y la página ya no recarga');
-
-        console.log(datos);
-        var texto = document.getElementById('nombre_contacto').value;
-        var expresionRegular = /^[a-zA-Z]{3,}$/;
-        if (expresionRegular.test(texto)) {
-            // Si es válido, envía el formulario
-
-            alert('Texto válido: ' + texto);
-
-
-            // this.submit(); // Puedes enviar el formulario si lo deseas
-        } else {
-            // Si no es válido, muestra un mensaje de error
-
-            alert('Por favor, ingresa al menos 3 letras del alfabeto en el campo Nombre.');
-            return;
-        }
-        // Validar el Formulario...
-
-        const { nombre_contacto, email_contacto, phone_contacto, direccion_contacto, comentarios_contacto } = datos;
-
-        if (nombre_contacto === '' || email_contacto === '' || phone_contacto === '' || direccion_contacto === '') {
-            //console.log('Al menos un campo esta vacio');
-            mostrarError('Todos los campos son obligatorios');
-            return; // Detiene la ejecución de esta función
-        }
-
-        // console.log('Todo bien...')
-
-        mostrarMensaje('Mensaje enviado correctamente');
-    });
-}
-
-
-
-//muestra error en pantalla
-function mostrarError(mensaje) {
-    const alerta = document.createElement('p');
-    alerta.textContent = mensaje;
-    alerta.classList.add('error');
-
-    formulario.appendChild(alerta);
-
-    setTimeout(() => {
-        alerta.remove();
-    }, 3000);
-}
-
-function mostrarMensaje(mensaje) {
-    const alerta = document.createElement('p');
-    alerta.textContent = mensaje;
-    alerta.classList.add('correcto');
-    formulario.appendChild(alerta);
-
-    setTimeout(() => {
-        alerta.remove();
-    }, 3000);
-}
-// Eventos de los Inputs...
-const nombre_contacto = document.querySelector('#nombre_contacto');
-const email = document.querySelector('#email_contacto');
-const phone = document.querySelector('#phone_contacto');
-const direccion = document.querySelector('#direccion_contacto');
-const comentario = document.querySelector('#comentario_contacto');
-
-
-nombre_contacto.addEventListener('input', leerTexto);
-email_contacto.addEventListener('input', leerTexto);
-phone.addEventListener('input', leerTexto);
-direccion_contacto.addEventListener('input', leerTexto);
-comentarios_contacto.addEventListener('input', leerTexto);
-
-function leerTexto(e) {
-    // console.log(e);
-    // console.log(e.target.value);
-
-    datos[e.target.id] = e.target.value;
-
-    console.log(datos);
-}*/
-
+/** otras funciones server-side */
