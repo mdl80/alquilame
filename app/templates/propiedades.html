@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../static/css/styles.css">
     <title>Alquilame</title>
 </head>
+
 <body>
     <header>
         <img class="logo" src="../static/img/Logo-alquilame-azul.svg" alt="logo alquilame">
@@ -17,265 +21,275 @@
         <nav class="nav" id="nav">
             <button id="cerrar" class="cerrar-menu"><i class="bi bi-x-circle"></i></button>
             <ul class="nav-list">
-                <li><a href="../index.html">INICIO</a></li>
-                <li><a href="/html/nosotros.html">NOSOTROS</a></li>
-                <li><a href="/html/contacto.html">CONTACTO</a></li>
-                <li><a href="/html/registro.html">REGISTRO</a></li>
-                <li><a href="/html/inicio_sesion.html">INICIAR SESION</a></li>
-                <li><a href="/html/inicio_sesion_propietario.html" id="boton-publicar">PUBLICAR</a></li>
+                <li><a href="../templates/index.html">INICIO</a></li>
+                <li><a href="../templates/nosotros.html">NOSOTROS</a></li>
+                <li><a href="../templates/contacto.html">CONTACTO</a></li>
+                <li><a href="../templates/registro.html">REGISTRO</a></li>
+                <li><a href="../templates/inicio_sesion.html">INICIAR SESION</a></li>
+                <li><a href="../templates/inicio_sesion_propietario.html" id="boton-publicar">PUBLICAR</a></li>
             </ul>
-        </nav>        
+        </nav>
     </header>
-            <main>
-                <div class="img-fondo magic">
-                    <h1>Mis propiedades</h1>
-                </div>
-                <div class="container ">
-                    <div class="container-content fade-in">
-                        <div class="bar">
-                            <h2>Publicar Propiedad</h2>
-                            <div class="bar-buttons">
-                                <button>NUEVO</button>
-                                <button>EDITAR</button>
-                                <button>ELIMINAR</button>
-                            </div>
-                        </div>
-                    <div class="filter-container">
-                        <form action="#" class="form-filter">
-                            <div class="filter">
-                                <label for="categoria">Categoria</label>
-                                <input type="text" id="categoria">
-                            </div>
-                            <div class="filter">
-                                <label for="baños">Baños</label>
-                                <input type="number" name="baños" id="baños" min="1">
-                            </div>
-                            <div class="filter">
-                                <label for="transaccion">Tipo de Transacción</label>
-                                <input type="text" id="transaccion">
-                            </div>
-                            <div class="filter">
-                                <label for="cochera">Cochera</label>
-                                <select name="cochera" id="cochera" >
-                                    <option value="si">si</option>
-                                    <option value="no">no</option>
-                                </select>
-                            </div>
-                            <div class="filter">
-                                <label for="ubicacion">Ubicacion del imueble</label>
-                                <input type="text" id="ubicacion">
-                            </div>
-                            <div class="filter">                            
-                                <label for="cochera">Jardín</label>
-                                <select name="jardin" id="jardin" >
-                                    <option value="si">si</option>
-                                    <option value="no">no</option>
-                                </select>
-                            </div>
-                            <div class="filter">
-                                <label for="superficie-total">Superficie Total</label>
-                                <input type="text" id="superficie-total">
-                            </div>
-                            <div class="filter" id="upload-file">
-                                <label for="archivo">Subir Imagenes</label>
-                                <input type="file" name="archivo" id="archivo">
-                            </div>
-                            <div class="filter">
-                                <label for="superficie-cub">Superficie Cubierta</label>
-                                <input type="text" id="superficie-cub">
-                            </div>
-                            <div class="filter" id="space">
-                                
-                            </div>
-                            <div class="filter button-container">
-                                <button>AGREGAR</button>
-                            </div>
-                            <div class="filter">
-                                <label for="dormitorios">Dormitorios</label>
-                                <input type="number" name="dormitorios" id="dormitorios" min="1">
-                            </div>
-                        </form>
-                        </div>
-                        <div class="property-container roboto-condensed">
-                            <div class="property">
-                                <img src="../static/img/pexels-binyamin-mellish-186077.jpg" alt="">
-                                <div class="info-prop">
-                                    <p>Tipo operacion: <span>Venta</span></p>
-                                    <p>Tipo propiedad: <span>PH</span></p>
-                                    <p>Ubicación: <span>NorDelta</span></p>
-                                    <p>Superficie Cubierta: <span>150m2</span></p>
-                                    <p>Superficie total: <span>180m2</span></p>
-                                    <p>Dormitorios: <span>3</span></p>
-                                    <p>Baños: <span>2</span></p>
-                                    <p>Cochera: <span>SI</span></p>
-                                    <p>Aménities: <span>NO</span></p><br>
-                                    <p>Descripción: <span>Hermosa Casa ubicada en cercanias de nordelta</span></p>
-                                    <h5 class="precio_prop">Precio: U$S 160.000</h5>
-                                </div>                        
-                            </div>
-                            <div class="property">
-                                <img src="../static/img/pexels-mark-2724748.jpg" alt="">
-                                <div class="info-prop">
-                                    <p>Tipo operacion: <span>Venta</span></p>
-                                    <p>Tipo propiedad: <span>PH</span></p>
-                                    <p>Ubicación: <span>CABA</span></p>
-                                    <p>Superficie Cubierta: <span>200m2</span></p>
-                                    <p>Superficie total: <span>380m2</span></p>
-                                    <p>Dormitorios: <span>3</span></p>
-                                    <p>Baños: <span>2</span></p>
-                                    <p>Cochera: <span>SI</span></p>
-                                    <p>Aménities: <span>NO</span></p><br>
-                                    <p>Descripción: <span>Casa Ubicada en exclsiva zona de Palermo Soho.</span></p>
-                                    <h5 class="precio_prop">Precio: U$S 180.000</h5>
-                                </div>
-                            </div>
-                            <div class="property"><img src="../static/img/pexels-pixabay-259962.jpg" alt="">
-                                <div class="info-prop">
-                                    <p>Tipo operacion: <span>Venta</span></p>
-                                    <p>Tipo propiedad: <span>Departamento</span></p>
-                                    <p>Ubicación: <span>CABA</span></p>
-                                    <p>Superficie Cubierta: <span>200m2</span></p>
-                                    <p>Superficie total: <span>200m2</span></p>
-                                    <p>Dormitorios: <span>4</span></p>
-                                    <p>Baños: <span>2</span></p>
-                                    <p>Cochera: <span>SI</span></p>
-                                    <p>Aménities: <span>SI</span></p><br>
-                                    <p>Descripción: <span>Departamento ,piso completo en edificio de categoria</span></p>
-                                    <h5 class="precio_prop">Precio: U$S 150.000</h5>
-                                </div>
-                            </div>
-                            <div class="property">
-                                <img src="../static/img/pexels-mark-2724749.jpg" alt="">
-                                <div class="info-prop">
-                                    <p>Tipo operacion: <span>Venta</span></p>
-                                    <p>Tipo propiedad: <span>PH</span></p>
-                                    <p>Ubicación: <span>CABA</span></p>
-                                    <p>Superficie Cubierta: <span>150m2</span></p>
-                                    <p>Superficie total: <span>180m2</span></p>
-                                    <p>Dormitorios: <span>3</span></p>
-                                    <p>Baños: <span>2</span></p>
-                                    <p>Cochera: <span>NO</span></p>
-                                    <p>Aménities: <span>NO</span></p><br>
-                                    <p>Descripción: <span>Hermosa casa en zona de Caballito, remodelada 100%</span></p>
-                                    <h5 class="precio_prop">Precio: U$S 150.000</h5>
-                                </div>
-                            </div>
-                            <div class="property">
-                                <img src="../static/img/pexels-pixabay-276724.jpg" alt="">
-                                <div class="info-prop">
-                                    <p>Tipo operacion: <span>Alquiler</span></p>
-                                    <p>Tipo propiedad: <span>Departamento</span></p>
-                                    <p>Ubicación: <span>Cordoba Capital</span></p>
-                                    <p>Superficie Cubierta: <span>100m2</span></p>
-                                    <p>Superficie total: <span>100m2</span></p>
-                                    <p>Dormitorios: <span>4</span></p>
-                                    <p>Baños: <span>2</span></p>
-                                    <p>Cochera: <span>SI</span></p>
-                                    <p>Aménities: <span>SI</span></p><br>
-                                    <p>Descripción: <span>Hermoso departamento en pleno centro de cordoba, centros de compras y colegios privados.
-                                        Ajuste semestral
-                                    </span></p>
-                                    <h5 class="precio_prop">Precio: U$S 250</h5>
-                                </div>
-                            </div>
-                            <div class="property"><img src="../static/img/pexels-pixabay-275484.jpg" alt="">
-                                <div class="info-prop">
-                                    <p>Tipo operacion: <span>Alquiler</span></p>
-                                    <p>Tipo propiedad: <span>Departamento</span></p>
-                                    <p>Ubicación: <span>CABA</span></p>
-                                    <p>Superficie Cubierta: <span>80m2</span></p>
-                                    <p>Superficie total: <span>80m2</span></p>
-                                    <p>Dormitorios: <span></span></p>
-                                    <p>Baños: <span>1</span></p>
-                                    <p>Cochera: <span>SI</span></p>
-                                    <p>Aménities: <span>NO</span></p><br>
-                                    <p>Descripción: <span>Moderno monoambiente en Almagro</span></p>
-                                    <h5 class="precio_prop">Precio: U$S 155</h5>
-                                </div></div>
-                            <div class="property"><img src="../static/img/pexels-pixabay-276724.jpg" alt="">
-                                <div class="info-prop">
-                                    <p>Tipo operacion: <span>Venta</span></p>
-                                    <p>Tipo propiedad: <span>Departamento</span></p>
-                                    <p>Ubicación: <span>CABA</span></p>
-                                    <p>Superficie Cubierta: <span>50m2</span></p>
-                                    <p>Superficie total: <span>50m2</span></p>
-                                    <p>Dormitorios: <span>1</span></p>
-                                    <p>Baños: <span>1</span></p>
-                                    <p>Cochera: <span>NO</span></p>
-                                    <p>Aménities: <span>NO</span></p><br>
-                                    <p>Descripción: <span>Loft a estrenar, ubicado en Almagro</span></p>
-                                    <h5 class="precio_prop">Precio: U$S 115</h5>
-                                </div></div>
-                            <div class="property"><img src="../static/img/pexels-pixabay-534151.jpg" alt="">
-                                <div class="info-prop">
-                                    <p>Tipo operacion: <span>Venta</span></p>
-                                    <p>Tipo propiedad: <span>PH</span></p>
-                                    <p>Ubicación: <span>Mar del Plata</span></p>
-                                    <p>Superficie Cubierta: <span>150m2</span></p>
-                                    <p>Superficie total: <span>180m2</span></p>
-                                    <p>Dormitorios: <span>4</span></p>
-                                    <p>Baños: <span>3</span></p>
-                                    <p>Cochera: <span>SI</span></p>
-                                    <p>Aménities: <span>NO</span></p><br>
-                                    <p>Descripción: <span>Hermosa casa familiar ubicada en mar del plata, a 5 cuadras de la playa</span></p>
-                                    <h5 class="precio_prop">Precio: U$S 350.000</h5>
-                                </div></div>
-                        </div>
-                    </div>
-                    <div class="pages-bar">
-                        <ul>
-                            <li><a href="">1</a> </li>
-                            <li><a href="">2</a> </li>
-                            <li><a href="">3</a> </li>
-                            <li><a href="">4</a> </li>
-                            <li><a href="">5</a> </li>
-                            <li><a href="">6</a> </li>
-                            <li><a href="">7</a> </li>
-                            <li><a href="">8</a> </li>
-                            <li><a href="">Siguiente</a> </li>
-                        </ul>
+    <main>
+        <div class="img-fondo magic">
+            <h1>Mis propiedades</h1>
+        </div>
+        <div class="container ">
+            <div class="container-content fade-in">
+                <div class="bar">
+                    <h2>Publicar Propiedad</h2>
+                    <div class="bar-buttons">
+                        <button>NUEVO</button>
+                        <button>EDITAR</button>
+                        <button>ELIMINAR</button>
                     </div>
                 </div>
-            </main>
-            <footer>       
-                <nav class="footer-nav">               
-                    <div class="info">
-                        <div>
-                            <h3>Lo mejor del mercado</h3>
-                            <p>Donde sea que estés buscando, encontraremos la mejor propiedad para vos y tu familia.</p>
+                <div class="filter-container">
+                    <form action="#" class="form-filter">
+                        <div class="filter">
+                            <label for="categoria">Categoria</label>
+                            <input type="text" id="categoria">
                         </div>
-                        <div>
-                            <h3>Orientación al cliente</h3>
-                            <p>Centramos nuestro esfuerzo en la satisfacción del cliente, aportando soluciones competitivas y de calidad.</p>
+                        <div class="filter">
+                            <label for="baños">Baños</label>
+                            <input type="number" name="baños" id="baños" min="1">
                         </div>
-                        <div>
-                            <h3>Innovación</h3>
-                            <p>Promovemos mejoras continuas e innovación para alcanzar la máxima calidad desde criterios de rentabilidad.</p>
+                        <div class="filter">
+                            <label for="transaccion">Tipo de Transacción</label>
+                            <input type="text" id="transaccion">
+                        </div>
+                        <div class="filter">
+                            <label for="cochera">Cochera</label>
+                            <select name="cochera" id="cochera">
+                                <option value="si">si</option>
+                                <option value="no">no</option>
+                            </select>
+                        </div>
+                        <div class="filter">
+                            <label for="ubicacion">Ubicacion del imueble</label>
+                            <input type="text" id="ubicacion">
+                        </div>
+                        <div class="filter">
+                            <label for="cochera">Jardín</label>
+                            <select name="jardin" id="jardin">
+                                <option value="si">si</option>
+                                <option value="no">no</option>
+                            </select>
+                        </div>
+                        <div class="filter">
+                            <label for="superficie-total">Superficie Total</label>
+                            <input type="text" id="superficie-total">
+                        </div>
+                        <div class="filter" id="upload-file">
+                            <label for="archivo">Subir Imagenes</label>
+                            <input type="file" name="archivo" id="archivo">
+                        </div>
+                        <div class="filter">
+                            <label for="superficie-cub">Superficie Cubierta</label>
+                            <input type="text" id="superficie-cub">
+                        </div>
+                        <div class="filter" id="space">
+
+                        </div>
+                        <div class="filter button-container">
+                            <button>AGREGAR</button>
+                        </div>
+                        <div class="filter">
+                            <label for="dormitorios">Dormitorios</label>
+                            <input type="number" name="dormitorios" id="dormitorios" min="1">
+                        </div>
+                    </form>
+                </div>
+                <div class="property-container roboto-condensed">
+                    <div class="property">
+                        <img src="../static/img/pexels-binyamin-mellish-186077.jpg" alt="">
+                        <div class="info-prop">
+                            <p>Tipo operacion: <span>Venta</span></p>
+                            <p>Tipo propiedad: <span>PH</span></p>
+                            <p>Ubicación: <span>NorDelta</span></p>
+                            <p>Superficie Cubierta: <span>150m2</span></p>
+                            <p>Superficie total: <span>180m2</span></p>
+                            <p>Dormitorios: <span>3</span></p>
+                            <p>Baños: <span>2</span></p>
+                            <p>Cochera: <span>SI</span></p>
+                            <p>Aménities: <span>NO</span></p><br>
+                            <p>Descripción: <span>Hermosa Casa ubicada en cercanias de nordelta</span></p>
+                            <h5 class="precio_prop">Precio: U$S 160.000</h5>
                         </div>
                     </div>
-                    <div class="comunicate">                    
-                        <p>Llamanos: <a href="tel:+5411-5555-5555">(+54-11) 5555-5555</a></p>
-                        <p>Escribinos: <a href="mailto:contacto@alquilame.com.ar">contacto@alquilame.com.ar</a></p>
-                    </div>
-                    <div class="social-footer">                
-                        <div class="iconos-social">
-                            <h3>Seguinos</h3>
-                            <div>
-                                <a href="https://facebook.com"><img src="../static/img/Facebook.svg" alt="facebook"></a>
-                                <a href="https://twitter.com/home"><img src="../static/img/Twitter.svg" alt="X"></a>
-                                <a href="https://instagram.com"><img src="../static/img/Instagram.svg" alt="instagram"></a>
-                                <a href="https://whatsapp.com"><img src="../static/img/WhatsApp.svg" alt="whatsapp"></a>
-                            </div>                    
-                        </div>                
-                        <div class="copyright">
-                            <p><b>Copyright ©<script>document.write(new Date().getFullYear());</script> All Rights Reserved.</b></p>
+                    <div class="property">
+                        <img src="../static/img/pexels-mark-2724748.jpg" alt="">
+                        <div class="info-prop">
+                            <p>Tipo operacion: <span>Venta</span></p>
+                            <p>Tipo propiedad: <span>PH</span></p>
+                            <p>Ubicación: <span>CABA</span></p>
+                            <p>Superficie Cubierta: <span>200m2</span></p>
+                            <p>Superficie total: <span>380m2</span></p>
+                            <p>Dormitorios: <span>3</span></p>
+                            <p>Baños: <span>2</span></p>
+                            <p>Cochera: <span>SI</span></p>
+                            <p>Aménities: <span>NO</span></p><br>
+                            <p>Descripción: <span>Casa Ubicada en exclsiva zona de Palermo Soho.</span></p>
+                            <h5 class="precio_prop">Precio: U$S 180.000</h5>
                         </div>
-                        <div class="diseñador">
-                            <a href="#">Creado por: Grupo4®</a>
-                        </div>                                      
-                    </div>                                
-                </nav>
-            </footer>
-        <script src="../js/main.js"></script>
-    </body>
+                    </div>
+                    <div class="property"><img src="../static/img/pexels-pixabay-259962.jpg" alt="">
+                        <div class="info-prop">
+                            <p>Tipo operacion: <span>Venta</span></p>
+                            <p>Tipo propiedad: <span>Departamento</span></p>
+                            <p>Ubicación: <span>CABA</span></p>
+                            <p>Superficie Cubierta: <span>200m2</span></p>
+                            <p>Superficie total: <span>200m2</span></p>
+                            <p>Dormitorios: <span>4</span></p>
+                            <p>Baños: <span>2</span></p>
+                            <p>Cochera: <span>SI</span></p>
+                            <p>Aménities: <span>SI</span></p><br>
+                            <p>Descripción: <span>Departamento ,piso completo en edificio de categoria</span></p>
+                            <h5 class="precio_prop">Precio: U$S 150.000</h5>
+                        </div>
+                    </div>
+                    <div class="property">
+                        <img src="../static/img/pexels-mark-2724749.jpg" alt="">
+                        <div class="info-prop">
+                            <p>Tipo operacion: <span>Venta</span></p>
+                            <p>Tipo propiedad: <span>PH</span></p>
+                            <p>Ubicación: <span>CABA</span></p>
+                            <p>Superficie Cubierta: <span>150m2</span></p>
+                            <p>Superficie total: <span>180m2</span></p>
+                            <p>Dormitorios: <span>3</span></p>
+                            <p>Baños: <span>2</span></p>
+                            <p>Cochera: <span>NO</span></p>
+                            <p>Aménities: <span>NO</span></p><br>
+                            <p>Descripción: <span>Hermosa casa en zona de Caballito, remodelada 100%</span></p>
+                            <h5 class="precio_prop">Precio: U$S 150.000</h5>
+                        </div>
+                    </div>
+                    <div class="property">
+                        <img src="../static/img/pexels-pixabay-276724.jpg" alt="">
+                        <div class="info-prop">
+                            <p>Tipo operacion: <span>Alquiler</span></p>
+                            <p>Tipo propiedad: <span>Departamento</span></p>
+                            <p>Ubicación: <span>Cordoba Capital</span></p>
+                            <p>Superficie Cubierta: <span>100m2</span></p>
+                            <p>Superficie total: <span>100m2</span></p>
+                            <p>Dormitorios: <span>4</span></p>
+                            <p>Baños: <span>2</span></p>
+                            <p>Cochera: <span>SI</span></p>
+                            <p>Aménities: <span>SI</span></p><br>
+                            <p>Descripción: <span>Hermoso departamento en pleno centro de cordoba, centros de compras y
+                                    colegios privados.
+                                    Ajuste semestral
+                                </span></p>
+                            <h5 class="precio_prop">Precio: U$S 250</h5>
+                        </div>
+                    </div>
+                    <div class="property"><img src="../static/img/pexels-pixabay-275484.jpg" alt="">
+                        <div class="info-prop">
+                            <p>Tipo operacion: <span>Alquiler</span></p>
+                            <p>Tipo propiedad: <span>Departamento</span></p>
+                            <p>Ubicación: <span>CABA</span></p>
+                            <p>Superficie Cubierta: <span>80m2</span></p>
+                            <p>Superficie total: <span>80m2</span></p>
+                            <p>Dormitorios: <span></span></p>
+                            <p>Baños: <span>1</span></p>
+                            <p>Cochera: <span>SI</span></p>
+                            <p>Aménities: <span>NO</span></p><br>
+                            <p>Descripción: <span>Moderno monoambiente en Almagro</span></p>
+                            <h5 class="precio_prop">Precio: U$S 155</h5>
+                        </div>
+                    </div>
+                    <div class="property"><img src="../static/img/pexels-pixabay-276724.jpg" alt="">
+                        <div class="info-prop">
+                            <p>Tipo operacion: <span>Venta</span></p>
+                            <p>Tipo propiedad: <span>Departamento</span></p>
+                            <p>Ubicación: <span>CABA</span></p>
+                            <p>Superficie Cubierta: <span>50m2</span></p>
+                            <p>Superficie total: <span>50m2</span></p>
+                            <p>Dormitorios: <span>1</span></p>
+                            <p>Baños: <span>1</span></p>
+                            <p>Cochera: <span>NO</span></p>
+                            <p>Aménities: <span>NO</span></p><br>
+                            <p>Descripción: <span>Loft a estrenar, ubicado en Almagro</span></p>
+                            <h5 class="precio_prop">Precio: U$S 115</h5>
+                        </div>
+                    </div>
+                    <div class="property"><img src="../static/img/pexels-pixabay-534151.jpg" alt="">
+                        <div class="info-prop">
+                            <p>Tipo operacion: <span>Venta</span></p>
+                            <p>Tipo propiedad: <span>PH</span></p>
+                            <p>Ubicación: <span>Mar del Plata</span></p>
+                            <p>Superficie Cubierta: <span>150m2</span></p>
+                            <p>Superficie total: <span>180m2</span></p>
+                            <p>Dormitorios: <span>4</span></p>
+                            <p>Baños: <span>3</span></p>
+                            <p>Cochera: <span>SI</span></p>
+                            <p>Aménities: <span>NO</span></p><br>
+                            <p>Descripción: <span>Hermosa casa familiar ubicada en mar del plata, a 5 cuadras de la
+                                    playa</span></p>
+                            <h5 class="precio_prop">Precio: U$S 350.000</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pages-bar">
+                <ul>
+                    <li><a href="">1</a> </li>
+                    <li><a href="">2</a> </li>
+                    <li><a href="">3</a> </li>
+                    <li><a href="">4</a> </li>
+                    <li><a href="">5</a> </li>
+                    <li><a href="">6</a> </li>
+                    <li><a href="">7</a> </li>
+                    <li><a href="">8</a> </li>
+                    <li><a href="">Siguiente</a> </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <nav class="footer-nav">
+            <div class="info">
+                <div>
+                    <h3>Lo mejor del mercado</h3>
+                    <p>Donde sea que estés buscando, encontraremos la mejor propiedad para vos y tu familia.</p>
+                </div>
+                <div>
+                    <h3>Orientación al cliente</h3>
+                    <p>Centramos nuestro esfuerzo en la satisfacción del cliente, aportando soluciones competitivas y de
+                        calidad.</p>
+                </div>
+                <div>
+                    <h3>Innovación</h3>
+                    <p>Promovemos mejoras continuas e innovación para alcanzar la máxima calidad desde criterios de
+                        rentabilidad.</p>
+                </div>
+            </div>
+            <div class="comunicate">
+                <p>Llamanos: <a href="tel:+5411-5555-5555">(+54-11) 5555-5555</a></p>
+                <p>Escribinos: <a href="mailto:contacto@alquilame.com.ar">contacto@alquilame.com.ar</a></p>
+            </div>
+            <div class="social-footer">
+                <div class="iconos-social">
+                    <h3>Seguinos</h3>
+                    <div>
+                        <a href="https://facebook.com"><img src="../static/img/Facebook.svg" alt="facebook"></a>
+                        <a href="https://twitter.com/home"><img src="../static/img/Twitter.svg" alt="X"></a>
+                        <a href="https://instagram.com"><img src="../static/img/Instagram.svg" alt="instagram"></a>
+                        <a href="https://whatsapp.com"><img src="../static/img/WhatsApp.svg" alt="whatsapp"></a>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p><b>Copyright ©
+                            <script>document.write(new Date().getFullYear());</script> All Rights Reserved.
+                        </b></p>
+                </div>
+                <div class="diseñador">
+                    <a href="#">Creado por: Grupo4®</a>
+                </div>
+            </div>
+        </nav>
+    </footer>
+    <script src="../static/js/main.js"></script>
+</body>
+
 </html>

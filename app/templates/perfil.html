@@ -30,40 +30,31 @@
             </ul>
         </nav>
     </header>
-    <article class="inicio_sesion">
+    <article>
         <section class="login magic">
-            <h2>Bienvenido</h2>
+            <h2>Perfil</h2>
         </section>
-        <section class="formulario">
-            <h4>Inicio de sesión Propietario</h4>
-            <form action="#" class="login_form" method="post">
-                <div>
-                    <input type="email" id="email" name="email" placeholder="email@address.com">
-                </div>
-                <div>
-                    <input type="text" id="razon_social_p" name="razon_social" placeholder="Razón Social *">
-                </div>
-                <div>
-                    <input type="text" id="matricula_usuario_p" name="matricula" placeholder="Matricula inmobiliaria *">
-                </div>
-                <div>
-                    <input type="password" id="password" name="password" placeholder="Contraseña">
-                </div>
-                <div class="cbox-login">
-                    <label for="cbox1">
-                        <input type="checkbox" id="cbox1" value="colegios">Mantenerme conectado
-                    </label>
-                </div>
-                <div>
-                    <p class="contraseña">Olvidé mi contraseña</p>
-                </div>
-                <div class="button_publicar">
-                    <a href="#">INGRESAR</a>
-                </div>
-                <div>
-                    <p class="ayuda">¿Necesitas ayuda?</p>
-                </div>
-            </form>
+        <section class="formu-perfil">
+            <div>
+                <h4>Nombre de Usuario</h4>
+                <ul class="lista-datos">
+                    <li><img class="ic-perfil" src="../static/img/perfil-direccion.png" ></img> Dirección de usuario:<li class="cuadro-texto"></li></li>
+                    <li><img class="ic-perfil" src="../static/img/perfil-documento.png" ></img> Número de documento:<li class="cuadro-texto"></li></li>
+                    <li><img class="ic-perfil" src="../static/img/perfil-cp.png" ></img> Código postal:<li class="cuadro-texto"></li></li>
+                    <li><img class="ic-perfil" src="../static/img/perfil-email.webp" ></img> E-mail:<li class="cuadro-texto"></li></li>
+                    <li><img class="ic-perfil" src="../static/img/perfil-rs.webp" ></img> Razón Social:<li class="cuadro-texto"></li></li>
+                    <li><img class="ic-perfil" src="../static/img/perfil-matricula.png" ></img> Matrícula inmobiliaria:<li class="cuadro-texto"></li></li>
+                </ul>
+            </div>
+            <div>
+                <input class="butt-perfil" type="submit" value="Editar Perfil">
+            </div>
+            <div>
+                <input class="butt-perfil" type="submit" value="Guardar Cambios">
+            </div>
+            <div>
+                <input class="butt-perfil" type="submit" value="Eliminar Perfil">
+            </div>
         </section>
     </article>
     <footer>
