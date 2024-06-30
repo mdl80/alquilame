@@ -219,9 +219,9 @@ function crearUsuario(tipoUsuario, name, dni, address, CPostal, email, password,
             address,
             CPostal,
             email,
+            password,
             razon_Social,
             matricula,
-            password,
         };
     }
     return user;
@@ -236,15 +236,20 @@ function crearUsuario(tipoUsuario, name, dni, address, CPostal, email, password,
  */
 function validarUsuarios(usuario, tipoUsuario) {
     let validado = true;
-    let tag;
+
     for (const atributo in usuario) {
         if (Object.hasOwnProperty.call(usuario, atributo)) {
-            const valor = usuario[atributo]
-            if (tipoUsuario === 'Inquilino' && (atributo != 'razon_social' || atributo != 'matricula') && (valor === null || valor === '')) {
-                validado = false;
-                return validado;
-            } else {
-                if ((atributo != 'dni') && (valor === null || valor === '')) {
+            const valor = usuario[atributo];
+            if (tipoUsuario === 'Inquilino') {
+                // Si es Inquilino, ignoramos razon_social y matricula
+                if ((atributo !== 'razon_social' && atributo !== 'matricula') && (valor === null || valor === '')) {
+                    validado = false;
+                    return validado;
+                }
+            }
+            if (tipoUsuario === 'Locador') {
+                // Si es Locador, ignoramos dni
+                if ((atributo !== 'dni') && (valor === null || valor === '')) {
                     validado = false;
                     return validado;
                 }
@@ -256,10 +261,11 @@ function validarUsuarios(usuario, tipoUsuario) {
 
 
 
+
 /**
  * Esta funcion marca los errores en el formulario dependiendo de sus valores y devuelve True si es validado
  * o False en caso contrario
- * @param {Formulario} formulario 
+ * @param {formulario} formulario 
  * @param {String} tipoUsuario 
  * @returns Boolean
  */
@@ -321,7 +327,7 @@ if (!(form_usuario === null && form_prop === null)) {
     registrarUsuario(form_prop, 'Locatario');
 }
 
-function nuevoUsuario(usuario) {
+function convertir(usuario) {
 
 }
 
