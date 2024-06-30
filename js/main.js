@@ -156,7 +156,7 @@ function validarContraseña(pass1, pass2) {
 
 // función que devuelve true si el mail es validado, false en caso contrario
 function validarMail(mail) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(mail);
 }
 
@@ -213,7 +213,7 @@ function marcarError(formulario, tipoUsuario) {
         CPostal = document.querySelector('#CPostal_usuario').value;
         email = document.querySelector('#email_usuario').value;
         password = document.querySelector('#password_usuario').value;
-        password2 = document.querySelector('#password2_usuario');
+        password2 = document.querySelector('#password2_usuario').value;
 
         if (!name || !dni || !address || !CPostal || !email || !password || !password2) {
             // Marcar los campos que faltan
@@ -276,7 +276,6 @@ if (document.querySelector('.contact_form') !== null) {
         const mensaje = document.querySelector('#comentarios_contacto').value;
         const contacto = document.querySelector('input[name="contacto"]:checked');
         const servicio = document.querySelector('#motivo').value;
-        const formulario = document.querySelector('.contact_form');
 
         // Eliminar clases de error anteriores
         document.querySelectorAll('.error').forEach(element => {
@@ -284,10 +283,10 @@ if (document.querySelector('.contact_form') !== null) {
         });
 
         // Comprobamos si alguno está vacío
-        if (!nombre || (!email || !(validarMail(email))) || !telefono || !mensaje || !contacto || !servicio) {
+        if (!nombre || !email || !telefono || !mensaje || !contacto || !servicio) {
             // Marcamos con error los vacíos
             if (!nombre) document.querySelector('#nombre_contacto').classList.add('error');
-            if (!email || !(validarMail(email))) document.querySelector('#email_contacto').classList.add('error');
+            if (!email) document.querySelector('#email_contacto').classList.add('error');
             if (!telefono) document.querySelector('#phone_contacto').classList.add('error');
             if (!mensaje) document.querySelector('#comentarios_contacto').classList.add('error');
             if (!contacto) {
@@ -298,10 +297,8 @@ if (document.querySelector('.contact_form') !== null) {
             if (!servicio) document.querySelector('#motivo').classList.add('error');
             alert("Debe completar todos los campos para poder comunicarnos con usted");
         } else {
-            console.log('email validado?: ' + validarMail(email) + ' mail: ' + email)
-            alert("Formulario enviado con exito!!!!");
-            formulario.reset();
-            
+            console.log("llego a todo esta bien");
+            alert("Formulario enviado con exito");
         }
     }
 }
