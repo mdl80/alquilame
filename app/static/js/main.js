@@ -128,7 +128,7 @@ function registrarUsuario(formulario, tipoUsuario) {
 
         // crear usuario, 
         let usuario = crearUsuario(tipoUsuario, name, dni, address, CPostal, email, password, razon_Social, matricula);
-
+        enviar(empaquetar(usuario))
         // validar Usuario
         let validado = validarUsuarios(usuario, tipoUsuario);
 
@@ -141,6 +141,12 @@ function registrarUsuario(formulario, tipoUsuario) {
             if (!validarMail(email)) {
                 return alert('Por favor, ingrese un correo electrónico válido');
             }
+            //si fue validado y no hubo errores empaqueto y envio
+            function empaquetar(usuario) {
+                const usuarioJson = JSON.stringify(usuario)
+                console.log('Usuario empaquetado:' + usuario)
+                return usuarioJson
+            }
             // se crea un array de objetos
             const Users = JSON.parse(localStorage.getItem('Users')) || [];
             const isUserRegistered = Users.find(user => user.email === email);
@@ -151,7 +157,7 @@ function registrarUsuario(formulario, tipoUsuario) {
             Users.push(usuario);
             localStorage.setItem('Users', JSON.stringify(Users));
             alert('Registro Exitoso');
-            window.location.href = 'inicio_sesion.html';
+            window.location.href = 'inicio_sesion.html';//va a la pagina de perfil no a la de inicio
         } else {
             alert("Para continuar el registro debe completar todos los campos obligatorios");
         }
@@ -198,6 +204,8 @@ function validarMail(mail) {
  * @param {*} matricula - matricula (solo para Locatario)
  * @returns Usuario -el usuario creado
  */
+
+/*
 function crearUsuario(tipoUsuario, name, dni, address, CPostal, email, password, razon_Social, matricula) {
     let user = null;
     if (tipoUsuario === 'Inquilino') {
@@ -222,6 +230,33 @@ function crearUsuario(tipoUsuario, name, dni, address, CPostal, email, password,
             password,
             razon_Social,
             matricula,
+        };
+    }
+    return user;
+}*/
+function crearUsuario(tipoUsuario, name, dni, address, CPostal, email, password, razon_Social, matricula) {
+    let user = null;
+    if (tipoUsuario === 'Inquilino') {
+        user = {
+            name: name,
+            dni: dni,
+            address: address,
+            CPostal: CPostal,
+            email: email,
+            password: password,
+            razon_Social: '',
+            matricula: ''
+        };
+    } else if (tipoUsuario === 'Locatario') {
+        user = {
+            name: name,
+            dni: '',
+            address: address,
+            CPostal: CPostal,
+            email: email,
+            razon_Social: razon_Social,
+            matricula: matricula,
+            password: password
         };
     }
     return user;
@@ -327,8 +362,30 @@ if (!(form_usuario === null && form_prop === null)) {
     registrarUsuario(form_prop, 'Locatario');
 }
 
-function convertir(usuario) {
-
+function empaquetar(usuario) {
+    const usuarioJson = JSON.stringify(usuario)
+    console.log('Usuario empaquetado:' + usuario)
+    return usuarioJson
+}
+function enviar(paquete) {
+    fetch('ruta de la api',
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: paquete
+        }
+    )
+        .then(Response => {
+            if (!Response.ok) {
+                throw new Error('Error en la solicitud' + Response.status)
+            }
+            return Response.json()
+        })
+        .catch(error => {
+            console.error('Error en la solicitud:', error); // si hay error lo muestro en consola
+        })
 }
 
 
