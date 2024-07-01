@@ -166,7 +166,7 @@ header {
 
 .busqueda_gral {
     height: 700px;
-    background-image: url("../static/img/pexels-photomix-company-101808\ -\ copia.jpg");
+    background-image: url("../img/pexels-photomix-company-101808\ -\ copia.jpg");
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -350,7 +350,7 @@ footer {
 
 .sobre_nosotros {
     width: 100%;
-    background: url("../static/img/fondo_cortado_duotono.png");
+    background: url("../img/fondo_cortado_duotono.png");
 }
 
 .sobre_nosotros h2 {
@@ -406,7 +406,7 @@ footer {
 
 .login {
     width: 100%;
-    background: url("../static/img/fondo_cortado_duotono_ingreso.png");
+    background: url("../img/fondo_cortado_duotono_ingreso.png");
 }
 
 .login h2 {
@@ -462,7 +462,7 @@ footer {
 
 .contacto_title {
     width: 100%;
-    background: url("../static/img/fondo_cortado_duotono_contacto.png");
+    background: url("../img/fondo_cortado_duotono_contacto.png");
     background-size: cover;
     background-position: center;
     position: relative;
@@ -589,7 +589,7 @@ footer {
 
 .registro_title {
     width: 100%;
-    background: url("../static/img/fondo_cortado_duotono - registro.png");
+    background: url("../img/fondo_cortado_duotono - registro.png");
 }
 
 .registro_title h2 {
@@ -662,6 +662,53 @@ label.error {
     font-size: var(--font-x-small);
     color: var(--text-color-title);
     font-weight: 500;
+
+}
+.lista-datos {
+    width: 70%;
+    list-style: none;
+    font-weight: 500;
+}
+
+.lista-datos li {
+    padding: 15px 0;
+    font-size:large;
+}
+
+.cuadro-texto {
+    width: 140%;
+    border-style:outset;
+    font-weight: 190;
+}
+
+.butt-perfil {
+    padding: var(--padding-x-small);
+    width: 100%;
+    margin-top: var(--margin-small);
+    background-color: var(--bg-color-principal);
+    color: var(--text-color-third);
+    border-radius: var(--border-radius-med);
+    cursor: pointer;
+    font-size: var(--font-x-small);
+}
+
+.formu-perfil {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--padding-small);
+    margin: var(--margin-small) auto;
+    border: 1px solid var(--border-color-3);
+}
+
+.formu-perfil h4 {
+    text-align: center;
+}
+
+.ic-perfil {
+    width: 20px;
+    align-items: center;
 }
 
 /* -- animaciones propiedades.html -- */
@@ -795,7 +842,7 @@ label.error {
         justify-content: center;
         width: 100%;
         height: 150px;
-        background-image: url("../static/img/fondo_cortado_duotono-alquileres.png");
+        background-image: url("../img/fondo_cortado_duotono-alquileres.png");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -1098,7 +1145,7 @@ label.error {
 
     .img-fondo {
         height: 150px;
-        background-image: url("../static/img/fondo_cortado_duotono-alquileres.png");
+        background-image: url("../img/fondo_cortado_duotono-alquileres.png");
     }
 
     .bar button {
@@ -1415,7 +1462,7 @@ label.error {
 
     .img-fondo {
         height: 110px;
-        background-image: url("../static/img/fondo_cortado_duotono-alquileres.png");
+        background-image: url("../img/fondo_cortado_duotono-alquileres.png");
     }
 
     .bar-buttons {
