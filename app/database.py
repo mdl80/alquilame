@@ -25,3 +25,4 @@ def close_db(e=None):
 #Inicializar la aplicacion con el manejo de la DB
 def init_app(app):
     app.teardown_appcontext(close_db)
+
