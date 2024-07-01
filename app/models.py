@@ -27,4 +27,55 @@ class User:
             self.idUsuario = cursor.lastrowid
         db.commit()
         cursor.close()
+
+    def delete(self):
+        db = get_db()
+        cursor = db.cursor()
+        cursor.execute("DELETE FROM users WHERE idUsuario = %s", (self.idUsuario,))
+        db.commit()
+        cursor.close()
+
+    @staticmethod
+    def get_all():
+        db = get_db()
+        cursor = db.cursor()
+        cursor.execute("SELECT * FROM users")
+        users = cursor.fetchall()
+        cursor.close()
+        return users
+
+    @staticmethod
+    def get_by_id(idUsuario):
+        db = get_db()
+        cursor = db.cursor()
+        cursor.execute("SELECT * FROM users WHERE idUsuario = %s", (idUsuario,))
+        user = cursor.fetchone()
+        cursor.close()
+        return user
+
+    @staticmethod
+    def get_by_username(username):
+        db = get_db()
+        cursor = db.cursor()
+        cursor.execute("SELECT * FROM users WHERE username = %s", (username,))
+        user = cursor.fetchone()
+        cursor.close()
+        return user
+
+    @staticmethod
+    def get_by_email(email):
+        db = get_db()
+        cursor = db.cursor()
+        cursor.execute("SELECT * FROM users WHERE email = %s", (email,))
+        user = cursor.fetchone()
+        cursor.close()
+        return user
+
+
+
+
+
+
+
+
         
