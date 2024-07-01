@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../static/css/styles.css">
     <title>Alquilame</title>
 </head>
+
 <body>
     <header>
         <img class="logo" src="../static/img/Logo-alquilame-azul.svg" alt="logo alquilame">
@@ -17,90 +21,95 @@
         <nav class="nav" id="nav">
             <button id="cerrar" class="cerrar-menu"><i class="bi bi-x-circle"></i></button>
             <ul class="nav-list">
-                <li><a href="../index.html">INICIO</a></li>
-                <li><a href="/html/nosotros.html">NOSOTROS</a></li>
-                <li><a href="/html/contacto.html">CONTACTO</a></li>
-                <li><a href="/html/registro.html">REGISTRO</a></li>
-                <li><a href="/html/inicio_sesion.html">INICIAR SESION</a></li>
-                <li><a href="/html/inicio_sesion_propietario.html" id="boton-publicar">PUBLICAR</a></li>
+                <li><a href="../templates/index.html">INICIO</a></li>
+                <li><a href="../templates/nosotros.html">NOSOTROS</a></li>
+                <li><a href="../templates/contacto.html">CONTACTO</a></li>
+                <li><a href="../templates/registro.html">REGISTRO</a></li>
+                <li><a href="../templates/inicio_sesion.html">INICIAR SESION</a></li>
+                <li><a href="../templates/inicio_sesion_propietario.html" id="boton-publicar">PUBLICAR</a></li>
             </ul>
-        </nav>        
+        </nav>
     </header>
-            <article class="inicio_sesion">
-                <section class="login magic">
-                    <h2>Bienvenido</h2>
-                </section>
-                <section class="formulario">
-                    <h4>Inicio de sesión Propietario</h4>
-                    <form action="#" class="login_form" method="post">
-                        <div>
-                            <input type="email" id="email" name="email" placeholder="email@address.com">
-                        </div>
-                        <div>
-                            <input type="text" id="razon_social_p" name="razon_social" placeholder="Razón Social *">
-                        </div>
-                        <div>
-                            <input type="text" id="matricula_usuario_p" name="matricula" placeholder="Matricula inmobiliaria *">
-                        </div>
-                        <div>
-                            <input type="password" id="password" name="password" placeholder="Contraseña">
-                        </div>
-                        <div class="cbox-login">
-                            <label for="cbox1">
-                                <input type="checkbox" id="cbox1"  value="colegios">Mantenerme conectado
-                            </label>
-                        </div>
-                        <div>
-                            <p class="contraseña">Olvidé mi contraseña</p>
-                        </div>
-                        <div class="button_publicar">
-                            <a href="#">INGRESAR</a>
-                        </div>
-                        <div>
-                            <p class="ayuda">¿Necesitas ayuda?</p>
-                        </div>
-                    </form>
-                </section>                           
-            </article>
-            <footer>       
-                <nav class="footer-nav">               
-                    <div class="info">
-                        <div>
-                            <h3>Lo mejor del mercado</h3>
-                            <p>Donde sea que estés buscando, encontraremos la mejor propiedad para vos y tu familia.</p>
-                        </div>
-                        <div>
-                            <h3>Orientación al cliente</h3>
-                            <p>Centramos nuestro esfuerzo en la satisfacción del cliente, aportando soluciones competitivas y de calidad.</p>
-                        </div>
-                        <div>
-                            <h3>Innovación</h3>
-                            <p>Promovemos mejoras continuas e innovación para alcanzar la máxima calidad desde criterios de rentabilidad.</p>
-                        </div>
+    <article class="inicio_sesion">
+        <section class="login magic">
+            <h2>Bienvenido</h2>
+        </section>
+        <section class="formulario">
+            <h4>Inicio de sesión Propietario</h4>
+            <form action="#" class="login_form" method="post">
+                <div>
+                    <input type="email" id="email" name="email" placeholder="email@address.com">
+                </div>
+                <div>
+                    <input type="text" id="razon_social_p" name="razon_social" placeholder="Razón Social *">
+                </div>
+                <div>
+                    <input type="text" id="matricula_usuario_p" name="matricula" placeholder="Matricula inmobiliaria *">
+                </div>
+                <div>
+                    <input type="password" id="password" name="password" placeholder="Contraseña">
+                </div>
+                <div class="cbox-login">
+                    <label for="cbox1">
+                        <input type="checkbox" id="cbox1" value="colegios">Mantenerme conectado
+                    </label>
+                </div>
+                <div>
+                    <p class="contraseña">Olvidé mi contraseña</p>
+                </div>
+                <div class="button_publicar">
+                    <a href="#">INGRESAR</a>
+                </div>
+                <div>
+                    <p class="ayuda">¿Necesitas ayuda?</p>
+                </div>
+            </form>
+        </section>
+    </article>
+    <footer>
+        <nav class="footer-nav">
+            <div class="info">
+                <div>
+                    <h3>Lo mejor del mercado</h3>
+                    <p>Donde sea que estés buscando, encontraremos la mejor propiedad para vos y tu familia.</p>
+                </div>
+                <div>
+                    <h3>Orientación al cliente</h3>
+                    <p>Centramos nuestro esfuerzo en la satisfacción del cliente, aportando soluciones competitivas y de
+                        calidad.</p>
+                </div>
+                <div>
+                    <h3>Innovación</h3>
+                    <p>Promovemos mejoras continuas e innovación para alcanzar la máxima calidad desde criterios de
+                        rentabilidad.</p>
+                </div>
+            </div>
+            <div class="comunicate">
+                <p>Llamanos: <a href="tel:+5411-5555-5555">(+54-11) 5555-5555</a></p>
+                <p>Escribinos: <a href="mailto:contacto@alquilame.com.ar">contacto@alquilame.com.ar</a></p>
+            </div>
+            <div class="social-footer">
+                <div class="iconos-social">
+                    <h3>Seguinos</h3>
+                    <div>
+                        <a href="https://facebook.com"><img src="../static/img/Facebook.svg" alt="facebook"></a>
+                        <a href="https://twitter.com/home"><img src="../static/img/Twitter.svg" alt="X"></a>
+                        <a href="https://instagram.com"><img src="../static/img/Instagram.svg" alt="instagram"></a>
+                        <a href="https://whatsapp.com"><img src="../static/img/WhatsApp.svg" alt="whatsapp"></a>
                     </div>
-                    <div class="comunicate">                    
-                        <p>Llamanos: <a href="tel:+5411-5555-5555">(+54-11) 5555-5555</a></p>
-                        <p>Escribinos: <a href="mailto:contacto@alquilame.com.ar">contacto@alquilame.com.ar</a></p>
-                    </div>
-                    <div class="social-footer">                
-                        <div class="iconos-social">
-                            <h3>Seguinos</h3>
-                            <div>
-                                <a href="https://facebook.com"><img src="../static/img/Facebook.svg" alt="facebook"></a>
-                                <a href="https://twitter.com/home"><img src="../static/img/Twitter.svg" alt="X"></a>
-                                <a href="https://instagram.com"><img src="../static/img/Instagram.svg" alt="instagram"></a>
-                                <a href="https://whatsapp.com"><img src="../static/img/WhatsApp.svg" alt="whatsapp"></a>
-                            </div>                    
-                        </div>                
-                        <div class="copyright">
-                            <p><b>Copyright ©<script>document.write(new Date().getFullYear());</script> All Rights Reserved.</b></p>
-                        </div>
-                        <div class="diseñador">
-                            <a href="#">Creado por: Grupo4®</a>
-                        </div>                                      
-                    </div>                                
-                </nav>
-            </footer>
-        <script src="../js/main.js"></script>
-    </body>
+                </div>
+                <div class="copyright">
+                    <p><b>Copyright ©
+                            <script>document.write(new Date().getFullYear());</script> All Rights Reserved.
+                        </b></p>
+                </div>
+                <div class="diseñador">
+                    <a href="#">Creado por: Grupo4®</a>
+                </div>
+            </div>
+        </nav>
+    </footer>
+    <script src="../static/js/main.js"></script>
+</body>
+
 </html>
