@@ -70,12 +70,3 @@ class User:
         user = cursor.fetchone()
         cursor.close()
         return user
-
-
-
-
-
-
-
-
-        
