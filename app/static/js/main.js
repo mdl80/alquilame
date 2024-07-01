@@ -238,14 +238,15 @@ function crearUsuario(tipoUsuario, name, dni, address, CPostal, email, password,
     let user = null;
     if (tipoUsuario === 'Inquilino') {
         user = {
-            name: name,
-            dni: dni,
-            address: address,
-            CPostal: CPostal,
+            nombre_apellido: name,
+            DNI: dni,
+            direccion: address,
+            codigo_postal: CPostal,
             email: email,
             password: password,
             razon_Social: '',
-            matricula: ''
+            matricula: '',
+            idRol:1
         };
     } else if (tipoUsuario === 'Locatario') {
         user = {
@@ -256,7 +257,8 @@ function crearUsuario(tipoUsuario, name, dni, address, CPostal, email, password,
             email: email,
             razon_Social: razon_Social,
             matricula: matricula,
-            password: password
+            password: password,
+            idRol:2
         };
     }
     return user;
@@ -432,7 +434,6 @@ if (document.querySelector('.contact_form') !== null) {
             console.log('email validado?: ' + validarMail(email) + ' mail: ' + email)
             alert("Formulario enviado con exito!!!!");
             formulario.reset();
-
         }
     }
 }
