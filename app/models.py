@@ -18,8 +18,8 @@ class User:
         cursor = db.cursor()
         if self.idUsuario:
             cursor.execute("""UPDATE users SET nombre_apellido = %s, DNI = %s, direccion = %s, codigo_postal = %s, password = %s, razon_social = %s, matricula = %s, idRol = %s 
-                           WHERE idUsuario = %s""",
-                           (self.nombre_apellido, self.DNI, self.direccion, self.codigo_postal, self.password, self.razon_social, self.matricula, self.idRol))
+                WHERE idUsuario = %s""",
+                (self.nombre_apellido, self.DNI, self.direccion, self.codigo_postal, self.password, self.razon_social, self.matricula, self.idRol))
         else:
             cursor.execute("""
                 INSERT INTO Usuario (nombre_apellido, DNI, direccion, codigo_postal, password, razon_social, matricula, irRol) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)""", 
