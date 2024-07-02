@@ -6,7 +6,7 @@ from flask import Flask
 class Routes:
     def __init__(self, app:Flask) -> None:
         self.app = app
-        self.registerRoutes()
+        self.registerRoutes(app)
 
     def registerRoutes(self):
         @self.app.route('/')
