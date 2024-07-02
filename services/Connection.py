@@ -48,3 +48,17 @@ class Connection:
         resultado = self.cursor.execute(query, (DNI,)).fetchone()[0]
         self.desconectar()
         return resultado == 0
+
+    def existsByMatricula(self, matricula):
+        """existsByMatricula Verifica si el usuario con matricula existe en la base de datos 
+
+        Args:
+            matricula (String): La matricula de usuario
+        Returns:
+            Boolean:True si  existe , False si no existe
+        """
+        self.conectar()
+        query = "SELECT COUNT(matricula) FROM Usuario WHERE matricula=?"
+        resultado = self.cursor.execute(query, (matricula,)).fetchone()[0]
+        self.desconectar()
+        return resultado == 0

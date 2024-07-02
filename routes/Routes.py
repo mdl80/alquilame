@@ -4,6 +4,8 @@ from flask import Flask
 
 
 class Routes:
+    """ Esta clase registra las rutas que nos llevan a los htmls(vistas)
+    """
     def __init__(self, app:Flask) -> None:
         self.app = app
         self.registerRoutes()
@@ -25,6 +27,10 @@ class Routes:
         def registro():
             return render_template('/registro.html')
 
+        @self.app.route('/register', methods=['POST'])
+        def registroUsuario():
+            return registroUsuario(request)
+
         @self.app.route('/sesion')
         def sesion():
             return render_template('/inicio_sesion.html')
@@ -32,7 +38,3 @@ class Routes:
         @self.app.route('/sesion2')
         def sesion2():
             return render_template('/inicio_sesion_propietario.html')
-
-        @self.app.route('/register', methods=['POST'])
-        def registroUsuario():
-            return registroUsuario(request)
