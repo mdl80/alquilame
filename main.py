@@ -1,13 +1,12 @@
 from flask import Flask, render_template
 
 from services.Connection import Connection
-from routes.home import home
+from routes.Routes import Routes
 
 app = Flask(__name__,template_folder='app/templates')
 
 """conexion = Connection()"""
-
-home(app)
+home_routes = Routes(app)
 
 if __name__ == '__main__':
     app.run(debug=True)

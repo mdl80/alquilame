@@ -1,5 +1,4 @@
 import sqlite3
-from winreg import QueryInfoKey
 
 from Models.Inquilino import Inquilino
 from Models.Locatario import Locatario
