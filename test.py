@@ -28,19 +28,30 @@ def recibir():
     data = request.get_json()
     return jsonify(data),200
 
-#api de prueba de inicio de sesion,
+#*****Copiar desde aca *****
+
+#api de prueba de inicio de sesion,FUNCIONA
 @app.route('/sesion')
 def inicioSesion():
+    return render_template('inicio_sesion.html')
+#api de prueba para perfil FUNCIONA (Falta js para cargar datos)
+@app.route('/perfil')
+def perfil():
+    return render_template('perfil.html')
 
-@app.route('/auth')
+@app.route('/auth', methods=['POST'])
 def autorizacion():
     data = request.get_json()
     if not data:
         return jsonify({'error':'No se recibieron datos'}),400
     mail = data.get('email')
     password = data.get('password')
-    return data,200
-    
+    validado = models.User.authLoguin(mail,password)
+    if(validado):
+        return jsonify({'validado':True}),200
+    else:
+        return jsonify({'validado':False}),401
+
     
 if __name__== '__main__':
     app.run(debug=True)
