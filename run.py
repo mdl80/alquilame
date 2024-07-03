@@ -1,4 +1,5 @@
-from flask import Flask, render_template, render_template_string
+from crypt import methods
+from flask import Flask, jsonify, render_template, render_template_string, request
 from app import models
 from app.database import init_app
 import os
@@ -17,11 +18,16 @@ def registro():
     return render_template('registro.html')
 
 #api de prueba para verificar funcionamiento en base de datos
-@app.route('/todos')
+@app.route('/todos', methods=['GET'])
 def todos():
     usuarios= models.User.get_all()
     return usuarios
 
+@app.route('/recibir', methods=['POST'])
+def recibir():
+    data = request.get_json()
+    return jsonify(data),200
+    
 if __name__== '__main__':
     app.run(debug=True)
     

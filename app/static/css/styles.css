@@ -684,6 +684,7 @@ label.error {
 .butt-perfil {
     padding: var(--padding-x-small);
     width: 100%;
+    font-weight: 800;
     margin-top: var(--margin-small);
     background-color: var(--bg-color-principal);
     color: var(--text-color-third);
