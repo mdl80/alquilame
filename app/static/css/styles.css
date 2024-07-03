@@ -676,7 +676,8 @@ label.error {
 }
 
 .cuadro-texto {
-    width: 140%;
+    width: 100%;
+    
     border-style:outset;
     font-weight: 190;
 }
@@ -692,7 +693,7 @@ label.error {
     cursor: pointer;
     font-size: var(--font-x-small);
 }
-
+/******  perfil ****/
 .formu-perfil {
     width: 40%;
     display: flex;
@@ -705,11 +706,43 @@ label.error {
 
 .formu-perfil h4 {
     text-align: center;
+    margin-bottom: 5%;
 }
 
 .ic-perfil {
-    width: 20px;
+    width: 25px;
+    margin-right: 10px;
+}
+.formu-perfil div{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+.formu-perfil input{
+    height: 40px;
+    color: black;
+    font-weight:400;
+    font-size: medium;
+}
+.formu-perfil label{
+    display: flex;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+.div-botones{
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    gap:5px;
+}
+.div-botones button{
+    background-color: var(--bg-color-principal);
+    color: var(--bg-color-header);
+    height: 46px;
+    width: 50%;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 10px;
 }
 
 /* -- animaciones propiedades.html -- */
