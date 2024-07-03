@@ -459,9 +459,10 @@ function activarLoguin(formulario){
         let email = formulario.querySelector('#email').value;
         let password = formulario.querySelector('#password').value;
 
-        let validar = false;
+        let validar = validarMail(email);
 
-        if(validarMail(email)){
+        if(validar){
+            console.log('mail validado?:' + validar)
             //creo un objeto con los datos a enviar
             const formData={
                 email:email,
@@ -479,20 +480,24 @@ function activarLoguin(formulario){
             };
             
             fetch('/auth', opciones)
-            .then(response => {
+            /*.then(response => {
                 if(!response.ok){
                     throw new Error('Algo ha fallado');
                 }
-                return responde.json();
-            })
+                return response.json();
+            })*/
             .then(data => {
-                if (data){
-                    // acceder la respuesta es que existe en la base 
+                if (data.validado){
+                    console.log('a punto de abir')
+                    window.location.replace('/perfil')
                 }else{
-                    //error no existe en la base de datos 
+                    alert('Email o contraseñas incorrectos'); 
                 }
             });
 
+        }
+        else{
+            alert('Ingrese un correo correcto')
         }
     })
 }
@@ -500,77 +505,4 @@ function activarLoguin(formulario){
 //si el formulario no esta vacio o nulo, le agrego un listener a traves de activarLoguin
 if(form_login){
     activarLoguin(form_login)
-}
-
-unction registrarUsuario(formulario, tipoUsuario) {
-    formulario.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        let name, DNI, address, CPostal, email, password, password2, razon_Social, matricula;
-
-        // Eliminar clases de error anteriores
-        document.querySelectorAll('.error').forEach(element => {
-            element.classList.remove('error');
-        });
-
-        if (!marcarError(formulario, tipoUsuario)) {
-            alert("Para continuar el registro debe completar todos los campos obligatorios");
-            return;
-        }
-        //se podria sacar a una funcion, guarda los datos segun tipo de usuario 
-        //los datos los saca del formulario segun su tipo de usuario
-        if (tipoUsuario === 'Inquilino') {
-            name = document.querySelector('#name_usuario').value;
-            DNI = document.querySelector('#dni_usuario').value;
-            address = document.querySelector('#address_usuario').value;
-            CPostal = document.querySelector('#CPostal_usuario').value;
-            email = document.querySelector('#email_usuario').value;
-            password = document.querySelector('#password_usuario').value;
-            password2 = document.querySelector('#password2_usuario').value;
-        }
-
-        if (tipoUsuario === 'Locatario') {
-            name = document.querySelector('#name_prop').value;
-            address = document.querySelector('#address_prop').value;
-            CPostal = document.querySelector('#CPostal_prop').value;
-            email = document.querySelector('#email_prop').value;
-            razon_Social = document.querySelector('#razon_social').value;
-            matricula = document.querySelector('#matricula_prop').value;
-            password = document.querySelector('#password_prop').value;
-            password2 = document.querySelector('#password2_prop').value;
-        }
-
-        // crear usuario, 
-        let usuario = crearUsuario(tipoUsuario, name, DNI, address, CPostal, email, password, razon_Social, matricula);
-        //enviar(empaquetar(usuario))
-        // validar Usuario
-        let validado = validarUsuarios(usuario, tipoUsuario);
-
-        if (validado) {
-            // Validación de contraseñas
-            if (!validarContraseña(password, password2)) {
-                return alert('Las contraseñas no coinciden');
-            }
-            // validación de correo electrónico
-            if (!validarMail(email)) {
-                return alert('Por favor, ingrese un correo electrónico válido');
-            }
-            //si fue validado y no hubo errores empaqueto y envio
-            empaquetar(usuario)
-            // se crea un array de objetos
-            /*const Users = JSON.parse(localStorage.getItem('Users')) || [];
-            const isUserRegistered = Users.find(user => user.email === email);
-            if (isUserRegistered) {
-                return alert('El usuario ya existe');
-            }
-
-            Users.push(usuario);
-            localStorage.setItem('Users', JSON.stringify(Users));*/
-            alert('Registro Exitoso');
-            limpiarFormularios()
-            redireccion(tipoUsuario)
-        } else {
-            alert("Para continuar el registro debe completar todos los campos obligatorios");
-        }
-    });
 }
