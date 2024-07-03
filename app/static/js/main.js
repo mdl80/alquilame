@@ -92,7 +92,7 @@ function registrarUsuario(formulario, tipoUsuario) {
     formulario.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        let name, dni, address, CPostal, email, password, password2, razon_Social, matricula;
+        let name, DNI, address, CPostal, email, password, password2, razon_Social, matricula;
 
         // Eliminar clases de error anteriores
         document.querySelectorAll('.error').forEach(element => {
@@ -107,7 +107,7 @@ function registrarUsuario(formulario, tipoUsuario) {
         //los datos los saca del formulario segun su tipo de usuario
         if (tipoUsuario === 'Inquilino') {
             name = document.querySelector('#name_usuario').value;
-            dni = document.querySelector('#dni_usuario').value;
+            DNI = document.querySelector('#dni_usuario').value;
             address = document.querySelector('#address_usuario').value;
             CPostal = document.querySelector('#CPostal_usuario').value;
             email = document.querySelector('#email_usuario').value;
@@ -127,8 +127,8 @@ function registrarUsuario(formulario, tipoUsuario) {
         }
 
         // crear usuario, 
-        let usuario = crearUsuario(tipoUsuario, name, dni, address, CPostal, email, password, razon_Social, matricula);
-        enviar(empaquetar(usuario))
+        let usuario = crearUsuario(tipoUsuario, name, DNI, address, CPostal, email, password, razon_Social, matricula);
+        //enviar(empaquetar(usuario))
         // validar Usuario
         let validado = validarUsuarios(usuario, tipoUsuario);
 
@@ -142,28 +142,38 @@ function registrarUsuario(formulario, tipoUsuario) {
                 return alert('Por favor, ingrese un correo electrónico válido');
             }
             //si fue validado y no hubo errores empaqueto y envio
-            function empaquetar(usuario) {
-                const usuarioJson = JSON.stringify(usuario)
-                console.log('Usuario empaquetado:' + usuario)
-                return usuarioJson
-            }
+            empaquetar(usuario)
             // se crea un array de objetos
-            const Users = JSON.parse(localStorage.getItem('Users')) || [];
+            /*const Users = JSON.parse(localStorage.getItem('Users')) || [];
             const isUserRegistered = Users.find(user => user.email === email);
             if (isUserRegistered) {
                 return alert('El usuario ya existe');
             }
 
             Users.push(usuario);
-            localStorage.setItem('Users', JSON.stringify(Users));
+            localStorage.setItem('Users', JSON.stringify(Users));*/
             alert('Registro Exitoso');
-            window.location.href = 'inicio_sesion.html';//va a la pagina de perfil no a la de inicio
+            limpiarFormularios()
+            redireccion(tipoUsuario)
         } else {
             alert("Para continuar el registro debe completar todos los campos obligatorios");
         }
     });
 }
 
+function redireccion(tipoUsuario) {
+    if (tipoUsuario === 'Inquilino') {
+        window.location.href = '/sesion';//va a la pagina de perfil no a la de inicio*/
+    }
+    if (tipoUsuario === 'Locatario') {
+        window.location.href = '/sesion2';//va a la pagina de perfil no a la de inicio*/
+    }
+}
+function limpiarFormularios() {
+
+    form_prop.reset()
+    form_usuario.reset()
+}
 // función que devuelve true si la contraseña es validada, false en caso contrario 
 /**
  * Esta funcion valida si dos campos contienen la misma contraseña,devuelve True en el caso de que 
@@ -205,58 +215,44 @@ function validarMail(mail) {
  * @returns Usuario -el usuario creado
  */
 
-/*
-function crearUsuario(tipoUsuario, name, dni, address, CPostal, email, password, razon_Social, matricula) {
-    let user = null;
-    if (tipoUsuario === 'Inquilino') {
-        razon_Social = ''
-        matricula = ''
-        user = {
-            name,
-            dni,
-            address,
-            CPostal,
-            email,
-            password,
-            razon_Social,
-            matricula
-        };
-    } else if (tipoUsuario === 'Locatario') {
-        user = {
-            name,
-            address,
-            CPostal,
-            email,
-            password,
-            razon_Social,
-            matricula,
-        };
-    }
-    return user;
-}*/
+/**
+ *  Esta funcion crea un usuario de control dependiendo su tipo
+ * @param {*} tipoUsuario 
+ * @param {*} name 
+ * @param {*} dni 
+ * @param {*} address 
+ * @param {*} CPostal 
+ * @param {*} email 
+ * @param {*} password 
+ * @param {*} razon_Social 
+ * @param {*} matricula 
+ * @returns un usuario tipo Inquilino o Locatario
+ */
 function crearUsuario(tipoUsuario, name, dni, address, CPostal, email, password, razon_Social, matricula) {
     let user = null;
     if (tipoUsuario === 'Inquilino') {
         user = {
-            name: name,
-            dni: dni,
-            address: address,
-            CPostal: CPostal,
+            nombre_apellido: name,
+            DNI: dni,
+            direccion: address,
+            codigo_postal: CPostal,
             email: email,
             password: password,
-            razon_Social: '',
-            matricula: ''
+            razon_social: '',
+            matricula: '',
+            idRol: 1
         };
     } else if (tipoUsuario === 'Locatario') {
         user = {
             name: name,
-            dni: '',
-            address: address,
-            CPostal: CPostal,
+            DNI: '',
+            direccion: address,
+            codigo_postal: CPostal,
             email: email,
-            razon_Social: razon_Social,
+            razon_social: razon_Social,
             matricula: matricula,
-            password: password
+            password: password,
+            idRol: 2
         };
     }
     return user;
@@ -275,27 +271,26 @@ function validarUsuarios(usuario, tipoUsuario) {
     for (const atributo in usuario) {
         if (Object.hasOwnProperty.call(usuario, atributo)) {
             const valor = usuario[atributo];
+            console.log(`Validando atributo: ${atributo}, valor: '${valor}', tipoUsuario: ${tipoUsuario}`);
             if (tipoUsuario === 'Inquilino') {
                 // Si es Inquilino, ignoramos razon_social y matricula
                 if ((atributo !== 'razon_social' && atributo !== 'matricula') && (valor === null || valor === '')) {
                     validado = false;
-                    return validado;
+                    break;
                 }
             }
             if (tipoUsuario === 'Locador') {
                 // Si es Locador, ignoramos dni
-                if ((atributo !== 'dni') && (valor === null || valor === '')) {
+                if ((atributo !== 'DNI') && (valor === null || valor === '')) {
                     validado = false;
-                    return validado;
+                    break;
                 }
             }
         }
     }
+    console.log('Resultado de validado:', validado);
     return validado;
 }
-
-
-
 
 /**
  * Esta funcion marca los errores en el formulario dependiendo de sus valores y devuelve True si es validado
@@ -314,7 +309,7 @@ function marcarError(formulario, tipoUsuario) {
         CPostal = document.querySelector('#CPostal_usuario').value;
         email = document.querySelector('#email_usuario').value;
         password = document.querySelector('#password_usuario').value;
-        password2 = document.querySelector('#password2_usuario');
+        password2 = document.querySelector('#password2_usuario').value;
 
         if (!name || !dni || !address || !CPostal || !email || !password || !password2) {
             // Marcar los campos que faltan
@@ -354,13 +349,6 @@ function marcarError(formulario, tipoUsuario) {
 
     return true;
 }
-//comprobacion para no meter un listener sobre nulo y llamar a la funcion
-if (!(form_usuario === null && form_prop === null)) {
-    // llamando a la función registrarUsuario, activa el listener en el form cliente
-    registrarUsuario(form_usuario, 'Inquilino');
-    // llamando a la función registrarUsuario, activa el listener en el form propietario
-    registrarUsuario(form_prop, 'Locatario');
-}
 
 function empaquetar(usuario) {
     const usuarioJson = JSON.stringify(usuario)
@@ -387,6 +375,16 @@ function enviar(paquete) {
             console.error('Error en la solicitud:', error); // si hay error lo muestro en consola
         })
 }
+
+//comprobacion para no meter un listener sobre nulo y llamar a la funcion
+if (!(form_usuario === null)) {
+    // llamando a la función registrarUsuario, activa el listener en el form cliente
+    registrarUsuario(form_usuario, 'Inquilino');
+    // llamando a la función registrarUsuario, activa el listener en el form propietario
+    if (!(form_prop === null))
+        registrarUsuario(form_prop, 'Locatario');
+}
+
 
 
 
@@ -432,7 +430,6 @@ if (document.querySelector('.contact_form') !== null) {
             console.log('email validado?: ' + validarMail(email) + ' mail: ' + email)
             alert("Formulario enviado con exito!!!!");
             formulario.reset();
-
         }
     }
 }
