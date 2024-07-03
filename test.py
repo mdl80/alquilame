@@ -27,6 +27,19 @@ def todos():
 def recibir():
     data = request.get_json()
     return jsonify(data),200
+
+#api de prueba de inicio de sesion,
+@app.route('/sesion')
+def inicioSesion():
+
+@app.route('/auth')
+def autorizacion():
+    data = request.get_json()
+    if not data:
+        return jsonify({'error':'No se recibieron datos'}),400
+    mail = data.get('email')
+    password = data.get('password')
+    
     
 if __name__== '__main__':
     app.run(debug=True)
