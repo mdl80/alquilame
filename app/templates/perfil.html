@@ -34,28 +34,40 @@
         <section class="login magic">
             <h2>Perfil</h2>
         </section>
-        <section class="formu-perfil">
+        <form action="#" class="formu-perfil">
             <div>
                 <h4>Nombre de Usuario</h4>
-                <ul class="lista-datos">
-                    <li><img class="ic-perfil" src="../static/img/perfil-direccion.png" ></img> Dirección:<li class="cuadro-texto"></li></li>
-                    <li><img class="ic-perfil" src="../static/img/perfil-documento.png" ></img> Número de documento:<li class="cuadro-texto"></li></li>
-                    <li><img class="ic-perfil" src="../static/img/perfil-cp.png" ></img> Código postal:<li class="cuadro-texto"></li></li>
-                    <li><img class="ic-perfil" src="../static/img/perfil-email.webp" ></img> E-mail:<li class="cuadro-texto"></li></li>
-                    <li><img class="ic-perfil" src="../static/img/perfil-rs.webp" ></img> Razón Social:<li class="cuadro-texto"></li></li>
-                    <li><img class="ic-perfil" src="../static/img/perfil-matricula.png" ></img> Matrícula inmobiliaria:<li class="cuadro-texto"></li></li>
-                </ul>
             </div>
             <div>
-                <input class="butt-perfil" type="submit" value="Editar Perfil">
+                <label for="direccion2"><img src="../static/img/perfil-direccion.png" class="ic-perfil">Direccion:</label>
+                <input type="tex" class="cuadro-texto" name="direccion" id="direccion2">
             </div>
             <div>
-                <input class="butt-perfil" type="submit" value="Guardar Cambios">
+                <label for="DNI"><img src="../static/img/perfil-documento.png" class="ic-perfil">Documento:</label>
+                <input type="text" class="cuadro-texto" name="Documento" id="DNI">
             </div>
             <div>
-                <input class="butt-perfil" type="submit" value="Eliminar Perfil">
+                <label for="codigo_postal"><img src="../static/img/perfil-cp.png" class="ic-perfil">Codigo Postal:</label>
+                <input type="text" class="cuadro-texto" name="codigo_postal" id="">
             </div>
-        </section>
+            <div>
+                <label for="email"><img src="../static/img/perfil-email.webp" class="ic-perfil">E-mail:</label>
+                <input type="email" class="cuadro-texto" name="email" id="email">
+            </div>
+            <div>
+                <label for="razon_social"><img src="../static/img/perfil-rs.webp" class="ic-perfil">Razon Social:</label>
+                <input type="text" class="cuadro-texto" name="razon_sociañ" id="razon_social">
+            </div>
+            <div>
+                <label for="matricula"><img src="../static/img/perfil-matricula.png"class="ic-perfil">Matricula:</label>
+                <input type="text" class="cuadro-texto" name="matricula" id="matricula">
+            </div>
+            <div class="div-botones">
+                <button class="boton-editar">Editar</button>
+                <Button type="submit" class="boton-guardar">Guardar</Button>
+                <button class="boton-eliminar">Eliminar Perfil</button>
+            </div>
+        </form>
     </article>
     <footer>
         <nav class="footer-nav">
