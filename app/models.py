@@ -71,3 +71,12 @@ class User:
         user = cursor.fetchone()
         cursor.close()
         return user
+
+    @staticmethod
+    def authLoguin(email, password):
+        db = get_db()
+        cursor = db.cursor()
+        cursor.execute("SELECT COUNT(idUsuario) FROM Usuario WHERE email = ? AND password = ?",(email,password))
+        validado = cursor.fetchone()[0]
+        cursor.close()
+        return validado==1
