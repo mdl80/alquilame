@@ -39,6 +39,7 @@ def autorizacion():
         return jsonify({'error':'No se recibieron datos'}),400
     mail = data.get('email')
     password = data.get('password')
+    return data,200
     
     
 if __name__== '__main__':
