@@ -434,4 +434,10 @@ if (document.querySelector('.contact_form') !== null) {
     }
 }
 
+/*** Perfil *****/
+//traigo el formulario 
+const form_perfil = document.querySelector('.formu-perfil')
+
+//si el formulario no esta vacio traigo los valores 
+
 /** otras funciones server-side */
