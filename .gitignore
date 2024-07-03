@@ -2,3 +2,10 @@
 .vscode/
 #Ignorar archivo temporal de excel
 static/.~lock.Criterios de Evaluacion TPO.xlsx#
+# Ignorar archivos compilados de Python
+__pycache__/
+*.pyc
+
+# Ignorar archivos compilados de Python
+__pycache__/
+*.pyc

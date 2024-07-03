@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, render_template_string
+from app import models
 from app.database import init_app
 import os
 
@@ -15,6 +16,11 @@ def registro():
     
     return render_template('registro.html')
 
+#api de prueba para verificar funcionamiento en base de datos
+@app.route('/todos')
+def todos():
+    usuarios= models.User.get_all()
+    return usuarios
 
 if __name__== '__main__':
     app.run(debug=True)

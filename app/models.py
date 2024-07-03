@@ -2,12 +2,13 @@ from app.database import get_db
 
 class User:
     
-    def __init__(self, idUsuario=None, nombre_apellido=None, DNI=None, direccion=None, codigo_postal=None, password=None, razon_social=None, matricula=None, idRol=None):
+    def __init__(self, idUsuario=None, nombre_apellido=None, DNI=None, direccion=None, codigo_postal=None,email=None, password=None, razon_social=None, matricula=None, idRol=None):
         self.idUsuario = idUsuario
         self.nombre_apellido = nombre_apellido
         self.DNI = DNI
         self.direccion = direccion
         self.codigo_postal = codigo_postal
+        self.email = email
         self.password = password
         self.razon_social = razon_social
         self.matricula = matricula
@@ -39,7 +40,7 @@ class User:
     def get_all():
         db = get_db()
         cursor = db.cursor()
-        cursor.execute("SELECT * FROM users")
+        cursor.execute("SELECT * FROM Usuario")
         users = cursor.fetchall()
         cursor.close()
         return users
