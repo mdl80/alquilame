@@ -349,36 +349,6 @@ function marcarError(formulario, tipoUsuario) {
 
     return true;
 }
-/**
- * Esta funcion empaqueta un Usuario o dato y lo convierte a Json
- * @param {*} dato Usuario o dato a empaquetar
- * @returns Json
- */
-function empaquetar(dato) {
-    const usuarioJson = JSON.stringify(dato)
-    console.log('Usuario/dato empaquetado:' + dato.email)
-    return usuarioJson
-}
-function enviar(paquete) {
-    fetch('ruta de la api',
-        {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: paquete
-        }
-    )
-        .then(Response => {
-            if (!Response.ok) {
-                throw new Error('Error en la solicitud' + Response.status)
-            }
-            return Response.json()
-        })
-        .catch(error => {
-            console.error('Error en la solicitud:', error); // si hay error lo muestro en consola
-        })
-}
 
 //comprobacion para no meter un listener sobre nulo y llamar a la funcion
 if (!(form_usuario === null)) {
@@ -478,7 +448,6 @@ function activarLoguin(formulario) {
                     return response.json();
                 })
                 .then(data => {
-                    console.log('Mostrando lo que viene del back :' + data.validado);
                     if (data.validado) {
                         idUsuario = data.idUsuario;
                         email = data.email;
@@ -486,9 +455,6 @@ function activarLoguin(formulario) {
                             idUsuario: idUsuario,
                             email: email
                         };
-                        console.log('a punto de abrir');
-                        console.log('Validado?:' + data.validado);
-                        console.log(data);
                         sessionStorage.setItem('userData', JSON.stringify(userData));
                         window.location.replace('/perfil');
                     } else {
@@ -515,45 +481,224 @@ if (form_login) {
 
 const formu_perfil = document.querySelector('.formu-perfil')
 
-function activarPerfil(){
-    if (formu_perfil){
-        //estableciendo banderas de botones
-        bandera_editar = false
-        bandera_guardar = false
-        bandera_eliminar = false
+function activarPerfil() {
+    if (formu_perfil) {
+        // Ocultar inicialmente los campos 
+        document.getElementById('espacio-DNI').style.display = 'none';
+        document.getElementById('espacio-razon_social').style.display = 'none';
+        document.getElementById('espacio-matricula').style.display = 'none';
 
+        // Estableciendo banderas de botones
+        let bandera_editar = false;
+        let bandera_guardar = false;
+        let bandera_eliminar = false;
+        //estableciendo los botones
         boton_editar = document.querySelector('.boton-editar')
         boton_guardar = document.querySelector('.boton-guardar')
+        boton_eliminar = document.querySelector('.boton-eliminar')
+
+        deshabilitado(true)
+
+        // Trayendo los datos de sessionStorage
+        const userData = JSON.parse(sessionStorage.getItem('userData'));
+        console.log(sessionStorage.getItem('userData'))
+        const id = userData.idUsuario
+        console.log('el id de usuario es :' + id.toString())
+        // Verificando si userData tiene los datos que necesitas
+        if (id >= 1) {
+            // Trayendo al usuario de la DB por su ID
+            fetch('/getById', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ idUsuario: id })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    //completa y bloquea 
+                    completar(data)
+                    idRol = data.idRol
+
+                    // Mostrar u ocultar campos según el idRol
+                    if (idRol == 1) {
+                        document.getElementById('espacio-DNI').style.display = 'block';
+                    } else if (idRol == 2) {
+                        document.getElementById('espacio-razon_social').style.display = 'block';
+                        document.getElementById('espacio-matricula').style.display = 'block';
+                    }
+                    //asignando un listener a boton-editar
+                    boton_editar.addEventListener('click', function (event) {
+                        event.preventDefault(); // Prevenir el comportamiento por defecto del botón
+                        habilitaGuardar(true)
+
+                    });
+                    boton_guardar.addEventListener('click', function (event) {
+                        event.preventDefault();
+
+
+                    })
+                    //asignar un listener al boton guardar
+                    //asignando un listener a boton-editar
+                    boton_guardar.addEventListener('click', function (event) {
+                        event.preventDefault(); // Prevenir el comportamiento por defecto del botón
+                        habilitaGuardar(false)
+
+                    });
+                    boton_guardar.addEventListener('click', function (event) {
+                        event.preventDefault();
+
+
+                    })
+                    //asiganando un listener al boton eliminar
+                    boton_eliminar.addEventListener('click', function (event) {
+                        event.preventDefault(); // Prevenir el comportamiento por defecto del botón
+
+
+                    });
+                    boton_guardar.addEventListener('click', function (event) {
+                        event.preventDefault();
+
+
+                    })
+                })/*
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error al obtener los datos del usuario.');
+                });*/
+        } else {
+            alert('ID de usuario no encontrado en sessionStorage');
+            window.location.replace('/sesion'); // Redirigir a la página de inicio de sesión si no hay datos en sessionStorage
+        }
+    }
+}
+function habilitaEdicion() {
+
+}
+/**
+ * alterna entre los botones editar y guarda, cuando uno esta habilitado el otro se deshabilita
+ * cuando recibe true deshabilita guardar y habilita editar y viceversa
+ * @param {boolean} habilitar 
+ */
+function habilitaGuardar(habilitar) {
+    if (habilitar == true) {
+        //aca guardar esta habilitado,editar deshabilitado
+        document.querySelector('.boton-guardar').style.backgroundColor = '#224886'
+        document.querySelector('.boton-guardar').disabled = 'false';
+        document.querySelector('.boton-editar').backgroundColor = 'gray';
+        document.querySelector('.boton-editar').disabled = 'true'
+        deshabilitado(false)
+    } else {
+        //editar habilitado, desbloquea textbox
+        document.querySelector('.boton-guardar').style.backgroundColor = 'gray'
+        document.querySelector('.boton-guardar').disabled = 'true';
+        document.querySelector('.boton-editar').backgroundColor = '#224886';
+        document.querySelector('.boton-editar').disabled = 'false'
+        deshabilitado(true)
     }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    const userData = JSON.parse(sessionStorage.getItem('userData')); // Obtener el objeto userData de sessionStorage
+function completar(data) {
+    document.getElementById('nombre_usuario').innerText = data.nombreUsuario;
+    document.getElementById('direccion2').value = data.direccion;
+    document.getElementById('DNI').value = data.DNI;
+    document.getElementById('codigo_postal').value = data.codigoPostal;
+    document.getElementById('email').value = data.email;
+    document.getElementById('razon_social').value = data.razonSocial;
+    document.getElementById('matricula').value = data.matricula;
 
-    if (userData && userData.idUsuario) {
-        // Obtener los datos del usuario usando el ID
-        fetch('/get_user_data', {
+    //por defecto guardar deshabilitado
+    document.querySelector('.boton-guardar').disabled = 'true'
+    document.querySelector('.boton-guardar').style.backgroundColor = 'gray'
+}
+/**
+ * bloquea o desbloquea el contenido segun true o false
+ * @param {Boolean} valor 
+ */
+function deshabilitado(valor) {
+    if (valor) {
+        document.getElementById('nombre_usuario').disabled = true;
+        document.getElementById('direccion2').disabled = true;
+        document.getElementById('DNI').disabled = true;
+        document.getElementById('codigo_postal').disabled = true;
+        document.getElementById('email').disabled = true;
+        document.getElementById('razon_social').disabled = true;
+        document.getElementById('matricula').disabled = true;
+    } else {
+        document.getElementById('nombre_usuario').disabled = false;
+        document.getElementById('direccion2').disabled = false;
+        document.getElementById('DNI').disabled = false;
+        document.getElementById('codigo_postal').disabled = false;
+        document.getElementById('email').disabled = false;
+        document.getElementById('razon_social').disabled = false;
+        document.getElementById('matricula').disabled = false;
+    }
+}
+//funcion para el update actualizar debe ser igual a guardar
+function actualizar(paquete) {
+    empaquetar(paquete)
+}
+if (formu_perfil) {
+    activarPerfil()
+}
+
+/**
+ * Esta funcion empaqueta un Usuario o dato y lo convierte a Json
+ * @param {*} dato Usuario o dato a empaquetar
+ * @returns Json
+ */
+function empaquetar(dato) {
+    const usuarioJson = JSON.stringify(dato)
+    return usuarioJson
+}
+/**
+ * Esta funcion guarda un usuarioen la db 
+ * @param {Usuario} paquete El usuario a guardar en la base de datos 
+ */
+function guardar(paquete) {
+    fetch('ruta de la api',
+        {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ id: userData.idUsuario })
+            body: paquete
+        }
+    )
+        .then(Response => {
+            if (!Response.ok) {
+                throw new Error('Error en la solicitud' + Response.status)
+            }
+            return Response.json()
         })
-            .then(response => response.json())
-            .then(userData => {
-                if (!userData.error) {
-                    // Aquí puedes cargar los datos del usuario en tu formulario
-                    document.querySelector('#nombre').value = userData.nombre;
-                    document.querySelector('#apellido').value = userData.apellido;
-                    // y así con los demás campos
-                } else {
-                    console.error('Error al obtener datos del usuario:', userData.error);
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-    } else {
-        console.error('ID de usuario no encontrado en sessionStorage');
-    }
-});
+        .catch(error => {
+            console.error('Error en la solicitud:', error); // si hay error lo muestro en consola
+        })
+}
+
+
+
+/**
+* Esta funcion actualiza un usuario en la db 
+* @param {Usuario} paquete El usuario a guardar en la base de datos 
+*/
+function actualizar(paquete) {
+    fetch('ruta de la api',
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: paquete
+        }
+    )
+        .then(Response => {
+            if (!Response.ok) {
+                throw new Error('Error en la solicitud' + Response.status)
+            }
+            return Response.json()
+        })
+        .catch(error => {
+            console.error('Error en la solicitud:', error); // si hay error lo muestro en consola
+        })
+}

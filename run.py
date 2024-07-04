@@ -14,6 +14,10 @@ app = Flask(__name__)
 
 init_app(app)
 
+@app.route('/')
+def home():
+    return render_template('index.html')
+
 @app.route('/registro')
 def registro():
     
