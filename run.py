@@ -1,6 +1,6 @@
 from crypt import methods
 from flask import Flask, jsonify, render_template, render_template_string, request
-from flask_cors import CORS
+
 from app import models
 from app.database import init_app
 import os
