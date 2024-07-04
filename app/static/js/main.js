@@ -356,7 +356,7 @@ function marcarError(formulario, tipoUsuario) {
  */
 function empaquetar(dato) {
     const usuarioJson = JSON.stringify(dato)
-    console.log('Usuario/dato empaquetado:' + dato)
+    console.log('Usuario/dato empaquetado:' + dato.email)
     return usuarioJson
 }
 function enviar(paquete) {
@@ -438,35 +438,29 @@ if (document.querySelector('.contact_form') !== null) {
     }
 }
 
-/*** Perfil *****/
-//traigo el formulario 
-const form_perfil = document.querySelector('.formu-perfil')
-
-//si el formulario no esta vacio traigo los valores git push 
-
-//function getDatos()
-/** otras funciones server-side */
-
-
 /**** Login ******/
 //obtenemos el formulario
 const form_login = document.querySelector('.login_form');
-//activarloguin agrega un listener
-function activarLoguin(formulario){
-    formulario.addEventListener('submit',(e) => {
+
+//activarLoguin agrega un listener
+function activarLoguin(formulario) {
+    formulario.addEventListener('submit', (e) => {
         e.preventDefault();
+        if (sessionStorage.getItem('userData')) {
+            sessionStorage.removeItem('userData');
+        }
 
         let email = formulario.querySelector('#email').value;
         let password = formulario.querySelector('#password').value;
 
         let validar = validarMail(email);
 
-        if(validar){
-            console.log('mail validado?:' + validar)
+        if (validar) {
+            console.log('mail validado?:' + validar);
             //creo un objeto con los datos a enviar
-            const formData={
-                email:email,
-                password:password
+            const formData = {
+                email: email,
+                password: password
             };
 
             let paquete = empaquetar(formData);
@@ -478,31 +472,88 @@ function activarLoguin(formulario){
                 },
                 body: paquete
             };
-            
-            fetch('/auth', opciones)
-            /*.then(response => {
-                if(!response.ok){
-                    throw new Error('Algo ha fallado');
-                }
-                return response.json();
-            })*/
-            .then(data => {
-                if (data.validado){
-                    console.log('a punto de abir')
-                    window.location.replace('/perfil')
-                }else{
-                    alert('Email o contraseñas incorrectos'); 
-                }
-            });
 
+            fetch('/auth', opciones)
+                .then(response => {
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Mostrando lo que viene del back :' + data.validado);
+                    if (data.validado) {
+                        idUsuario = data.idUsuario;
+                        email = data.email;
+                        const userData = {
+                            idUsuario: idUsuario,
+                            email: email
+                        };
+                        console.log('a punto de abrir');
+                        console.log('Validado?:' + data.validado);
+                        console.log(data);
+                        sessionStorage.setItem('userData', JSON.stringify(userData));
+                        window.location.replace('/perfil');
+                    } else {
+                        alert('Email o contraseñas incorrectos');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Ocurrió un error al intentar iniciar sesión.');
+                });
+
+        } else {
+            alert('Ingrese un correo correcto');
         }
-        else{
-            alert('Ingrese un correo correcto')
-        }
-    })
+    });
 }
 
 //si el formulario no esta vacio o nulo, le agrego un listener a traves de activarLoguin
-if(form_login){
-    activarLoguin(form_login)
+if (form_login) {
+    activarLoguin(form_login);
 }
+
+/***Perfil*****/
+
+const formu_perfil = document.querySelector('.formu-perfil')
+
+function activarPerfil(){
+    if (formu_perfil){
+        //estableciendo banderas de botones
+        bandera_editar = false
+        bandera_guardar = false
+        bandera_eliminar = false
+
+        boton_editar = document.querySelector('.boton-editar')
+        boton_guardar = document.querySelector('.boton-guardar')
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    const userData = JSON.parse(sessionStorage.getItem('userData')); // Obtener el objeto userData de sessionStorage
+
+    if (userData && userData.idUsuario) {
+        // Obtener los datos del usuario usando el ID
+        fetch('/get_user_data', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ id: userData.idUsuario })
+        })
+            .then(response => response.json())
+            .then(userData => {
+                if (!userData.error) {
+                    // Aquí puedes cargar los datos del usuario en tu formulario
+                    document.querySelector('#nombre').value = userData.nombre;
+                    document.querySelector('#apellido').value = userData.apellido;
+                    // y así con los demás campos
+                } else {
+                    console.error('Error al obtener datos del usuario:', userData.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    } else {
+        console.error('ID de usuario no encontrado en sessionStorage');
+    }
+});
