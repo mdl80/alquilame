@@ -18,13 +18,13 @@ class User:
         db = get_db()
         cursor = db.cursor()
         if self.idUsuario:
-            cursor.execute("""UPDATE users SET nombre_apellido = %s, DNI = %s, direccion = %s, codigo_postal = %s, password = %s, razon_social = %s, matricula = %s, idRol = %s 
+            cursor.execute("""UPDATE Usuario SET nombre_apellido = %s, DNI = %s, direccion = %s, codigo_postal = %s, email = %s, password = %s, razon_social = %s, matricula = %s, idRol = %s 
                 WHERE idUsuario = %s""",
-                (self.nombre_apellido, self.DNI, self.direccion, self.codigo_postal, self.password, self.razon_social, self.matricula, self.idRol))
+                (self.nombre_apellido, self.DNI, self.direccion, self.codigo_postal, self.email, self.password, self.razon_social, self.matricula, self.idRol))
         else:
             cursor.execute("""
                 INSERT INTO Usuario (nombre_apellido, DNI, direccion, codigo_postal, password, razon_social, matricula, irRol) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)""", 
-                (self.nombre_apellido, self.DNI, self.direccion, self.codigo_postal, self.password, self.razon_social, self.matricula, self.idRol))
+                (self.nombre_apellido, self.DNI, self.direccion, self.codigo_postal, self.email, self.password, self.razon_social, self.matricula, self.idRol))
             self.idUsuario = cursor.lastrowid
         db.commit()
         cursor.close()
@@ -32,7 +32,7 @@ class User:
     def delete(self):
         db = get_db()
         cursor = db.cursor()
-        cursor.execute("DELETE FROM users WHERE idUsuario = %s", (self.idUsuario,))
+        cursor.execute("DELETE FROM Usuario WHERE idUsuario = %s", (self.idUsuario,))
         db.commit()
         cursor.close()
 
@@ -49,7 +49,7 @@ class User:
     def get_by_id(idUsuario):
         db = get_db()
         cursor = db.cursor()
-        cursor.execute("SELECT * FROM users WHERE idUsuario = %s", (idUsuario,))
+        cursor.execute("SELECT * FROM Usuario WHERE idUsuario = %s", (idUsuario,))
         user = cursor.fetchone()
         cursor.close()
         return user
@@ -58,7 +58,7 @@ class User:
     def get_by_username(username):
         db = get_db()
         cursor = db.cursor()
-        cursor.execute("SELECT * FROM users WHERE username = %s", (username,))
+        cursor.execute("SELECT * FROM Usuario WHERE username = %s", (username,))
         user = cursor.fetchone()
         cursor.close()
         return user
@@ -67,7 +67,7 @@ class User:
     def get_by_email(email):
         db = get_db()
         cursor = db.cursor()
-        cursor.execute("SELECT * FROM users WHERE email = %s", (email,))
+        cursor.execute("SELECT * FROM Usuario WHERE email = %s", (email,))
         user = cursor.fetchone()
         cursor.close()
         return user
@@ -76,7 +76,21 @@ class User:
     def authLoguin(email, password):
         db = get_db()
         cursor = db.cursor()
-        cursor.execute("SELECT COUNT(idUsuario) FROM Usuario WHERE email = ? AND password = ?",(email,password))
+        cursor.execute("SELECT COUNT(idUsuario) FROM Usuario WHERE email = %s AND password = %s",(email,password))
         validado = cursor.fetchone()[0]
         cursor.close()
         return validado==1
+    
+    def serialize(self):
+        return{
+            'idUsuario' : self.idUsuario,
+            'nombre_apellido' : self.nombre_apellido,
+            'DNI' : self.DNI,
+            'direccion' : self.direccion,
+            'codigo_postal' : self.codigo_postal,
+            'email' : self.email,
+            'password' : self.password,
+            'razon_social' : self.razon_social,
+            'matricula' : self.matricula,
+            'idRol' : self.idRol
+        }
