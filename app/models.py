@@ -1,3 +1,4 @@
+from flask import jsonify
 from app.database import get_db
 
 class User:
@@ -76,7 +77,11 @@ class User:
     def authLoguin(email, password):
         db = get_db()
         cursor = db.cursor()
-        cursor.execute("SELECT COUNT(idUsuario) FROM Usuario WHERE email = ? AND password = ?",(email,password))
-        validado = cursor.fetchone()[0]
-        cursor.close()
-        return validado==1
+        cursor.execute('SELECT idUsuario FROM Usuario WHERE email=? AND password=?', (email, password))
+        result = cursor.fetchone()
+        if result:
+            idUsuario = result[0]
+            return idUsuario
+        else:
+            return -1
+            
