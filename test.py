@@ -1,4 +1,4 @@
-from crypt import methods
+from urllib import response
 from flask import Flask, Response, jsonify, render_template, render_template_string, request
 from app import models
 from app.database import init_app
@@ -12,21 +12,15 @@ app = Flask(__name__, template_folder=template_dir, static_folder=static_dir)
 
 init_app(app)
 
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+
 @app.route('/registro')
 def registro():
     
     return render_template('registro.html')
-
-#api de prueba para verificar funcionamiento en base de datos
-@app.route('/todos', methods=['GET'])
-def todos():
-    usuarios= models.User.get_all()
-    return usuarios
-
-@app.route('/recibir', methods=['POST'])
-def recibir():
-    data = request.get_json()
-    return jsonify(data),200
 
 #*****Copiar desde aca *****
 
@@ -61,6 +55,24 @@ def autorizacion():
     else:
         return jsonify({'validado': False, 'idUsuario': -1}), 401
     
+@app.route('/getById', methods=['POST'])
+def getById():
+    data = request.get_json()
+    id = data.get('idUsuario')
+    usuario = models.User.get_by_id(id)
+    usuario = {
+            'nombreUsuario': usuario[1],
+            'DNI': usuario[2],
+            'direccion': usuario[3],
+            'codigoPostal': usuario[4],
+            'email': usuario[5],
+            'password':usuario[6],
+            'razonSocial': usuario[7],
+            'matricula': usuario[8],
+            'idRol':usuario[9]
+    }
+    return jsonify(usuario),200
+
+
 if __name__== '__main__':
     app.run(debug=True)
-    

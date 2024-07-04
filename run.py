@@ -17,6 +17,10 @@ static_dir = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'app', 'st
 
 CORS(app)
 
+@app.route('/')
+def home():
+    return render_template('index.html')
+
 @app.route('/registro')
 def registro():
     
