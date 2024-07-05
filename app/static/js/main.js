@@ -12,6 +12,7 @@ cerrar.addEventListener("click", () => {
     nav.classList.remove("visible");
 })
 
+
 // Login js
 
 
@@ -92,7 +93,7 @@ function registrarUsuario(formulario, tipoUsuario) {
     formulario.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        let name, DNI, address, CPostal, email, password, password2, razon_Social, matricula;
+        let nombre_usuario, DNI, direccion, codigo_postal, email, password, password2, razon_Social, matricula, idRol;
 
         // Eliminar clases de error anteriores
         document.querySelectorAll('.error').forEach(element => {
@@ -106,28 +107,30 @@ function registrarUsuario(formulario, tipoUsuario) {
         //se podria sacar a una funcion, guarda los datos segun tipo de usuario 
         //los datos los saca del formulario segun su tipo de usuario
         if (tipoUsuario === 'Inquilino') {
-            name = document.querySelector('#name_usuario').value;
+            nombre_usuario = document.querySelector('#name_usuario').value;
             DNI = document.querySelector('#dni_usuario').value;
-            address = document.querySelector('#address_usuario').value;
-            CPostal = document.querySelector('#CPostal_usuario').value;
+            direccion = document.querySelector('#address_usuario').value;
+            CPcodifo_postal = document.querySelector('#CPostal_usuario').value;
             email = document.querySelector('#email_usuario').value;
             password = document.querySelector('#password_usuario').value;
             password2 = document.querySelector('#password2_usuario').value;
+            idRol = 1;
         }
 
         if (tipoUsuario === 'Locatario') {
-            name = document.querySelector('#name_prop').value;
-            address = document.querySelector('#address_prop').value;
-            CPostal = document.querySelector('#CPostal_prop').value;
+            nombre_usuario = document.querySelector('#name_prop').value;
+            direccion = document.querySelector('#address_prop').value;
+            codigo_postal = document.querySelector('#CPostal_prop').value;
             email = document.querySelector('#email_prop').value;
             razon_Social = document.querySelector('#razon_social').value;
             matricula = document.querySelector('#matricula_prop').value;
             password = document.querySelector('#password_prop').value;
             password2 = document.querySelector('#password2_prop').value;
+            idRol = 2;
         }
 
-        // crear usuario, 
-        let usuario = crearUsuario(tipoUsuario, name, DNI, address, CPostal, email, password, razon_Social, matricula);
+        // vamos a crear un diccionario llamado usuario , el tipo de usuario para asignar el idRol 
+        let usuario = crearUsuario(tipoUsuario, nombre_usuario, DNI, direccion, codigo_postal, email, password, razon_Social, matricula);
         //enviar(empaquetar(usuario))
         // validar Usuario
         let validado = validarUsuarios(usuario, tipoUsuario);
@@ -142,17 +145,10 @@ function registrarUsuario(formulario, tipoUsuario) {
                 return alert('Por favor, ingrese un correo electrónico válido');
             }
             //si fue validado y no hubo errores empaqueto y envio
-            empaquetar(usuario)
-            // se crea un array de objetos
-            /*const Users = JSON.parse(localStorage.getItem('Users')) || [];
-            const isUserRegistered = Users.find(user => user.email === email);
-            if (isUserRegistered) {
-                return alert('El usuario ya existe');
-            }
-
-            Users.push(usuario);
-            localStorage.setItem('Users', JSON.stringify(Users));*/
-            alert('Registro Exitoso');
+            //debo hacer fetch para guardar la redireccion la hago dependiendo la respuesta
+            console.log('entrando a guardar')
+            guardar(usuario)
+            console.log('salida despues de mandar a guardar')
             limpiarFormularios()
             redireccion(tipoUsuario)
         } else {
@@ -200,7 +196,7 @@ function validarMail(mail) {
 
 // función para crear un usuario 
 /**
- * Esta funcion devuelve un usuario,posee un atributo repetido para validacion posterior (Password)
+ * Esta funcion devuelve un diccionario,posee un atributo repetido para validacion posterior (Password)
  * se puede mejorar
  * @param {String} tipoUsuario - identificador de tipo de usuario
  * @param {*} name - nombre y apellido del usuario
@@ -228,14 +224,14 @@ function validarMail(mail) {
  * @param {*} matricula 
  * @returns un usuario tipo Inquilino o Locatario
  */
-function crearUsuario(tipoUsuario, name, dni, address, CPostal, email, password, razon_Social, matricula) {
+function crearUsuario(tipoUsuario, nombre_apellido, DNI, direccion, codigo_postal, email, password, razon_Social, matricula) {
     let user = null;
     if (tipoUsuario === 'Inquilino') {
         user = {
-            nombre_apellido: name,
-            DNI: dni,
-            direccion: address,
-            codigo_postal: CPostal,
+            nombre_apellido: nombre_apellido,
+            DNI: DNI,
+            direccion: direccion,
+            codigo_postal: codigo_postal,
             email: email,
             password: password,
             razon_social: '',
@@ -244,10 +240,10 @@ function crearUsuario(tipoUsuario, name, dni, address, CPostal, email, password,
         };
     } else if (tipoUsuario === 'Locatario') {
         user = {
-            name: name,
+            nombre_apellido: nombre_apellido,
             DNI: '',
-            direccion: address,
-            codigo_postal: CPostal,
+            direccion: direccion,
+            codigo_postal: codigo_postal,
             email: email,
             razon_social: razon_Social,
             matricula: matricula,
@@ -300,23 +296,23 @@ function validarUsuarios(usuario, tipoUsuario) {
  * @returns Boolean
  */
 function marcarError(formulario, tipoUsuario) {
-    let name, dni, address, CPostal, email, password, password2, razon_Social, matricula;
+    let nombre_apellido, DNI, direccion, codigo_postal, email, password, password2, razon_Social, matricula;
 
     if (tipoUsuario === 'Inquilino') {
-        name = document.querySelector('#name_usuario').value;
-        dni = document.querySelector('#dni_usuario').value;
-        address = document.querySelector('#address_usuario').value;
-        CPostal = document.querySelector('#CPostal_usuario').value;
+        nombre_apellido = document.querySelector('#name_usuario').value;
+        DNI = document.querySelector('#dni_usuario').value;
+        direccion = document.querySelector('#address_usuario').value;
+        codigo_postal = document.querySelector('#CPostal_usuario').value;
         email = document.querySelector('#email_usuario').value;
         password = document.querySelector('#password_usuario').value;
         password2 = document.querySelector('#password2_usuario').value;
 
-        if (!name || !dni || !address || !CPostal || !email || !password || !password2) {
+        if (!nombre_apellido || !DNI || !direccion || !codigo_postal || !email || !password || !password2) {
             // Marcar los campos que faltan
-            if (!name) document.querySelector('#name_usuario').classList.add('error');
-            if (!dni) document.querySelector('#dni_usuario').classList.add('error');
-            if (!address) document.querySelector('#address_usuario').classList.add('error');
-            if (!CPostal) document.querySelector('#CPostal_usuario').classList.add('error');
+            if (!nombre_usuario) document.querySelector('#name_usuario').classList.add('error');
+            if (!DNI) document.querySelector('#dni_usuario').classList.add('error');
+            if (!direccion) document.querySelector('#address_usuario').classList.add('error');
+            if (!codigo_postal) document.querySelector('#CPostal_usuario').classList.add('error');
             if (!email) document.querySelector('#email_usuario').classList.add('error');
             if (!password) document.querySelector('#password_usuario').classList.add('error');
             if (!password2) document.querySelector('#password2_usuario').classList.add('error');
@@ -324,20 +320,20 @@ function marcarError(formulario, tipoUsuario) {
         }
 
     } else if (tipoUsuario === 'Locatario') {
-        name = document.querySelector('#name_prop').value;
-        address = document.querySelector('#address_prop').value;
-        CPostal = document.querySelector('#CPostal_prop').value;
+        nombre_apellido = document.querySelector('#name_prop').value;
+        direccion = document.querySelector('#address_prop').value;
+        codigo_postal = document.querySelector('#CPostal_prop').value;
         email = document.querySelector('#email_prop').value;
         razon_Social = document.querySelector('#razon_social').value;
         matricula = document.querySelector('#matricula_prop').value;
         password = document.querySelector('#password_prop').value;
         password2 = document.querySelector('#password2_prop').value;
 
-        if (!name || !address || !CPostal || !email || !razon_Social || !matricula || !password || !password2) {
+        if (!nombre_apellido || !direccion || !codigo_postal || !email || !razon_Social || !matricula || !password || !password2) {
             // Marcar los campos que faltan
-            if (!name) document.querySelector('#name_prop').classList.add('error');
-            if (!address) document.querySelector('#address_prop').classList.add('error');
-            if (!CPostal) document.querySelector('#CPostal_prop').classList.add('error');
+            if (!nombre_apellido) document.querySelector('#name_prop').classList.add('error');
+            if (!direccion) document.querySelector('#address_prop').classList.add('error');
+            if (!codigo_postal) document.querySelector('#CPostal_prop').classList.add('error');
             if (!email) document.querySelector('#email_prop').classList.add('error');
             if (!razon_Social) document.querySelector('#razon_social').classList.add('error');
             if (!matricula) document.querySelector('#matricula_prop').classList.add('error');
@@ -411,6 +407,10 @@ if (document.querySelector('.contact_form') !== null) {
 /**** Login ******/
 //obtenemos el formulario
 const form_login = document.querySelector('.login_form');
+function empaquetar(data) {
+    data = JSON.stringify(data)
+    return data
+}
 
 //activarLoguin agrega un listener
 function activarLoguin(formulario) {
@@ -449,6 +449,7 @@ function activarLoguin(formulario) {
                 })
                 .then(data => {
                     if (data.validado) {
+
                         idUsuario = data.idUsuario;
                         email = data.email;
                         const userData = {
@@ -477,6 +478,26 @@ if (form_login) {
     activarLoguin(form_login);
 }
 
+function guardar(data){
+    fetch('/guardar', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            if (data.estado >= 1) {
+                alert('Usuario Guardado exitosamente.');
+                completar(data.usuario); // Actualiza los campos con los datos retornados
+                habilitaGuardar(false);
+            } else if (data.estado == 0) {
+                alert('Error Nada para Guardar.');
+            }
+        })
+}
 /***Perfil*****/
 
 const formu_perfil = document.querySelector('.formu-perfil')
@@ -492,18 +513,20 @@ function activarPerfil() {
         let bandera_editar = false;
         let bandera_guardar = false;
         let bandera_eliminar = false;
-        //estableciendo los botones
-        boton_editar = document.querySelector('.boton-editar')
-        boton_guardar = document.querySelector('.boton-guardar')
-        boton_eliminar = document.querySelector('.boton-eliminar')
 
-        deshabilitado(true)
+        // Estableciendo los botones
+        const boton_editar = document.querySelector('.boton-editar');
+        const boton_guardar = document.querySelector('.boton-guardar');
+        const boton_eliminar = document.querySelector('.boton-eliminar');
+
+        deshabilitado(true);
 
         // Trayendo los datos de sessionStorage
         const userData = JSON.parse(sessionStorage.getItem('userData'));
-        console.log(sessionStorage.getItem('userData'))
-        const id = userData.idUsuario
-        console.log('el id de usuario es :' + id.toString())
+        console.log(sessionStorage.getItem('userData'));
+        const id = userData.idUsuario;
+        console.log('el id de usuario es :' + id.toString());
+
         // Verificando si userData tiene los datos que necesitas
         if (id >= 1) {
             // Trayendo al usuario de la DB por su ID
@@ -516,9 +539,9 @@ function activarPerfil() {
             })
                 .then(response => response.json())
                 .then(data => {
-                    //completa y bloquea 
-                    completar(data)
-                    idRol = data.idRol
+                    // Completa y bloquea 
+                    completar(data);
+                    const idRol = data.idRol;
 
                     // Mostrar u ocultar campos según el idRol
                     if (idRol == 1) {
@@ -527,74 +550,55 @@ function activarPerfil() {
                         document.getElementById('espacio-razon_social').style.display = 'block';
                         document.getElementById('espacio-matricula').style.display = 'block';
                     }
-                    //asignando un listener a boton-editar
+
+                    // Asignando un listener al botón editar
                     boton_editar.addEventListener('click', function (event) {
                         event.preventDefault(); // Prevenir el comportamiento por defecto del botón
-                        habilitaGuardar(true)
-
+                        habilitaGuardar(true);
                     });
-                    boton_guardar.addEventListener('click', function (event) {
-                        event.preventDefault();
 
-
-                    })
-                    //asignar un listener al boton guardar
-                    //asignando un listener a boton-editar
+                    // Asignando un listener al botón guardar
                     boton_guardar.addEventListener('click', function (event) {
                         event.preventDefault(); // Prevenir el comportamiento por defecto del botón
-                        habilitaGuardar(false)
-
+                        actualizarUsuario(data.idUsuario);
+                        habilitaGuardar(false);
                     });
-                    boton_guardar.addEventListener('click', function (event) {
-                        event.preventDefault();
 
-
-                    })
-                    //asiganando un listener al boton eliminar
+                    // Asignando un listener al botón eliminar
                     boton_eliminar.addEventListener('click', function (event) {
                         event.preventDefault(); // Prevenir el comportamiento por defecto del botón
-
-
+                        eliminarUsuario(id);
                     });
-                    boton_guardar.addEventListener('click', function (event) {
-                        event.preventDefault();
-
-
-                    })
-                })/*
+                })
                 .catch(error => {
                     console.error('Error:', error);
                     alert('Error al obtener los datos del usuario.');
-                });*/
+                });
         } else {
             alert('ID de usuario no encontrado en sessionStorage');
             window.location.replace('/sesion'); // Redirigir a la página de inicio de sesión si no hay datos en sessionStorage
         }
     }
 }
-function habilitaEdicion() {
 
-}
-/**
- * alterna entre los botones editar y guarda, cuando uno esta habilitado el otro se deshabilita
- * cuando recibe true deshabilita guardar y habilita editar y viceversa
- * @param {boolean} habilitar 
- */
+
+
 function habilitaGuardar(habilitar) {
-    if (habilitar == true) {
-        //aca guardar esta habilitado,editar deshabilitado
-        document.querySelector('.boton-guardar').style.backgroundColor = '#224886'
-        document.querySelector('.boton-guardar').disabled = 'false';
-        document.querySelector('.boton-editar').backgroundColor = 'gray';
-        document.querySelector('.boton-editar').disabled = 'true'
-        deshabilitado(false)
+    const botonGuardar = document.querySelector('.boton-guardar');
+    const botonEditar = document.querySelector('.boton-editar');
+
+    if (habilitar) {
+        botonGuardar.style.backgroundColor = '#224886';
+        botonGuardar.disabled = false;
+        botonEditar.style.backgroundColor = 'gray';
+        botonEditar.disabled = true;
+        deshabilitado(false);
     } else {
-        //editar habilitado, desbloquea textbox
-        document.querySelector('.boton-guardar').style.backgroundColor = 'gray'
-        document.querySelector('.boton-guardar').disabled = 'true';
-        document.querySelector('.boton-editar').backgroundColor = '#224886';
-        document.querySelector('.boton-editar').disabled = 'false'
-        deshabilitado(true)
+        botonGuardar.style.backgroundColor = 'gray';
+        botonGuardar.disabled = true;
+        botonEditar.style.backgroundColor = '#224886';
+        botonEditar.disabled = false;
+        deshabilitado(true);
     }
 }
 
@@ -607,98 +611,88 @@ function completar(data) {
     document.getElementById('razon_social').value = data.razonSocial;
     document.getElementById('matricula').value = data.matricula;
 
-    //por defecto guardar deshabilitado
-    document.querySelector('.boton-guardar').disabled = 'true'
-    document.querySelector('.boton-guardar').style.backgroundColor = 'gray'
+    // Por defecto, guardar deshabilitado
+    document.querySelector('.boton-guardar').disabled = true;
+    document.querySelector('.boton-guardar').style.backgroundColor = 'gray';
 }
-/**
- * bloquea o desbloquea el contenido segun true o false
- * @param {Boolean} valor 
- */
+
 function deshabilitado(valor) {
-    if (valor) {
-        document.getElementById('nombre_usuario').disabled = true;
-        document.getElementById('direccion2').disabled = true;
-        document.getElementById('DNI').disabled = true;
-        document.getElementById('codigo_postal').disabled = true;
-        document.getElementById('email').disabled = true;
-        document.getElementById('razon_social').disabled = true;
-        document.getElementById('matricula').disabled = true;
-    } else {
-        document.getElementById('nombre_usuario').disabled = false;
-        document.getElementById('direccion2').disabled = false;
-        document.getElementById('DNI').disabled = false;
-        document.getElementById('codigo_postal').disabled = false;
-        document.getElementById('email').disabled = false;
-        document.getElementById('razon_social').disabled = false;
-        document.getElementById('matricula').disabled = false;
-    }
+    document.getElementById('nombre_usuario').disabled = valor;
+    document.getElementById('direccion2').disabled = valor;
+    document.getElementById('DNI').disabled = valor;
+    document.getElementById('codigo_postal').disabled = valor;
+    document.getElementById('email').disabled = valor;
+    document.getElementById('razon_social').disabled = valor;
+    document.getElementById('matricula').disabled = valor;
 }
-//funcion para el update actualizar debe ser igual a guardar
-function actualizar(paquete) {
-    empaquetar(paquete)
+
+function actualizarUsuario(idUsuario) {
+    const userData = JSON.parse(sessionStorage.getItem('userData'));
+    console.log(sessionStorage.getItem('userData'));
+    const id = userData.idUsuario;
+    const data = {
+        idUsuario: id,
+        nombreUsuario: document.getElementById('nombre_usuario').innerText,
+        direccion: document.getElementById('direccion2').value,
+        DNI: document.getElementById('DNI').value,
+        codigoPostal: document.getElementById('codigo_postal').value,
+        email: document.getElementById('email').value,
+        razonSocial: document.getElementById('razon_social').value,
+        matricula: document.getElementById('matricula').value
+    };
+
+    console.log('************');
+    console.log(data);
+    console.log('************');
+
+    fetch('/actualizar', {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            if (data.estado >= 1) {
+                alert('Usuario actualizado exitosamente.');
+                completar(data.usuario); // Actualiza los campos con los datos retornados
+                habilitaGuardar(false);
+            } else if (data.estado == 0) {
+                alert('Nada para actualizar.');
+            }
+        })
+    //.catch(error => {
+    //    console.error('Error:', error);
+    //    alert('Error al actualizar el usuario.');
+    //});
 }
+
+
+function eliminarUsuario(idUsuario) {
+    fetch(`/eliminar/${idUsuario}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Usuario eliminado exitosamente.');
+            window.location.replace('/sesion'); // Redirigir a la página de inicio de sesión
+        } else {
+            alert('Error al eliminar el usuario.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Error al eliminar el usuario.');
+    });
+}
+
+// Inicializa la funcionalidad de perfil
 if (formu_perfil) {
-    activarPerfil()
-}
-
-/**
- * Esta funcion empaqueta un Usuario o dato y lo convierte a Json
- * @param {*} dato Usuario o dato a empaquetar
- * @returns Json
- */
-function empaquetar(dato) {
-    const usuarioJson = JSON.stringify(dato)
-    return usuarioJson
-}
-/**
- * Esta funcion guarda un usuarioen la db 
- * @param {Usuario} paquete El usuario a guardar en la base de datos 
- */
-function guardar(paquete) {
-    fetch('ruta de la api',
-        {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: paquete
-        }
-    )
-        .then(Response => {
-            if (!Response.ok) {
-                throw new Error('Error en la solicitud' + Response.status)
-            }
-            return Response.json()
-        })
-        .catch(error => {
-            console.error('Error en la solicitud:', error); // si hay error lo muestro en consola
-        })
-}
-
-
-
-/**
-* Esta funcion actualiza un usuario en la db 
-* @param {Usuario} paquete El usuario a guardar en la base de datos 
-*/
-function actualizar(paquete) {
-    fetch('ruta de la api',
-        {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: paquete
-        }
-    )
-        .then(Response => {
-            if (!Response.ok) {
-                throw new Error('Error en la solicitud' + Response.status)
-            }
-            return Response.json()
-        })
-        .catch(error => {
-            console.error('Error en la solicitud:', error); // si hay error lo muestro en consola
-        })
+    activarPerfil();
 }

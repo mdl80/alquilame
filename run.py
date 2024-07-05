@@ -20,7 +20,6 @@ def home():
 
 @app.route('/registro')
 def registro():
-    
     return render_template('registro.html')
 
 #api de prueba para verificar funcionamiento en base de datos
@@ -64,7 +63,13 @@ def autorizacion():
         return jsonify({'validado': True, 'idUsuario': idUsuario, 'email': email}), 200
     else:
         return jsonify({'validado': False, 'idUsuario': -1}), 401
-    
+
+@app.route('/actualizar', methods=['PUT'])
+def actualizar():
+    data = request.get_json()
+    resultado = models.User.update(data)
+    return {'estado': resultado}, 200
+
 if __name__== '__main__':
     app.run(debug=True)
     

@@ -1,3 +1,4 @@
+from crypt import methods
 from urllib import response
 from flask import Flask, Response, jsonify, render_template, render_template_string, request
 from app import models
@@ -48,7 +49,6 @@ def autorizacion():
         return jsonify({'error': 'Email y contraseña son requeridos'}), 400
     
     idUsuario = models.User.authLoguin(email, password)
-    print('el id de usuario es:' + str(idUsuario))
     
     if idUsuario >= 1:
         return jsonify({'validado': True, 'idUsuario': idUsuario, 'email': email}), 200
@@ -72,6 +72,29 @@ def getById():
             'idRol':usuario[9]
     }
     return jsonify(usuario),200
+
+@app.route('/guardar',methods=['POST'])
+def guardar():
+    usuario = request.get_json()
+    resultado = models.User.save(usuario)
+    if(resultado >0):
+        return jsonify({'exito':True}),200
+    else:
+        return jsonify({'exito':False}),500
+
+@app.route('/actualizar', methods=['PUT'])
+def actualizar():
+    data = request.get_json()
+    resultado = models.User.update(data)
+    return {'estado': resultado}, 200
+
+@app.route('/eliminar/<int:idUsuario>',methods=['DELETE'])
+def eliminar(idUsuario):
+    resultado = models.User.eliminar(idUsuario)
+    if resultado > 0:
+        return {'success': True}, 200
+    else:
+        return {'success': False}, 500
 
 
 if __name__== '__main__':
