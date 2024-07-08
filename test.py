@@ -1,6 +1,12 @@
 from crypt import methods
 from urllib import response
-from flask import Flask, Response, jsonify, render_template, render_template_string, request
+from flask import Flask, Response, jsonify, redirect, render_template, render_template_string, request
+from app import models
+from app.database import init_app
+import os
+
+from dotenv import load_dotenv
+from flask import Flask, jsonify, render_template, request
 from app import models
 from app.database import init_app
 import os
@@ -9,9 +15,13 @@ template_dir = (os.path.abspath(os.path.dirname(__file__)))
 template_dir = os.path.join(template_dir, 'app', 'templates')
 static_dir = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'app', 'static')
 
+dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+
 app = Flask(__name__, template_folder=template_dir, static_folder=static_dir)
+load_dotenv()
 
 init_app(app)
+
 
 @app.route('/')
 def home():
@@ -24,6 +34,9 @@ def registro():
     return render_template('registro.html')
 
 #*****Copiar desde aca *****
+app.route('/contacto')
+def contacto():
+    return redirect ('contacto.html')
 
 #api de prueba de inicio de sesion,FUNCIONA
 @app.route('/sesion')
@@ -95,7 +108,6 @@ def eliminar(idUsuario):
         return {'success': True}, 200
     else:
         return {'success': False}, 500
-
 
 if __name__== '__main__':
     app.run(debug=True)

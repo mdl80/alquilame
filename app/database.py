@@ -14,7 +14,7 @@ DATABASE_CONFIG = {
 #Obtener conexion a la base de datos
 def get_db():
     if 'db' not in g:
-        g.db =sqlite3.connect(**DATABASE_CONFIG)
+        g.db =sqlite3.connect(DATABASE_CONFIG)
     return g.db
 
 #Cerrar conexion a la base de datos
