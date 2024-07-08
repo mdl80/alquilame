@@ -30,15 +30,16 @@ def home():
 
 @app.route('/registro')
 def registro():
-    
     return render_template('registro.html')
 
-#*****Copiar desde aca *****
-app.route('/contacto')
+@app.route('/contacto')
 def contacto():
-    return redirect ('contacto.html')
+    return render_template('contacto.html')
 
-#api de prueba de inicio de sesion,FUNCIONA
+@app.route('/nosotros')
+def nosotros():
+    return render_template('nosotros.html')
+
 @app.route('/sesion')
 def inicioSesion():
     return render_template('inicio_sesion.html')
